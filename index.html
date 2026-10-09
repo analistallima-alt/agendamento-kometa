@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A6FB8">
+<meta name="description" content="Agendamento de entregas e controle do recebimento de mercadorias dos Supermercados Kometa.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="favicon-64.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Kometa Agenda">
 <title>Supermercados Kometa | Agendamento de Recebimento</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
@@ -337,6 +345,42 @@ a.btn{text-decoration:none}
 .spin{width:34px;height:34px;border-radius:50%;border:4px solid var(--surface-3);border-top-color:var(--blue);margin:0 auto 12px;animation:sp 1s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}
 .btn:disabled{opacity:.6;cursor:wait;transform:none}
+/* ===== Novos recursos ===== */
+.nav-i.small{padding:8px 14px;font-size:13.5px}.nav-i.small svg{width:17px;height:17px}
+.saved{margin:-4px 0 14px}.saved small{display:block;font-size:12.5px;color:var(--text-3);font-weight:700;margin-bottom:6px}.saved .chip{padding:7px 14px;font-size:13px}
+.hint{display:block;font-size:12.5px;color:var(--text-3);margin-top:2px}.hint.ok{color:var(--ok)}.hint.bad{color:var(--bad)}
+.aceite{display:flex;gap:10px;align-items:flex-start;margin-top:14px;padding:12px 14px;border:1.5px solid var(--border);border-radius:12px;background:var(--surface-2);cursor:pointer;font-size:13.5px;color:var(--text-2)}
+.aceite input{width:18px;height:18px;margin-top:2px;accent-color:var(--blue);flex:none}.aceite.on{border-color:var(--blue)}.aceite.err{border-color:var(--bad)!important;box-shadow:0 0 0 4px rgba(211,38,58,.12)}
+.aceite a{color:var(--accent);font-weight:800}
+.priv p{margin-bottom:10px;font-size:14px;color:var(--text-2)}.priv b{color:var(--text)}
+.qrbox{display:flex;gap:16px;align-items:center;border:1.5px solid var(--border);border-radius:16px;padding:14px;margin:-8px 0 20px;background:#fff;color:#13233A}
+.qrbox .qrimg{flex:none;line-height:0}.qrbox b{display:block;font-size:15px}.qrbox span{display:block;font-size:12.5px;color:#53607A}
+:root[data-theme="dark"] .qrbox .btn.ghost{background:#fff;color:#13233A;border-color:#DCE2EA}
+.qrbig{display:inline-block;padding:10px;background:#fff;border-radius:16px;line-height:0}
+.qrvideo{width:100%;max-height:60vh;border-radius:14px;background:#000;object-fit:cover}
+.instbar{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--red);border-radius:14px;padding:10px 12px 10px 14px;margin-bottom:14px;box-shadow:var(--shadow);font-size:14px}
+.instbar svg{color:var(--accent)}.instbar span{flex:1}.instbar .x{width:30px;height:30px}
+.alert.info{background:var(--accent-soft);border-color:rgba(26,111,184,.25)}.alert span{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.note-box{display:flex;gap:12px;align-items:flex-start;background:var(--accent-soft);border-radius:12px;padding:12px 14px;font-size:14px;color:var(--text-2)}.note-box svg{color:var(--accent);flex:none}
+.ou{display:flex;align-items:center;gap:10px;margin:16px 0 12px;color:var(--text-3);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}.ou:before,.ou:after{content:"";flex:1;height:1px;background:var(--border)}
+.port .ag-top{margin-bottom:10px}.port-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}
+.port-g small{display:block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--text-3)}.port-g b{font-size:15px}
+.placa{white-space:nowrap;font-family:Nunito,"Nunito Sans",system-ui,sans-serif;font-weight:900;font-size:20px!important;letter-spacing:1.5px;background:var(--surface-2);border:1.5px solid var(--border-2);border-radius:8px;padding:2px 10px;display:inline-block}
+.tokok{display:flex;align-items:center;gap:8px;background:rgba(20,153,90,.12);color:var(--ok);font-weight:800;border-radius:12px;padding:10px 14px}
+.when{font-weight:800;color:var(--ok);margin:4px 0}.when.late{color:var(--bad)}.when.early{color:#A57400}
+.seg3{display:inline-grid;grid-template-columns:repeat(3,auto)}.seg3 button{padding:8px 14px}
+.nota{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;padding:3px 10px 3px 4px;border-radius:999px;background:var(--surface-3);color:var(--text-2);white-space:nowrap}
+.nota b{display:grid;place-items:center;min-width:30px;height:24px;border-radius:999px;background:var(--surface);color:var(--text);font-size:13px}
+.nota.ok{background:rgba(20,153,90,.12);color:var(--ok)}.nota.info{background:var(--accent-soft);color:var(--accent)}.nota.warn{background:rgba(217,154,0,.14);color:#A57400}.nota.bad{background:rgba(211,38,58,.11);color:var(--bad)}
+th.sort{cursor:pointer;user-select:none}th.sort.on{color:var(--accent)}td.neg{color:var(--bad);font-weight:800}
+.bnav .dotc{position:absolute;top:2px;right:calc(50% - 20px);background:var(--red);color:#fff;font-style:normal;font-size:10px;border-radius:999px;padding:0 5px;line-height:15px}
+.rep .chart{margin:4px 0 2px;overflow-x:auto}.rep .chart svg{min-width:320px;display:block}.rep .legenda{font-size:11.5px;color:#8A96A9;margin-bottom:6px}
+@media (max-width:980px){.port-g{grid-template-columns:1fr 1fr}.qrbox{flex-direction:column;text-align:center}.qrbox .acts{justify-content:center}.seg3{width:100%;grid-template-columns:repeat(3,1fr)}}
+.alertbar{border-left-color:var(--blue)}
+.alrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:14px;font-weight:700;color:var(--text-2)}
+.sw{appearance:none;width:42px;height:24px;border-radius:999px;background:var(--surface-3);border:1px solid var(--border-2);position:relative;cursor:pointer;flex:none;transition:.15s}
+.sw:after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:.15s}
+.sw:checked{background:var(--blue);border-color:var(--blue)}.sw:checked:after{left:20px}
 /* ===== Modal / toast ===== */
 .modal-bg{position:fixed;inset:0;background:rgba(6,14,28,.6);display:none;align-items:center;justify-content:center;z-index:60;padding:16px}
 .modal-bg.on{display:flex}
@@ -383,7 +427,8 @@ a.btn{text-decoration:none}
   .totals{grid-template-columns:1fr 1fr}
   .ag-row{grid-template-columns:1fr}.ag-time{padding:0}
   .prev{grid-template-columns:1fr 1fr}
-  .search{flex-direction:column}
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
+  .search{flex-direction:column}.search .in{flex:none;max-width:none!important}
 }
 @media print{.side,.mtop,.bnav,.hero,.ag-h button,.ag-h input,.acts,.alert,.toast{display:none!important}.app{display:block}body,html{background:#fff}.card{box-shadow:none}}
 </style>
@@ -503,7 +548,7 @@ const DB={
 const today=new Date();today.setHours(0,0,0,0);
 const S={role:"forn",tab:"novo",step:1,viewY:today.getFullYear(),viewM:today.getMonth(),date:null,time:null,form:null,lastProto:null,
   admAuth:false,admTab:"painel",agDate:null,admFrom:"",admTo:"",admStatus:"",admQuery:""};
-function blankForm(){return{fornecedor:"",cnpj:"",contato:"",telefone:"",email:"",nfs:"",notas:[blankNota()],frete:"",veiculo:"Utilitário",placa:"",motorista:"",obs:""}}
+function blankForm(){return{fornecedor:"",cnpj:"",contato:"",telefone:"",email:"",nfs:"",notas:[blankNota()],frete:"",veiculo:"Utilitário",placa:"",motorista:"",obs:"",aceite:false}}
 function blankNota(){return{arquivo:"",volume:"",valor:"",pesoL:"",uL:"Kg",pesoB:"",uB:"Kg",lido:false}}
 S.form=blankForm();
 
@@ -557,7 +602,7 @@ function navItems(){
   if(S.role==="forn")return[["novo","Novo agendamento",I.cal,"Agendar"],["meus","Meus agendamentos",I.list,"Meus"],["status","Consultar status",I.search,"Status"]];
   if(!S.admAuth)return[["login","Entrar",I.lock,"Entrar"]];
   const pend=DB.all().filter(a=>a.status==="pendente"&&a.data>=iso(today)).length;
-  return[["painel","Painel",I.home,"Painel"],["agenda","Agenda do dia",I.clock,"Agenda"],["lista","Agendamentos",I.table,"Lista",pend],["avisos","Avisos WhatsApp",WA_ICON,"Avisos",DB.all().filter(a=>lembreteDevido(a)!=null).length],["relatorio","Relatório diário",I.doc,"Relatório"],["config","Configurações",I.gear,"Ajustes"]];
+  return[["painel","Painel",I.home,"Painel"],["agenda","Agenda do dia",I.clock,"Agenda"],["portaria","Portaria",I.qr,"Portaria"],["lista","Agendamentos",I.table,"Lista",pend],["avisos","Avisos WhatsApp",WA_ICON,"Avisos",DB.all().filter(a=>lembreteDevido(a)!=null).length],["ranking","Fornecedores",I.trophy,"Ranking"],["relatorio","Relatórios",I.doc,"Relatórios"],["config","Configurações",I.gear,"Ajustes"]];
 }
 function curKey(){return S.role==="forn"?S.tab:(S.admAuth?S.admTab:"login")}
 function go(k){if(k==="login")return;if(S.role==="forn"){S.tab=k;if(k==="meus")carregarMeus();if(k==="novo"&&S.step===4)novo()}else S.admTab=k;render();window.scrollTo(0,0)}
@@ -572,11 +617,12 @@ function renderChrome(){
       ${S.role==="adm"&&S.admAuth?`<button class="nav-i" onclick="sair()">${I.out}Sair</button>`:""}</div>
     <div class="side-foot">
       <div class="place"><b>Local de recebimento</b>${esc(CONFIG.endereco)}</div>
+      ${sinoRodapeHTML()}${extrasRodapeHTML()}
       ${statusConexaoHTML()}
       <button class="theme-row" onclick="toggleTheme()"><span>Modo escuro</span><span class="switch"></span></button>
     </div>`;
   $("#mtop").innerHTML=`<span class="lg"><img src="${LOGO}" alt="Supermercados Kometa"></span>${seg}<button class="tbtn" onclick="toggleTheme()" aria-label="Alternar tema">${dark?I.sun:I.moon}</button>`;
-  $("#bnav").innerHTML=items.map(([k,l,ic,sh])=>`<button class="${cur===k?"on":""}" onclick="go('${k}')">${ic}${sh}</button>`).join("")+(S.role==="adm"&&S.admAuth?`<button onclick="sair()">${I.out}Sair</button>`:"");
+  $("#bnav").innerHTML=bnavHTML(items,cur);
 }
 function hero(title,sub,{compact=false,chip=""}={}){return `<section class="hero ${compact?"compact":""}">${RIB}${chip?`<span class="chip"><i></i>${chip}</span>`:""}<h1>${title}</h1>${sub?`<p>${sub}</p>`:""}</section>`}
 
@@ -599,7 +645,10 @@ function rail(){
 }
 function renderNovo(){
   if(S.step===4)return renderSuccess();
-  let h=hero("Agende sua entrega","Escolha o dia e o horário de descarga e envie os dados das notas fiscais. Leva poucos minutos.",{chip:"Recebimento de mercadorias",compact:S.step>1});
+  if(S.reag){S.step=Math.min(S.step,2);const R=S.reag;let h=hero("Reagendar entrega",`${R.protocolo} · ${esc(R.fornecedor)} · horário atual: ${dShort(R.data)} às ${R.hora}. Escolha o novo dia e horário.`,{chip:"Reagendamento",compact:true});
+    h+=`<div style="margin:-6px 0 14px"><button class="back" onclick="cancelarReagendar()">${I.arrowL}Desistir do reagendamento</button></div>`;
+    h+=rail();if(S.step===1)h+=renderCalendar();if(S.step===2)h+=renderSlots();return h}
+  let h=(S.step===1?bannerInstalarHTML():"")+hero("Agende sua entrega","Escolha o dia e o horário de descarga e envie os dados das notas fiscais. Leva poucos minutos.",{chip:"Recebimento de mercadorias",compact:S.step>1});
   h+=rail();
   if(S.step===1)h+=renderCalendar();
   if(S.step===2)h+=renderSlots();
@@ -665,7 +714,7 @@ function renderSlots(){
       </div>
     </div></div>`;
 }
-function pickTime(t){S.time=t;S.step=3;render();window.scrollTo(0,0)}
+function pickTime(t){if(S.reag)return confirmarReagendar(t);S.time=t;S.step=3;render();window.scrollTo(0,0)}
 
 function fld(label,id,{ph="",mask="",cls="",type="text",val=""}={}){
   return `<div class="f ${cls}"><label for="${id}">${label} <span class="req">*</span></label><input class="in" id="${id}" type="${type}" placeholder="${ph}" value="${esc(val)}" ${mask?`data-mask="${mask}"`:""} oninput="onField(this)"></div>`}
@@ -687,9 +736,10 @@ function renderForm(){
   return `<div class="form-l"><div>
     <div style="margin-bottom:14px"><button class="back" onclick="S.step=2;render()">${I.arrowL}Trocar horário</button></div>
     <div class="card sec">${secH(1,"Fornecedor","Quem está enviando a mercadoria")}
+      ${fornSalvosHTML()}
       <div class="fg">
         ${fld("Razão social / fornecedor","fornecedor",{val:F.fornecedor,cls:"full"})}
-        ${fld("CNPJ","cnpj",{ph:"00.000.000/0000-00",mask:"cnpj",val:F.cnpj})}
+        <div class="f"><label for="cnpj">CNPJ <span class="req">*</span></label><input class="in" id="cnpj" placeholder="00.000.000/0000-00" value="${esc(F.cnpj)}" data-mask="cnpj" autocapitalize="characters" oninput="onField(this)"><span id="cnpjInfo">${cnpjInfoHTML()}</span></div>
         ${fld("Responsável / contato","contato",{val:F.contato})}
         ${fld("Telefone / WhatsApp","telefone",{ph:"(00) 00000-0000",mask:"tel",val:F.telefone,type:"tel"})}
         ${fld("E-mail","email",{val:F.email,type:"email",ph:"nome@empresa.com.br"})}
@@ -707,7 +757,8 @@ function renderForm(){
         ${fld("Motorista","motorista",{val:F.motorista})}
       </div></div>
     <div class="card sec">${secH(4,"Observações","Informações para a equipe da doca")}
-      <div class="f"><label for="obs">Observações <span class="req">*</span></label><textarea class="in" id="obs" placeholder="Ex: carga paletizada, produto refrigerado, carga frágil..." oninput="onField(this)">${esc(F.obs)}</textarea></div></div>
+      <div class="f"><label for="obs">Observações <span class="req">*</span></label><textarea class="in" id="obs" placeholder="Ex: carga paletizada, produto refrigerado, carga frágil..." oninput="onField(this)">${esc(F.obs)}</textarea></div>
+      ${aceiteHTML()}</div>
   </div>
   <aside class="sum">
     <div class="top"><small>Seu agendamento</small><div class="d">${DIAS_CURTO[d.getDay()]}, ${d.getDate()} de ${MESES[d.getMonth()]}</div><div class="h">${S.time}</div></div>
@@ -726,7 +777,7 @@ function sumRows(){const t=totals();return `
   <div class="row"><span>Peso bruto</span><b>${kgTxt(t.pb)}</b></div>
   <div class="row total"><span>Valor total</span><b>${brl(t.val)}</b></div>`}
 function applyMask(el){const m=el.dataset&&el.dataset.mask;if(m&&masks[m])el.value=masks[m](el.value)}
-function onField(el){applyMask(el);S.form[el.id]=el.value;el.classList.remove("err")}
+function onField(el){applyMask(el);S.form[el.id]=el.value;el.classList.remove("err");if(el.id==="cnpj")onCnpj()}
 function onNota(i,k,el){applyMask(el);S.form.notas[i][k]=el.value;el.classList.remove("err");$("#sumT").innerHTML=sumRows()}
 function addNota(){S.form.notas.push(blankNota());render()}
 function delNota(i){S.form.notas.splice(i,1);FILES.splice(i,1);render()}
@@ -760,10 +811,11 @@ function validate(){
   const F=S.form;let first=null;const mark=id=>{const el=document.getElementById(id);if(el){el.classList.add("err");first=first||el}};
   ["fornecedor","contato","nfs","veiculo","motorista","obs"].forEach(k=>{if(!String(F[k]).trim())mark(k)});
   if(!F.frete)mark("frete");
-  if(F.cnpj.replace(/\D/g,"").length!==14)mark("cnpj");
+  if(!cnpjValido(F.cnpj))mark("cnpj");
   if(F.telefone.replace(/\D/g,"").length<10)mark("telefone");
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(F.email))mark("email");
   if(!/^[A-Z]{3}-\d[A-Z0-9]\d{2}$/.test(F.placa))mark("placa");
+  if(!F.aceite)mark("aceiteBox");
   F.notas.forEach((n,i)=>{if(!n.arquivo)mark("drop"+i);if(!(parseInt(n.volume)>0))mark("vol"+i);if(!(num(n.valor)>0))mark("val"+i);if(!(num(n.pesoL)>0))mark("pl"+i);if(!(num(n.pesoB)>0))mark("pb"+i)});
   if(first){first.scrollIntoView({behavior:"smooth",block:"center"});if(first.focus&&first.tagName!=="LABEL")first.focus({preventScroll:true});toast("Preencha os campos destacados",1);return false}
   return true;
@@ -773,13 +825,13 @@ async function submitForm(){
   if(slotFree(S.date,S.time)<=0){toast("Este horário acabou de lotar. Escolha outro.",1);S.step=2;render();return}
   if(!ONLINE){
     const proto=genProto(),now=new Date().toISOString();
-    const rec={protocolo:proto,token:genToken(),data:S.date,hora:S.time,criadoEm:now,status:"pendente",...JSON.parse(JSON.stringify(S.form)),totais:totals(),hist:[{st:"pendente",em:now}]};
+    const rec={protocolo:proto,token:genToken(),data:S.date,hora:S.time,criadoEm:now,status:"pendente",...JSON.parse(JSON.stringify(S.form)),aceitePrivacidadeEm:now,totais:totals(),hist:[{st:"pendente",em:now}]};delete rec.aceite;salvarFornLocal(S.form);
     const all=DB.all();all.push(rec);DB.save(all);DB.addMine(proto,rec.token);
     S.lastProto=proto;S.step=4;render();window.scrollTo(0,0);return}
   S.enviando=true;const btn=$(".sum .btn.red"),txt=btn?btn.innerHTML:"";if(btn){btn.disabled=true;btn.innerHTML="Enviando…"}
   try{
     const notas=await enviarArquivos(JSON.parse(JSON.stringify(S.form.notas)));
-    const r=await rpc("kometa_criar",{p:{...JSON.parse(JSON.stringify(S.form)),notas,data:S.date,hora:S.time,totais:totals()}});
+    const r=await rpc("kometa_criar",{p:{...JSON.parse(JSON.stringify(S.form)),aceitePrivacidade:true,notas,data:S.date,hora:S.time,totais:totals()}});salvarFornLocal(S.form);
     const a=fromRow(r);ROWS.set(a.protocolo,a);DB.addMine(a.protocolo,a.token);OCC[a.data+"|"+a.hora]=(OCC[a.data+"|"+a.hora]||0)+1;FILES=[];
     S.lastProto=a.protocolo;S.step=4;render();window.scrollTo(0,0);
   }catch(e){
@@ -796,6 +848,7 @@ function renderSuccess(){
       <div class="proto-big"><small>Seu protocolo</small><b>${a.protocolo}</b></div>
       <div class="tokbox"><div><small>Token de confirmação</small><b>${a.token}</b><span>Envie ao recebimento pelo WhatsApp e passe ao motorista: ele será pedido na portaria.</span></div>
         ${CONFIG.whatsRecebimento?`<a class="btn wa" href="${waLink(CONFIG.whatsRecebimento,msgFornecedorParaKometa(a))}" target="_blank" rel="noopener">${WA_ICON}Confirmar pelo WhatsApp</a>`:""}</div>
+      ${qrBloco(a)}
       <div class="calbox"><div><b>Receba lembretes no celular</b><span>Salve na agenda e seu celular avisa ${(CONFIG.lembretesHoras||[24,2]).map(h=>h+"h").join(", ")} e 30 min antes da entrega.</span></div><div class="acts">${agendaBtns(a)}</div></div>
       <div class="kv">
         <div><small>Data</small><b>${longDate(a.data)}</b></div><div><small>Horário</small><b>${a.hora}</b></div>
@@ -807,7 +860,7 @@ function renderSuccess(){
         <button class="btn ghost" onclick="go('meus')">Meus agendamentos</button><button class="btn" onclick="novo()">Novo agendamento</button></div>
     </div></div>`;
 }
-function novo(){S.step=1;S.date=S.time=null;S.form=blankForm();S.tab="novo";render()}
+function novo(){S.reag=null;S.step=1;S.date=S.time=null;S.form=blankForm();S.tab="novo";render()}
 
 /* ---------- MEUS / STATUS ---------- */
 function tkCard(a,actions=true){
@@ -816,7 +869,7 @@ function tkCard(a,actions=true){
     <div class="mid"><h4>${esc(a.fornecedor)}</h4><p>NF ${esc(a.nfs)} · ${a.totais.qtd} nota(s) · ${brl(a.totais.val)}</p>
       <div class="m"><span>${esc(a.veiculo)} · ${esc(a.placa)}</span><span>Frete ${esc(a.frete)}</span><span>${kgTxt(a.totais.pb)}</span>${actions&&a.token?`<span>Token <b style="color:var(--text)">${a.token}</b></span>`:""}${["pendente","confirmado"].includes(a.status)&&slotDate(a)>new Date()?`<span>⏱ ${faltaTxt(minutosAte(a))}</span>`:""}</div></div>
     <div class="rt"><span class="proto">${a.protocolo}</span>${pill(a.status)}
-      <div class="acts">${["pendente","confirmado"].includes(a.status)&&slotDate(a)>new Date()?agendaBtns(a,true):""}<button class="btn ghost sm" onclick="details('${a.protocolo}')">Detalhes</button>${canCancel?`<button class="btn ghost sm danger" onclick="cancelBk('${a.protocolo}')">Cancelar</button>`:""}</div></div></div>`;
+      <div class="acts">${actions&&a.token&&["pendente","confirmado"].includes(a.status)&&slotDate(a)>new Date()?`<button class="btn ghost sm" onclick="mostrarQR('${a.protocolo}')">${I.qr}QR</button>`:""}${["pendente","confirmado"].includes(a.status)&&slotDate(a)>new Date()?agendaBtns(a,true):""}${actions&&podeReagendar(a)?`<button class="btn ghost sm" onclick="iniciarReagendar('${a.protocolo}')">${I.swap}Reagendar</button>`:""}<button class="btn ghost sm" onclick="details('${a.protocolo}')">Detalhes</button>${canCancel?`<button class="btn ghost sm danger" onclick="cancelBk('${a.protocolo}')">Cancelar</button>`:""}</div></div></div>`;
 }
 function renderMeus(){
   const mine=DB.mine(),list=DB.all().filter(a=>mine.includes(a.protocolo)).sort((a,b)=>(a.data+a.hora).localeCompare(b.data+b.hora));
@@ -842,7 +895,8 @@ function renderStatus(){
   if(statusQ.busy)res=`<div class="card empty" style="margin-top:16px"><div class="spin"></div><p>Consultando…</p></div>`;
   else if(statusQ.res)res=statusQ.res.length?`<div class="tk-list" style="margin-top:16px">${statusQ.res.map(a=>tkCard(ROWS.get(a.protocolo)||a,false)).join("")}</div>`:`<div class="card empty" style="margin-top:16px">${I.search}<p>Nenhum agendamento encontrado. Confira o protocolo e o token.</p></div>`;
   const enter=`onkeydown="if(event.key==='Enter')consultarStatus()"`;
-  return `<div class="card"><div class="card-t">Buscar agendamento</div>
+  const eq=S.pendingQ?`<div class="alert info"><span>${I.qr}<b>É da equipe de recebimento?</b> Entre para registrar a chegada deste veículo.</span><button class="btn sm" onclick="setRole('adm')">Entrar</button></div>`:"";
+  return eq+`<div class="card"><div class="card-t">Buscar agendamento</div>
     <p class="muted" style="font-size:13.5px;margin:-6px 0 12px">Use o protocolo e o token que aparecem na confirmação do agendamento.</p>
     <div class="search"><input class="in" id="qProt" placeholder="Protocolo (KM-AB12CD)" value="${esc(statusQ.p)}" ${enter} autocapitalize="characters">
       <input class="in" id="qTok" placeholder="Token (6 dígitos)" inputmode="numeric" maxlength="6" value="${esc(statusQ.t)}" ${enter} style="max-width:200px">
@@ -899,9 +953,10 @@ function renderAdmin(){
       <div class="f" style="text-align:left"><label for="admPass">Senha</label><input class="in" type="password" id="admPass" autocomplete="current-password" onkeydown="if(event.key==='Enter')admLogin(this.value)"></div>
       <button class="btn block" type="button" id="btnEntrar" style="margin-top:16px" onclick="admLogin($('#admPass').value)">Entrar</button></div>`;
   if(!S.agDate)S.agDate=iso(today);
+  if(S.pendingQ){S.admTab="portaria";S.port={p:S.pendingQ.p,t:S.pendingQ.t};const pq=S.pendingQ.p;S.pendingQ=null;buscarProtocolo(pq)}
   if(ONLINE){const ks=[S.agDate,S.relDate,S.admFrom].filter(Boolean).sort();if(ks.length)garantirPeriodo(ks[0])}
-  const v={painel:admPainel,agenda:admAgenda,lista:admLista,avisos:admAvisos,relatorio:admRelatorio,config:admConfig}[S.admTab]();
-  const t={painel:["Painel do recebimento",longDate(iso(today))],agenda:["Agenda do dia","Acompanhe cada descarga em tempo real"],lista:["Agendamentos","Busque, filtre e exporte"],avisos:["Avisos WhatsApp","Tokens de confirmação e lembretes antes da entrega"],relatorio:["Relatório diário","Resumo do dia pronto para imprimir, salvar em PDF ou enviar"],config:["Configurações","Horários, vagas, bloqueios e acesso"]}[S.admTab];
+  const v=(S.admTab==="painel"?bannerAlertasHTML()+lembreteBackupHTML()+bannerInstalarHTML():"")+({painel:admPainel,agenda:admAgenda,portaria:admPortaria,lista:admLista,avisos:admAvisos,ranking:admRanking,relatorio:admRelatorio,config:admConfig}[S.admTab]||admPainel)();
+  const t={painel:["Painel do recebimento",longDate(iso(today))],agenda:["Agenda do dia","Acompanhe cada descarga em tempo real"],lista:["Agendamentos","Busque, filtre e exporte"],avisos:["Avisos WhatsApp","Tokens de confirmação e lembretes antes da entrega"],portaria:["Portaria","Leia o QR Code do motorista e registre a chegada"],ranking:["Ranking de fornecedores","Pontualidade, faltas e tempos de cada fornecedor"],relatorio:["Relatórios","Diário, semanal e mensal: imprima, salve em PDF ou envie"],config:["Configurações","Horários, vagas, bloqueios e acesso"]}[S.admTab]||["Painel do recebimento",""];
   return hero(t[0],t[1],{compact:true})+v;
 }
 const kpi=(ic,cls,l,v,sub,color)=>`<div class="kpi"><span class="ic ${cls}">${ic}</span><div><small>${l}</small><b ${color?`style="color:${color}"`:""}>${v}</b>${sub?`<span>${sub}</span>`:""}</div></div>`;
@@ -984,13 +1039,13 @@ function admLista(){
     <p class="muted" style="margin-bottom:10px;font-size:13.5px;font-weight:700">${list.length} agendamento(s) · ${t.vol.toLocaleString("pt-BR")} volumes · ${kgTxt(t.pb)} · ${brl(t.val)}</p>
     ${list.length?`<div class="tbl"><table><thead><tr><th>Protocolo</th><th>Data</th><th>Fornecedor</th><th>NF</th><th>Vol.</th><th>P. bruto</th><th>Valor</th><th>Veículo</th><th>Status</th><th>Ações</th></tr></thead><tbody>${rows}</tbody></table></div>`:`<div class="empty">${I.inbox}<p>Nenhum agendamento encontrado.</p></div>`}</div>`;
 }
-function exportCSV(f){
-  const list=f?filtrados():DB.all();
-  const head=["Protocolo","Data","Hora","Status","Fornecedor","CNPJ","Contato","Telefone","E-mail","NFs","Qtd notas","Volume","Peso liq (kg)","Peso bruto (kg)","Valor (R$)","Frete","Veiculo","Placa","Motorista","Chegada","Inicio descarga","Fim","Espera (min)","Descarga (min)","Observacoes","Motivo"];
+function exportCSV(f,lista,nome){
+  const list=lista||(f?filtrados():DB.all());
+  const head=["Protocolo","Data","Hora","Status","Fornecedor","CNPJ","Contato","Telefone","E-mail","NFs","Qtd notas","Volume","Peso liq (kg)","Peso bruto (kg)","Valor (R$)","Frete","Veiculo","Placa","Motorista","Chegada","Inicio descarga","Fim","Espera (min)","Descarga (min)","Observacoes","Motivo","Aceite privacidade"];
   const br=n=>n.toFixed(2).replace(".",",");
-  const rows=list.map(a=>[a.protocolo,a.data,a.hora,STATUS[a.status][0],a.fornecedor,a.cnpj,a.contato,a.telefone,a.email,a.nfs,a.totais.qtd,a.totais.vol,br(a.totais.pl),br(a.totais.pb),br(a.totais.val),a.frete,a.veiculo,a.placa,a.motorista,hm(a.chegadaEm),hm(a.inicioDescargaEm),hm(a.fimEm),minDiff(a.chegadaEm,a.inicioDescargaEm)??"",minDiff(a.inicioDescargaEm,a.fimEm)??"",a.obs,a.motivo||""]);
+  const rows=list.map(a=>[a.protocolo,a.data,a.hora,STATUS[a.status][0],a.fornecedor,a.cnpj,a.contato,a.telefone,a.email,a.nfs,a.totais.qtd,a.totais.vol,br(a.totais.pl),br(a.totais.pb),br(a.totais.val),a.frete,a.veiculo,a.placa,a.motorista,hm(a.chegadaEm),hm(a.inicioDescargaEm),hm(a.fimEm),minDiff(a.chegadaEm,a.inicioDescargaEm)??"",minDiff(a.inicioDescargaEm,a.fimEm)??"",a.obs,a.motivo||"",a.aceitePrivacidadeEm?new Date(a.aceitePrivacidadeEm).toLocaleString("pt-BR"):""]);
   const csv=[head,...rows].map(r=>r.map(c=>`"${String(c??"").replace(/"/g,'""')}"`).join(";")).join("\n");
-  const url=URL.createObjectURL(new Blob(["﻿"+csv],{type:"text/csv"}));const l=document.createElement("a");l.href=url;l.download=`agendamentos-kometa-${iso(today)}.csv`;l.click();URL.revokeObjectURL(url);
+  const url=URL.createObjectURL(new Blob(["﻿"+csv],{type:"text/csv"}));const l=document.createElement("a");l.href=url;l.download=nome||`agendamentos-kometa-${iso(today)}.csv`;l.click();URL.revokeObjectURL(url);
 }
 function admConfig(){
   const C=CONFIG;
@@ -1013,6 +1068,9 @@ function admConfig(){
     <div class="card" style="margin-top:14px"><div class="card-t">${ONLINE?"Minha senha":"Senha da equipe"}</div>
       <div style="display:flex;gap:10px"><input class="in" type="password" id="cfSenha" autocomplete="new-password" placeholder="Nova senha (mín. ${ONLINE?8:6} caracteres)" style="flex:1"><button class="btn sm" onclick="trocarSenha()">Alterar</button></div></div>
     ${ONLINE?equipeCardHTML():""}
+    <div style="margin-top:14px">${alertasCardHTML()}</div>
+    ${privacidadeCardHTML()}
+    ${backupCardHTML()}
     <div class="card" style="margin-top:14px"><div class="card-t">Dados</div>
       <div class="acts">${ONLINE?"":`<button class="btn ghost sm" onclick="gerarExemplo()">Gerar dados de exemplo</button>`}<button class="btn ghost sm" onclick="exportCSV(false)">Exportar tudo (CSV)</button>
         ${ONLINE?"":`<button class="btn ghost sm danger" onclick="ask('Apagar TODOS os agendamentos? Esta ação não pode ser desfeita.').then(ok=>{if(ok){DB.save([]);toast('Agendamentos apagados');render()}})">Apagar agendamentos</button>`}
@@ -1031,7 +1089,7 @@ function salvarWa(){const w=$("#cfWa").value,d=w.replace(/\D/g,"");if(w&&d.lengt
   const l=$("#cfLem").value.split(/[,;\s]+/).map(Number).filter(n=>n>0&&n<=168);CONFIG.whatsRecebimento=w;CONFIG.lembretesHoras=[...new Set(l)].sort((a,b)=>b-a);saveConfig().then(ok=>{if(ok)toast("WhatsApp salvo")});render()}
 function trocarSenha(){if(ONLINE)return trocarSenhaOnline();const v=$("#cfSenha").value;if(v.length<6){toast("A senha precisa ter ao menos 6 caracteres",1);return}CONFIG.senhaAdmin=v;saveConfig();toast("Senha alterada");$("#cfSenha").value=""}
 function gerarExemplo(){if(ONLINE)return;
-  const forn=[["Alimentos Bom Sabor Ltda","11222333000181"],["Distribuidora Norte Frios","22333444000172"],["Bebidas Acre Ltda","33444555000163"],["Higiene Total Comércio","44555666000154"],["Grãos do Vale S.A.","55666777000145"],["Laticínios Serra Azul","66777888000136"],["Embalagens Rio Branco","77888999000127"]];
+  const forn=[["Alimentos Bom Sabor Ltda","11222333000181"],["Distribuidora Norte Frios","22333444000181"],["Bebidas Acre Ltda","33444555000181"],["Higiene Total Comércio","44555666000181"],["Grãos do Vale S.A.","55666777000181"],["Laticínios Serra Azul","66777888000181"],["Embalagens Rio Branco","77888999000181"]];
   const mot=["Carlos Souza","Pedro Lima","José Ferreira","Antônio Rocha","Marcos Dias","Paulo Nunes"],vei=["Truck","Toco","Carreta","VUC","3/4","Utilitário"];
   const r=a=>a[Math.floor(Math.random()*a.length)],L=()=>String.fromCharCode(65+Math.random()*26|0),all=DB.all(),tk=iso(today);
   const past=[];let k=addDays(tk,-1);while(past.length<8){if(CONFIG.diasUteis.includes(fromIso(k).getDay()))past.push(k);k=addDays(k,-1)}
@@ -1164,31 +1222,34 @@ function relatorioHTML(k){
 }
 function admRelatorio(){
   if(!S.relDate)S.relDate=iso(today);
-  const k=S.relDate;
+  const P=periodoRel();if(ONLINE)garantirPeriodo(P.de);
+  const tipos=[["dia","Diário"],["semana","Semanal"],["mes","Mensal"]];
   return `<div class="card no-print" style="margin-bottom:14px">
     <div class="ag-h" style="margin:0">
-      <button class="rnd" onclick="S.relDate=addDays(S.relDate,-1);render()" aria-label="Dia anterior">${I.left}</button>
-      <input class="in" type="date" value="${k}" onchange="if(this.value){S.relDate=this.value;render()}" style="width:auto;height:42px">
-      <button class="rnd" onclick="S.relDate=addDays(S.relDate,1);render()" aria-label="Próximo dia">${I.right}</button>
-      <button class="btn ghost sm" onclick="S.relDate=iso(today);render()">Hoje</button>
+      <div class="seg seg3">${tipos.map(([k,l])=>`<button class="${P.t===k?"on":""}" onclick="S.relTipo='${k}';render()">${l}</button>`).join("")}</div>
+      <button class="rnd" onclick="moverRel(-1)" aria-label="Anterior">${I.left}</button>
+      <input class="in" type="${P.t==="mes"?"month":"date"}" value="${P.t==="mes"?S.relDate.slice(0,7):S.relDate}" onchange="if(this.value){S.relDate=this.value.length===7?this.value+'-01':this.value;render()}" style="width:auto;height:42px">
+      <button class="rnd" onclick="moverRel(1)" aria-label="Próximo">${I.right}</button>
+      <button class="btn ghost sm" onclick="S.relDate=iso(today);render()">${P.t==="mes"?"Este mês":P.t==="semana"?"Esta semana":"Hoje"}</button>
       <span style="flex:1"></span>
       <button class="btn sm" onclick="window.print()">${I.doc}Imprimir / PDF</button>
       <button class="btn ghost sm" onclick="baixarRelatorio()">Baixar relatório</button>
-      <button class="btn ghost sm" onclick="exportDia()">CSV do dia</button>
+      <button class="btn ghost sm" onclick="exportDia()">CSV do período</button>
       <button class="btn ghost sm" onclick="resumoWhats()">Resumo p/ WhatsApp</button>
     </div></div>
-  ${relatorioHTML(k)}`;
+  ${P.t==="dia"?relatorioHTML(P.de):relatorioPeriodoHTML(P)}`;
 }
 function baixarArquivo(nome,conteudo,tipo){const url=URL.createObjectURL(new Blob([conteudo],{type:tipo}));const l=document.createElement("a");l.href=url;l.download=nome;document.body.appendChild(l);l.click();l.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function baixarRelatorio(){
-  const k=S.relDate;
+  const P=periodoRel(),k=P.t==="dia"?P.de:P.de+"_a_"+P.ate;
   const html=`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Relatório de recebimento ${k} - Kometa</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,800&display=swap" rel="stylesheet">
-<style>body{margin:0;padding:24px;background:#EEF1F5}@media print{body{background:#fff;padding:0}}${REP_CSS}</style></head><body>${relatorioHTML(k)}<script>/*imprimir: Ctrl+P*/<\/script></body></html>`;
+<style>body{margin:0;padding:24px;background:#EEF1F5}@media print{body{background:#fff;padding:0}}${REP_CSS}</style></head><body>${P.t==="dia"?relatorioHTML(P.de):relatorioPeriodoHTML(P)}<script>/*imprimir: Ctrl+P*/<\/script></body></html>`;
   baixarArquivo(`relatorio-recebimento-${k}.html`,html,"text/html");toast("Relatório baixado");
 }
-function exportDia(){const f={from:S.admFrom,to:S.admTo,st:S.admStatus,q:S.admQuery};S.admFrom=S.admTo=S.relDate;S.admStatus=S.admQuery="";exportCSV(true);S.admFrom=f.from;S.admTo=f.to;S.admStatus=f.st;S.admQuery=f.q}
+function exportDia(){const P=periodoRel(),f={from:S.admFrom,to:S.admTo,st:S.admStatus,q:S.admQuery};S.admFrom=P.de;S.admTo=P.ate;S.admStatus=S.admQuery="";exportCSV(true);S.admFrom=f.from;S.admTo=f.to;S.admStatus=f.st;S.admQuery=f.q}
 function resumoWhats(){
+  const P=periodoRel();if(P.t!=="dia")return mostrarResumo(resumoPeriodoTexto(P));
   const R=relDados(S.relDate);
   const txt=[`*Kometa — Recebimento ${dShort(S.relDate)}*`,
     `Agendados: ${R.all.length} (${R.ocup}% da capacidade)`,
@@ -1198,6 +1259,8 @@ function resumoWhats(){
     `Peso bruto recebido: ${kgTxt(R.rec.pb)} | Valor: ${brl(R.rec.val)}`,
     `Espera média: ${R.tEsp??"—"} min | Descarga média: ${R.tDesc??"—"} min | Pontualidade: ${R.pont!=null?R.pont+"%":"—"}`,
     R.ocorr.length?`Ocorrências: ${R.ocorr.map(a=>`${a.hora} ${a.fornecedor} (${STATUS[a.status][0].toLowerCase()})`).join("; ")}`:"Sem ocorrências."].join("\n");
+  mostrarResumo(txt)}
+function mostrarResumo(txt){
   const show=()=>{$("#modalBody").innerHTML=`<div class="mh"><h3 style="letter-spacing:0">Resumo do dia</h3><button class="x" onclick="closeModal()">${I.x}</button></div><div class="mb"><p class="muted" style="margin-bottom:10px">Selecione e copie o texto abaixo:</p><textarea class="in" style="min-height:230px;font-size:14px" onclick="this.select()">${esc(txt)}</textarea></div>`;$("#modal").classList.add("on")};
   try{navigator.clipboard.writeText(txt).then(()=>toast("Resumo copiado"),show)}catch(e){show()}
 }
@@ -1402,8 +1465,8 @@ async function puxarMudancas(){
   if(!S.admAuth)return;
   let q="/rest/v1/kometa_agendamentos?select=*&order=atualizado_em.asc&limit=1000";if(LAST_SYNC)q+="&atualizado_em=gt."+encodeURIComponent(LAST_SYNC);
   const rows=await sbFetch(q);if(!rows||!rows.length)return false;
-  const novos=[];rows.forEach(r=>{const a=fromRow(r);if(!ROWS.has(a.protocolo))novos.push(a);ROWS.set(a.protocolo,a)});marcarSync(rows);
-  if(novos.length)toast(novos.length===1?`Novo agendamento: ${novos[0].fornecedor} · ${dShort(novos[0].data)} ${novos[0].hora}`:`${novos.length} novos agendamentos`);
+  const evs=[];rows.forEach(r=>{const a=fromRow(r),tipo=tipoMudanca(ROWS.get(a.protocolo),a);if(tipo)evs.push({a,tipo});ROWS.set(a.protocolo,a)});marcarSync(rows);
+  alertar(evs);
   return true}
 function podeRedesenhar(){const ae=document.activeElement;return !(ae&&/^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName))&&!$("#modal").classList.contains("on")&&!$("#askBg").classList.contains("on")}
 async function sincronizar(){
@@ -1460,13 +1523,545 @@ function bootHTML(){
   return `<div class="card empty" style="margin-top:40px">${I.x}<p style="font-weight:800;color:var(--text)">Não foi possível conectar ao servidor</p><p>${esc(BOOT.msg)}</p><button class="btn" style="margin-top:16px" onclick="boot()">Tentar de novo</button></div>`}
 async function boot(){
   let t="light";try{t=localStorage.getItem("km_theme")||"light"}catch(e){}applyTheme(t);
-  if(!ONLINE){BOOT.state="ok";render();return}
+  if(!ONLINE){BOOT.state="ok";render();tratarHash();return}
   BOOT.state="loading";render();
   try{restaurarSessao();await carregarConfig();await carregarOcupacao();BOOT.state="ok";render();
-    carregarMeus();if(SESSION)entrarEquipe(true)}
+    carregarMeus();const temQ=/(q|ag)=KM-/i.test(decodeURIComponent(location.hash||""));if(SESSION){if(temQ)await entrarEquipe(true);else entrarEquipe(true)}if(temQ)tratarHash()}
   catch(e){BOOT.state="erro";BOOT.msg=msgErro(e);render()}
   if(!window._kmSync)window._kmSync=setInterval(sincronizar,20000);
 }
+
+/* ================= QR CODE (gerador próprio, sem bibliotecas externas) =================
+   Modo byte, correção de erro nível M, versões 1 a 9. */
+const QR=(()=>{
+  const EC=[null,[10,1,16,0,0],[16,1,28,0,0],[26,1,44,0,0],[18,2,32,0,0],[24,2,43,0,0],[16,4,27,0,0],[18,4,31,0,0],[22,2,38,2,39],[22,3,36,2,37]];
+  const ALN=[null,[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46]];
+  const EXP=new Array(512),LOG=new Array(256);
+  (()=>{let x=1;for(let i=0;i<255;i++){EXP[i]=x;LOG[x]=i;x<<=1;if(x&256)x^=0x11d}for(let i=255;i<512;i++)EXP[i]=EXP[i-255]})();
+  const mul=(a,b)=>a&&b?EXP[LOG[a]+LOG[b]]:0;
+  function rsGen(n){let g=[1];for(let i=0;i<n;i++){const ng=new Array(g.length+1).fill(0);for(let j=0;j<g.length;j++){ng[j]^=g[j];ng[j+1]^=mul(g[j],EXP[i])}g=ng}return g}
+  function rsRem(data,n){const g=rsGen(n),r=new Array(n).fill(0);for(const d of data){const f=d^r.shift();r.push(0);for(let i=0;i<n;i++)r[i]^=mul(g[i+1],f)}return r}
+  function utf8(s){return Array.from(new TextEncoder().encode(s))}
+  function encode(text){
+    const bytes=utf8(text);let ver=0;
+    for(let v=1;v<=9;v++){const e=EC[v],cap=e[1]*e[2]+e[3]*e[4];if(bytes.length+2<=cap){ver=v;break}}
+    if(!ver)throw new Error("Texto longo demais para o QR");
+    const e=EC[ver],cap=e[1]*e[2]+e[3]*e[4];
+    const bits=[];const put=(v,n)=>{for(let i=n-1;i>=0;i--)bits.push((v>>>i)&1)};
+    put(4,4);put(bytes.length,8);bytes.forEach(b=>put(b,8));
+    put(0,Math.min(4,cap*8-bits.length));while(bits.length%8)bits.push(0);
+    const data=[];for(let i=0;i<bits.length;i+=8)data.push(parseInt(bits.slice(i,i+8).join(""),2));
+    for(let p=0;data.length<cap;p++)data.push(p%2?0x11:0xEC);
+    const blocks=[];let k=0;
+    for(let g=0;g<2;g++){const cnt=g?e[3]:e[1],len=g?e[4]:e[2];for(let b=0;b<cnt;b++){const d=data.slice(k,k+len);k+=len;blocks.push({d,ec:rsRem(d,e[0])})}}
+    const out=[];const maxD=Math.max(...blocks.map(b=>b.d.length));
+    for(let i=0;i<maxD;i++)blocks.forEach(b=>{if(i<b.d.length)out.push(b.d[i])});
+    for(let i=0;i<e[0];i++)blocks.forEach(b=>out.push(b.ec[i]));
+    const size=ver*4+17,M=[],F=[];for(let i=0;i<size;i++){M.push(new Array(size).fill(0));F.push(new Array(size).fill(false))}
+    const set=(x,y,v)=>{M[y][x]=v?1:0;F[y][x]=true};
+    const finder=(cx,cy)=>{for(let dy=-4;dy<=4;dy++)for(let dx=-4;dx<=4;dx++){const x=cx+dx,y=cy+dy;if(x<0||y<0||x>=size||y>=size)continue;const d=Math.max(Math.abs(dx),Math.abs(dy));set(x,y,d!==2&&d!==4)}};
+    finder(3,3);finder(size-4,3);finder(3,size-4);
+    for(let i=0;i<size;i++){if(!F[6][i])set(i,6,i%2===0);if(!F[i][6])set(6,i,i%2===0)}
+    const al=ALN[ver],L=al.length-1;al.forEach((ay,i)=>al.forEach((ax,j)=>{if((i===0&&j===0)||(i===0&&j===L)||(i===L&&j===0))return;for(let dy=-2;dy<=2;dy++)for(let dx=-2;dx<=2;dx++)set(ax+dx,ay+dy,Math.max(Math.abs(dx),Math.abs(dy))!==1)}))
+    const fmt=m=>{let d=(0<<3)|m,r=d;for(let i=0;i<10;i++)r=(r<<1)^((r>>>9)*0x537);return((d<<10)|r)^0x5412};
+    const drawFmt=m=>{const b=fmt(m),g=i=>(b>>>i)&1;
+      for(let i=0;i<=5;i++)set(8,i,g(i));set(8,7,g(6));set(8,8,g(7));set(7,8,g(8));for(let i=9;i<15;i++)set(14-i,8,g(i));
+      for(let i=0;i<8;i++)set(size-1-i,8,g(i));for(let i=8;i<15;i++)set(8,size-15+i,g(i));set(8,size-8,1)};
+    drawFmt(0);
+    if(ver>=7){let r=ver;for(let i=0;i<12;i++)r=(r<<1)^((r>>>11)*0x1F25);const b=(ver<<12)|r;
+      for(let i=0;i<18;i++){const bit=(b>>>i)&1,a=size-11+i%3,c=Math.floor(i/3);set(a,c,bit);set(c,a,bit)}}
+    const cw=[];out.forEach(b=>{for(let i=7;i>=0;i--)cw.push((b>>>i)&1)});
+    let i=0;for(let right=size-1;right>=1;right-=2){if(right===6)right=5;
+      for(let vert=0;vert<size;vert++)for(let j=0;j<2;j++){const x=right-j,up=((right+1)&2)===0,y=up?size-1-vert:vert;
+        if(!F[y][x]){M[y][x]=i<cw.length?cw[i]:0;i++}}}
+    const MASKS=[(x,y)=>(x+y)%2===0,(x,y)=>y%2===0,(x,y)=>x%3===0,(x,y)=>(x+y)%3===0,(x,y)=>(Math.floor(x/3)+Math.floor(y/2))%2===0,(x,y)=>x*y%2+x*y%3===0,(x,y)=>(x*y%2+x*y%3)%2===0,(x,y)=>((x+y)%2+x*y%3)%2===0];
+    const apply=m=>{for(let y=0;y<size;y++)for(let x=0;x<size;x++)if(!F[y][x]&&MASKS[m](x,y))M[y][x]^=1};
+    const penalty=()=>{let p=0;
+      for(let t=0;t<2;t++)for(let a=0;a<size;a++){let run=1;for(let b=1;b<size;b++){const c=t?M[b][a]:M[a][b],pv=t?M[b-1][a]:M[a][b-1];if(c===pv){run++;if(run===5)p+=3;else if(run>5)p++}else run=1}}
+      for(let y=0;y<size-1;y++)for(let x=0;x<size-1;x++){const c=M[y][x];if(c===M[y][x+1]&&c===M[y+1][x]&&c===M[y+1][x+1])p+=3}
+      const pat=[1,0,1,1,1,0,1,0,0,0,0],pat2=[0,0,0,0,1,0,1,1,1,0,1];
+      for(let y=0;y<size;y++)for(let x=0;x<=size-11;x++)for(const P of[pat,pat2]){let h=true,v=true;for(let k=0;k<11;k++){if(M[y][x+k]!==P[k])h=false;if(M[x+k][y]!==P[k])v=false}if(h)p+=40;if(v)p+=40}
+      let dark=0;M.forEach(r=>r.forEach(c=>dark+=c));p+=Math.floor(Math.abs(dark*20-size*size*10)/(size*size))*10;return p};
+    let best=0,bp=Infinity;for(let m=0;m<8;m++){apply(m);drawFmt(m);const pp=penalty();if(pp<bp){bp=pp;best=m}apply(m)}
+    apply(best);drawFmt(best);return M;
+  }
+  function svg(text,px=220){const M=encode(text),n=M.length,q=4,t=n+q*2;let d="";
+    for(let y=0;y<n;y++)for(let x=0;x<n;x++)if(M[y][x])d+=`M${x+q} ${y+q}h1v1h-1z`;
+    return `<svg class="qr" width="${px}" height="${px}" viewBox="0 0 ${t} ${t}" shape-rendering="crispEdges" role="img" aria-label="QR Code"><rect width="${t}" height="${t}" fill="#fff"/><path d="${d}" fill="#0b1628"/></svg>`}
+  return{encode,svg};
+})();
+
+/* =====================================================================
+   NOVOS RECURSOS: QR na portaria · Reagendar · Preencher pelo CNPJ · App (PWA)
+   Ranking de fornecedores · Relatório semanal/mensal · Cópia de segurança · LGPD
+   ===================================================================== */
+Object.assign(I,{
+  qr:sv('<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14v1M14 20h1M17 17h4v4h-4"/>'),
+  cam:sv('<path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="4"/>'),
+  trophy:sv('<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>'),
+  shield:sv('<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>'),
+  dl:sv('<path d="M12 4v12M7 11l5 5 5-5"/><path d="M4 18v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1"/>'),
+  more:sv('<circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/>'),
+  phone2:sv('<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18h2"/>'),
+  swap:sv('<path d="M7 7h12l-3-3M17 17H5l3 3"/>')
+});
+Object.assign(CONFIG_PADRAO,{prazoReagendarHoras:24,retencaoMeses:24,contatoPrivacidade:"",controlador:"Supermercados Kometa"});
+for(const k of ["prazoReagendarHoras","retencaoMeses","contatoPrivacidade","controlador"])if(CONFIG[k]===undefined)CONFIG[k]=CONFIG_PADRAO[k];
+Object.assign(ERROS,{PRIVACIDADE:"É preciso aceitar o aviso de privacidade.",PRAZO_REAGENDAR:"O prazo para reagendar este horário já passou. Fale com o recebimento.",
+  LIMITE_REAGENDAR:"Este agendamento já foi reagendado 3 vezes. Fale com o recebimento.",MESMO_HORARIO:"Escolha uma data ou horário diferente do atual.",
+  NAO_REAGENDAVEL:"Este agendamento não pode mais ser reagendado."});
+
+/* ---------- CNPJ (inclui o novo CNPJ alfanumérico) ---------- */
+const normCnpj=c=>String(c||"").toUpperCase().replace(/[^A-Z0-9]/g,"");
+function cnpjValido(c){c=normCnpj(c);if(!/^[A-Z0-9]{12}\d{2}$/.test(c)||/^(.)\1+$/.test(c))return false;
+  const v=ch=>ch.charCodeAt(0)-48;
+  const dv=n=>{let s=0,p=n-7;for(let i=0;i<n;i++){s+=v(c[i])*p--;if(p<2)p=9}const r=s%11;return r<2?0:11-r};
+  return dv(12)===+c[12]&&dv(13)===+c[13]}
+masks.cnpj=x=>{x=normCnpj(x).slice(0,14);let o=x.slice(0,2);if(x.length>2)o+="."+x.slice(2,5);if(x.length>5)o+="."+x.slice(5,8);if(x.length>8)o+="/"+x.slice(8,12);if(x.length>12)o+="-"+x.slice(12);return o};
+
+/* ---------- Fornecedores salvos neste aparelho ---------- */
+const FORN_KEY="km_fornecedores";
+function fornSalvos(){try{return JSON.parse(SAFE.get(FORN_KEY)||"{}")}catch(e){return{}}}
+function salvarFornLocal(F){const m=fornSalvos(),k=normCnpj(F.cnpj);if(k.length!==14)return;
+  m[k]={fornecedor:F.fornecedor,cnpj:F.cnpj,contato:F.contato,telefone:F.telefone,email:F.email,frete:F.frete,veiculo:F.veiculo,placa:F.placa,motorista:F.motorista,usadoEm:Date.now()};
+  const ks=Object.keys(m).sort((a,b)=>m[b].usadoEm-m[a].usadoEm);ks.slice(20).forEach(x=>delete m[x]);SAFE.set(FORN_KEY,JSON.stringify(m))}
+function preencherCampos(d,soVazios){const F=S.form;let n=0;
+  for(const k of ["fornecedor","cnpj","contato","telefone","email","frete","veiculo","placa","motorista"]){if(d[k]==null||d[k]==="")continue;if(soVazios&&String(F[k]||"").trim()&&k!=="veiculo")continue;
+    F[k]=d[k];n++;const el=document.getElementById(k);if(el&&el.tagName!=="DIV"){el.value=d[k];el.classList.remove("err")}}
+  document.querySelectorAll("#frete .chip").forEach(c=>{const i=c.querySelector("input");i.checked=i.value===F.frete;c.classList.toggle("on",i.checked)});return n}
+function usarFornSalvo(k){const d=fornSalvos()[k];if(!d)return;preencherCampos(d,false);cnpjInfo={k,txt:"Dados do último agendamento deste CNPJ neste aparelho",ok:true};render();toast("Dados preenchidos")}
+function fornSalvosHTML(){const m=fornSalvos(),ks=Object.keys(m).sort((a,b)=>m[b].usadoEm-m[a].usadoEm).slice(0,6);if(!ks.length)return"";
+  return `<div class="saved"><small>Preencher com um fornecedor já usado neste aparelho:</small><div class="chips">${ks.map(k=>`<button type="button" class="chip" onclick="usarFornSalvo('${k}')">${esc(m[k].fornecedor||m[k].cnpj)}</button>`).join("")}</div></div>`}
+let cnpjInfo=null,_cnpjBusca=null;
+function cnpjInfoHTML(){if(!cnpjInfo||cnpjInfo.k!==normCnpj(S.form.cnpj))return "";return `<small class="hint ${cnpjInfo.ok?"ok":cnpjInfo.err?"bad":""}">${esc(cnpjInfo.txt)}</small>`}
+function mostrarCnpjInfo(){const el=$("#cnpjInfo");if(el)el.innerHTML=cnpjInfoHTML()}
+async function onCnpj(){
+  const k=normCnpj(S.form.cnpj);if(k.length<14){cnpjInfo=null;mostrarCnpjInfo();return}
+  if(!cnpjValido(k)){cnpjInfo={k,txt:"CNPJ inválido: confira os dígitos.",err:true};mostrarCnpjInfo();$("#cnpj")&&$("#cnpj").classList.add("err");return}
+  const loc=fornSalvos()[k];
+  if(loc){const n=preencherCampos(loc,true);cnpjInfo={k,txt:n?"Preenchido com os dados do último agendamento deste CNPJ neste aparelho.":"CNPJ válido.",ok:true};mostrarCnpjInfo();if(n)toast("Dados do fornecedor preenchidos");return}
+  if(!/^\d{14}$/.test(k)){cnpjInfo={k,txt:"CNPJ válido.",ok:true};mostrarCnpjInfo();return}
+  if(_cnpjBusca===k)return;_cnpjBusca=k;cnpjInfo={k,txt:"Consultando a Receita Federal…"};mostrarCnpjInfo();
+  try{const r=await fetch("https://brasilapi.com.br/api/cnpj/v1/"+k);if(normCnpj(S.form.cnpj)!==k)return;
+    if(r.status===404){cnpjInfo={k,txt:"CNPJ não encontrado na Receita. Confira o número.",err:true}}
+    else if(!r.ok)throw 0;
+    else{const j=await r.json();const nome=j.razao_social||j.nome_fantasia||"";
+      if(nome&&!String(S.form.fornecedor||"").trim()){S.form.fornecedor=nome;const el=$("#fornecedor");if(el){el.value=nome;el.classList.remove("err")}}
+      const sit=String(j.descricao_situacao_cadastral||"").toUpperCase();
+      cnpjInfo={k,txt:`Receita: ${nome}${j.nome_fantasia&&j.nome_fantasia!==nome?` (${j.nome_fantasia})`:""}${sit&&sit!=="ATIVA"?` · situação ${sit}`:""}`,ok:!sit||sit==="ATIVA",err:sit&&sit!=="ATIVA"}}}
+  catch(e){cnpjInfo={k,txt:"CNPJ válido (não foi possível consultar a Receita agora).",ok:true}}
+  finally{_cnpjBusca=null}
+  mostrarCnpjInfo()}
+
+/* ---------- LGPD ---------- */
+function avisoPrivacidadeHTML(){const C=CONFIG,contato=C.contatoPrivacidade||C.whatsRecebimento||"o setor de recebimento";
+  return `<div class="priv">
+  <p><b>Quem trata os dados:</b> ${esc(C.controlador||"Supermercados Kometa")}, no processo de agendamento e recebimento de mercadorias em ${esc(C.endereco)}.</p>
+  <p><b>Quais dados:</b> nome e CNPJ da empresa fornecedora; nome, telefone e e-mail do responsável; nome do motorista e placa do veículo; dados e arquivos das notas fiscais; horários de chegada e descarga.</p>
+  <p><b>Para quê:</b> organizar a agenda da doca, identificar o veículo na portaria, conferir as notas, enviar avisos sobre a entrega e medir a qualidade do recebimento (pontualidade e tempos).</p>
+  <p><b>Com quem:</b> os dados não são vendidos nem usados para propaganda. Ficam armazenados em serviços de nuvem contratados para operar o sistema e só a equipe de recebimento tem acesso.</p>
+  <p><b>Por quanto tempo:</b> pelo tempo necessário ao recebimento e às obrigações fiscais. Dados pessoais de contato e de motoristas são apagados ou anonimizados após ${+C.retencaoMeses||24} meses.</p>
+  <p><b>Seus direitos:</b> você pode pedir acesso, correção ou exclusão dos seus dados pessoais pelo contato: <b>${esc(contato)}</b>.</p>
+  <p class="muted" style="font-size:12px">Ao marcar a caixa de aceite, você declara que leu este aviso e que tem autorização para informar os dados do motorista.</p></div>`}
+function abrirPrivacidade(){$("#modalBody").innerHTML=`<div class="mh">${I.shield}<h3 style="letter-spacing:0">Aviso de privacidade</h3><button class="x" onclick="closeModal()" aria-label="Fechar">${I.x}</button></div><div class="mb">${avisoPrivacidadeHTML()}<div style="text-align:right;margin-top:14px"><button class="btn" onclick="closeModal()">Entendi</button></div></div>`;$("#modal").classList.add("on")}
+function aceiteHTML(){return `<label class="aceite ${S.form.aceite?"on":""}" id="aceiteBox"><input type="checkbox" id="aceite" ${S.form.aceite?"checked":""} onchange="S.form.aceite=this.checked;this.parentNode.classList.toggle('on',this.checked);this.parentNode.classList.remove('err')">
+  <span>Li e concordo com o <a href="#" onclick="event.preventDefault();abrirPrivacidade()">aviso de privacidade</a> e tenho autorização para informar os dados do motorista. <span class="req">*</span></span></label>`}
+async function anonimizarAntigos(){
+  const meses=+CONFIG.retencaoMeses||24,corte=(()=>{const d=new Date(today);d.setMonth(d.getMonth()-meses);return iso(d)})();
+  const ok=await ask(`Anonimizar contatos, telefones, e-mails, motoristas e placas dos agendamentos anteriores a ${fromIso(corte).toLocaleDateString("pt-BR")}? Os números das entregas continuam nos relatórios.`);if(!ok)return;
+  try{let lista=DB.all();if(ONLINE){const rows=await buscarPeriodo("2000-01-01",corte);rows.forEach(r=>{const a=fromRow(r);ROWS.set(a.protocolo,a)});lista=rows.map(fromRow)}
+    const alvo=lista.filter(a=>a.data<corte&&!a.anonimizadoEm);
+    if(!alvo.length){toast("Nenhum agendamento para anonimizar");return}
+    const now=new Date().toISOString();
+    for(const a of alvo){DB.update(a.protocolo,x=>{x.contato="(anonimizado)";x.telefone="";x.email="";x.motorista="(anonimizado)";x.placa="***-****";x.anonimizadoEm=now;
+      (x.hist=x.hist||[]).push({st:x.status,em:now,motivo:"Dados pessoais anonimizados (LGPD)"})});if(ONLINE)await new Promise(r=>setTimeout(r,60))}
+    toast(`${alvo.length} agendamento(s) anonimizado(s)`);render()}
+  catch(e){toast(msgErro(e),1)}}
+
+/* ---------- QR Code ---------- */
+function urlBase(){return /^https?:/.test(location.protocol)?location.origin+location.pathname:"https://agendamento-kometa.vercel.app/"}
+const qrTexto=a=>`${urlBase()}#q=${a.protocolo}.${a.token}`;
+function qrBloco(a,px=190){return `<div class="qrbox"><div class="qrimg">${QR.svg(qrTexto(a),px)}</div><div><b>Apresente na portaria</b><span>O motorista mostra este QR Code na chegada. A equipe lê com o celular e a chegada é registrada na hora, sem digitar nada.</span>
+  <div class="acts" style="margin-top:10px"><button class="btn ghost sm" type="button" onclick="baixarQR('${a.protocolo}')">${I.dl}Baixar QR</button>${navigator.share?`<button class="btn ghost sm" type="button" onclick="compartilharQR('${a.protocolo}')">Enviar ao motorista</button>`:""}</div></div></div>`}
+function mostrarQR(p){const a=DB.all().find(x=>x.protocolo===p);if(!a)return;
+  $("#modalBody").innerHTML=`<div class="mh">${I.qr}<h3>${a.protocolo}</h3>${pill(a.status)}<button class="x" onclick="closeModal()" aria-label="Fechar">${I.x}</button></div>
+  <div class="mb" style="text-align:center"><div class="qrbig">${QR.svg(qrTexto(a),260)}</div>
+  <p style="font-weight:800;font-size:17px;margin-top:10px">${longDate(a.data)} às ${a.hora}</p><p class="muted">${esc(a.fornecedor)} · ${esc(a.veiculo)} ${esc(a.placa)} · Token <b style="color:var(--text)">${a.token}</b></p>
+  <div class="acts" style="justify-content:center;margin-top:14px"><button class="btn ghost sm" onclick="baixarQR('${a.protocolo}')">${I.dl}Baixar QR</button>${navigator.share?`<button class="btn ghost sm" onclick="compartilharQR('${a.protocolo}')">Enviar ao motorista</button>`:""}</div></div>`;
+  $("#modal").classList.add("on")}
+function qrPng(a){return new Promise((res,rej)=>{const M=QR.encode(qrTexto(a)),n=M.length,s=10,q=4,W=(n+2*q)*s,H=W+120;const c=document.createElement("canvas");c.width=W;c.height=H;const g=c.getContext("2d");
+  g.fillStyle="#fff";g.fillRect(0,0,W,H);g.fillStyle="#0b1628";for(let y=0;y<n;y++)for(let x=0;x<n;x++)if(M[y][x])g.fillRect((x+q)*s,(y+q)*s,s,s);
+  g.textAlign="center";g.fillStyle="#13233A";g.font="bold 30px sans-serif";g.fillText(a.protocolo+"  ·  token "+a.token,W/2,W+30);
+  g.font="22px sans-serif";g.fillStyle="#53607A";g.fillText(`${dShort(a.data)} às ${a.hora} · ${a.placa}`,W/2,W+66);g.fillText("Supermercados Kometa · apresente na portaria",W/2,W+98);
+  c.toBlob(b=>b?res(b):rej(),"image/png")})}
+async function baixarQR(p){const a=DB.all().find(x=>x.protocolo===p);if(!a)return;try{const b=await qrPng(a);baixarArquivo(`qr-${a.protocolo}.png`,b,"image/png");toast("QR Code baixado")}catch(e){toast("Não foi possível gerar a imagem",1)}}
+async function compartilharQR(p){const a=DB.all().find(x=>x.protocolo===p);if(!a)return;
+  try{const b=await qrPng(a),f=new File([b],`qr-${a.protocolo}.png`,{type:"image/png"});const txt=`Entrega Kometa ${dShort(a.data)} às ${a.hora}. Protocolo ${a.protocolo}, token ${a.token}. Mostre este QR Code na portaria.`;
+    if(navigator.canShare&&navigator.canShare({files:[f]}))await navigator.share({files:[f],text:txt});else await navigator.share({text:txt+"\n"+qrTexto(a)})}catch(e){}}
+function lerHashQR(texto){const m=String(texto||"").match(/(KM-[A-Z0-9]{6})(?:[.\s:\-]+(\d{6}))?/i);return m?{p:m[1].toUpperCase(),t:m[2]||null}:null}
+function tratarHash(){const h=decodeURIComponent(location.hash||"");const ag=h.match(/ag=(KM-[A-Z0-9]{6})/i);if(ag){try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}if(S.admAuth){abrirDoAlerta(ag[1].toUpperCase())}else{S.role="adm";render()}return true}if(!/q=KM-/i.test(h))return false;const q=lerHashQR(h);if(!q)return false;
+  try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}
+  if(S.admAuth){abrirPortaria(q.p,q.t);return true}
+  S.pendingQ=q;S.role="forn";S.tab="status";statusQ.p=q.p;statusQ.t=q.t||"";statusQ.res=null;render();if(q.t)consultarStatus();return true}
+window.addEventListener("hashchange",()=>{if(BOOT.state==="ok")tratarHash()});
+
+/* ---------- Portaria (equipe) ---------- */
+async function buscarProtocolo(p){if(!ONLINE||!S.admAuth||ROWS.has(p))return;try{const r=await sbFetch(`/rest/v1/kometa_agendamentos?select=*&protocolo=eq.${encodeURIComponent(p)}`);(r||[]).forEach(x=>{const a=fromRow(x);ROWS.set(a.protocolo,a)});render()}catch(e){}}
+function abrirPortaria(p,t){S.role="adm";S.admTab="portaria";S.port={p,t:t||null};render();window.scrollTo(0,0);buscarProtocolo(p)}
+function buscarPortaria(){const raw=($("#ptBusca").value||"").trim();if(!raw)return;const q=lerHashQR(raw);
+  if(q){S.port=q;render();buscarProtocolo(q.p);return}
+  const all=DB.all().filter(a=>["pendente","confirmado","chegou","descarga"].includes(a.status)).sort((x,y)=>Math.abs(slotDate(x)-Date.now())-Math.abs(slotDate(y)-Date.now()));
+  const dig=raw.replace(/\D/g,""),pl=raw.toUpperCase().replace(/[^A-Z0-9]/g,"");
+  let a=dig.length===6&&!/[A-Z]/i.test(raw)?all.find(x=>String(x.token)===dig):null;
+  if(!a&&pl.length>=4)a=all.find(x=>String(x.placa).toUpperCase().replace(/[^A-Z0-9*]/g,"").includes(pl));
+  if(!a){S.port={p:null,t:null,nada:raw};render();return}
+  S.port={p:a.protocolo,t:dig.length===6&&String(a.token)===dig?dig:null};render()}
+function chegadaPortaria(p,viaQR){const now=new Date().toISOString(),por=ONLINE&&SESSION?SESSION.email:"",ex=por?{por}:{};
+  const a=DB.update(p,x=>{x.hist=x.hist||[];if(x.status==="pendente")x.hist.push({st:"confirmado",em:now,motivo:"Confirmado na portaria",...ex});
+    x.status="chegou";x.chegadaEm=now;x.hist.push({st:"chegou",em:now,motivo:viaQR?"Chegada registrada pelo QR Code (token conferido)":"Chegada registrada na portaria",...ex})});
+  if(a){toast("Chegada registrada: "+a.fornecedor);render()}}
+function portResultadoHTML(){const P=S.port;if(!P)return `<div class="empty" style="padding:30px 10px">${I.qr}<p>Leia o QR Code do motorista ou busque pelo protocolo, placa ou token.</p></div>`;
+  if(!P.p)return `<div class="empty" style="padding:30px 10px">${I.search}<p>Nada encontrado para “${esc(P.nada||"")}”.</p></div>`;
+  const a=DB.all().find(x=>x.protocolo===P.p);if(!a)return `<div class="empty" style="padding:30px 10px"><div class="spin"></div><p>Buscando ${esc(P.p)}…</p></div>`;
+  const tokOk=P.t&&String(a.token)===String(P.t),tokErr=P.t&&!tokOk,min=minutosAte(a),hoje=a.data===iso(today);
+  const quando=!hoje?`<div class="alert"><span>Atenção: este agendamento é para <b>${longDate(a.data)}</b> às ${a.hora}.</span></div>`:
+    ["pendente","confirmado"].includes(a.status)?`<p class="when ${min<-15?"late":min>60?"early":""}">${min>=0?`Chegou ${faltaCurto(min)} antes do horário`:`Chegou ${faltaCurto(-min)} depois do horário`}</p>`:"";
+  const podeChegar=["pendente","confirmado"].includes(a.status);
+  return `<div class="port">
+    <div class="ag-top"><div><small class="muted">${a.protocolo}</small><h3 style="font-size:20px">${esc(a.fornecedor)}</h3></div>${pill(a.status)}</div>
+    ${quando}
+    <div class="port-g">
+      <div><small>Horário</small><b>${hoje?"Hoje":dShort(a.data)} · ${a.hora}</b></div>
+      <div><small>Placa</small><b class="placa">${esc(a.placa)}</b></div>
+      <div><small>Motorista</small><b>${esc(a.motorista)}</b></div>
+      <div><small>Veículo</small><b>${esc(a.veiculo)}</b></div>
+      <div><small>Notas fiscais</small><b>${esc(a.nfs)}</b></div>
+      <div><small>Carga</small><b>${a.totais.vol} vol · ${kgTxt(a.totais.pb)}</b></div>
+    </div>
+    ${tokOk?`<div class="tokok">${I.check}Token conferido pelo QR Code</div>`:tokErr?`<div class="alert"><span>O token lido não confere com este agendamento.</span></div>`:""}
+    <div class="acts" style="margin-top:14px">
+      ${podeChegar?(tokOk?`<button class="btn" onclick="chegadaPortaria('${a.protocolo}',true)">${I.check}Registrar chegada</button>`:`<button class="btn" onclick="acao('${a.protocolo}','chegou')">${I.check}Registrar chegada</button>`):acoesHTML(a)}
+      <button class="btn ghost sm" onclick="details('${a.protocolo}')">Detalhes</button>
+      <button class="btn ghost sm" onclick="S.port=null;render()">Limpar</button></div></div>`}
+function admPortaria(){
+  const hoje=iso(today),todos=DB.all();
+  const prev=todos.filter(a=>a.data===hoje&&["pendente","confirmado"].includes(a.status)).sort((x,y)=>x.hora.localeCompare(y.hora));
+  const temCam=("BarcodeDetector" in window)&&navigator.mediaDevices&&navigator.mediaDevices.getUserMedia;
+  return `<div class="adm-g">
+    <div class="card"><div class="card-t">${I.qr}Ler QR Code do motorista</div>
+      ${temCam?`<button class="btn block" onclick="lerQR()">${I.cam}Abrir câmera</button>`:`<div class="note-box">${I.phone2}<span>Use a <b>câmera do celular</b>: aponte para o QR Code do motorista e toque no link que aparecer. O app abre direto nesta tela, com a chegada pronta para registrar.</span></div>`}
+      <div class="ou"><span>ou busque</span></div>
+      <div class="search"><input class="in" id="ptBusca" placeholder="Protocolo, placa ou token" onkeydown="if(event.key==='Enter')buscarPortaria()" autocapitalize="characters"><button class="btn" type="button" onclick="buscarPortaria()">${I.search}Buscar</button></div></div>
+    <div class="card">${portResultadoHTML()}</div></div>
+  <div class="card" style="margin-top:14px"><div class="card-t">Chegadas previstas hoje (${prev.length})</div>
+    ${prev.length?prev.map(a=>`<div class="mini" onclick="S.port={p:'${a.protocolo}',t:null};render();window.scrollTo(0,0)"><div><b>${a.hora} · ${esc(a.fornecedor)}</b><small>${esc(a.veiculo)} · <b>${esc(a.placa)}</b> · ${esc(a.motorista)}</small></div><div class="acts">${pill(a.status)}<button class="btn sm" onclick="event.stopPropagation();acao('${a.protocolo}','chegou')">Chegou</button></div></div>`).join(""):`<p class="muted">Nenhuma chegada prevista para hoje.</p>`}</div>`}
+let _qrStream=null,_qrTimer=null;
+async function lerQR(){
+  try{const det=new BarcodeDetector({formats:["qr_code"]});
+    _qrStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:"environment"},audio:false});
+    $("#modalBody").innerHTML=`<div class="mh">${I.cam}<h3 style="letter-spacing:0">Aponte para o QR Code</h3><button class="x" onclick="pararQR()" aria-label="Fechar">${I.x}</button></div><div class="mb"><video id="qrVideo" class="qrvideo" playsinline muted autoplay></video><p class="muted" style="text-align:center;margin-top:10px">A leitura é automática.</p></div>`;
+    $("#modal").classList.add("on");const v=$("#qrVideo");v.srcObject=_qrStream;await v.play().catch(()=>{});
+    const loop=async()=>{if(!_qrStream)return;try{const c=await det.detect(v);if(c&&c.length){const q=lerHashQR(c[0].rawValue);if(q){pararQR();if(navigator.vibrate)navigator.vibrate(80);S.port=q;render();buscarProtocolo(q.p);return}}}catch(e){}_qrTimer=setTimeout(loop,250)};loop()}
+  catch(e){pararQR();toast("Não foi possível abrir a câmera. Use a câmera do celular ou a busca.",1)}}
+function pararQR(){clearTimeout(_qrTimer);if(_qrStream){_qrStream.getTracks().forEach(t=>t.stop());_qrStream=null}closeModal()}
+
+/* ---------- Reagendar ---------- */
+const podeReagendar=a=>["pendente","confirmado"].includes(a.status)&&minutosAte(a)>=(+CONFIG.prazoReagendarHoras||0)*60&&(a.reagendamentos||0)<3;
+function iniciarReagendar(p){const a=DB.all().find(x=>x.protocolo===p);if(!a)return;
+  if(!podeReagendar(a)){toast((a.reagendamentos||0)>=3?ERROS.LIMITE_REAGENDAR:ERROS.PRAZO_REAGENDAR,1);return}
+  const it=DB.mineItems().find(x=>x.protocolo===p);S.reag={protocolo:p,token:(it&&it.token)||a.token,data:a.data,hora:a.hora,fornecedor:a.fornecedor};
+  S.tab="novo";S.step=1;S.date=null;S.time=null;closeModal();render();window.scrollTo(0,0)}
+function cancelarReagendar(){S.reag=null;S.step=1;S.date=S.time=null;go("meus")}
+function confirmarReagendar(t){const R=S.reag;
+  ask(`Reagendar ${R.protocolo} de ${dShort(R.data)} às ${R.hora} para ${dShort(S.date)} às ${t}? O agendamento volta para "pendente" até a confirmação do recebimento.`).then(async ok=>{if(!ok)return;
+    if(ONLINE){try{const r=await rpc("kometa_reagendar",{p_protocolo:R.protocolo,p_token:R.token,p_data:S.date,p_hora:t});const a=fromRow(r);ROWS.set(a.protocolo,a);
+        const ko=R.data+"|"+R.hora,kn=a.data+"|"+a.hora;if(OCC[ko])OCC[ko]--;OCC[kn]=(OCC[kn]||0)+1}
+      catch(e){const m=/kometa_reagendar|function|404/i.test(e.code||"")&&!ERROS[e.code]?"O servidor ainda não tem a função de reagendar. Rode o arquivo supabase-atualizacao-1.sql no Supabase.":msgErro(e);
+        toast(m,1);if(/LOTADO|PASSADO/.test(e.code||"")){try{await carregarOcupacao()}catch(_){}render()}return}}
+    else{if(slotFree(S.date,t)<=0){toast(ERROS.HORARIO_LOTADO,1);return}
+      DB.update(R.protocolo,a=>{const now=new Date().toISOString();(a.hist=a.hist||[]).push({st:"pendente",em:now,motivo:`Reagendado pelo fornecedor: ${dShort(a.data)} ${a.hora} → ${dShort(S.date)} ${t}`});
+        a.data=S.date;a.hora=t;a.status="pendente";a.lembretes=[];delete a.waConfEm;delete a.tokenConfirmadoEm;a.reagendamentos=(a.reagendamentos||0)+1})}
+    toast("Entrega reagendada para "+dShort(S.date)+" às "+t);S.reag=null;S.step=1;S.date=S.time=null;go("meus")})}
+
+/* ---------- App no celular (PWA) ---------- */
+let _instalar=null;
+const ehStandalone=()=>(window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true;
+const ehIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();_instalar=e;renderChrome();if(S.role==="forn"&&S.tab==="novo"&&S.step===1&&podeRedesenhar())render()});
+window.addEventListener("appinstalled",()=>{_instalar=null;toast("App instalado!");render()});
+const podeInstalar=()=>!ehStandalone()&&(!!_instalar||ehIOS());
+function instalarApp(){if(_instalar){_instalar.prompt();_instalar.userChoice.finally(()=>{_instalar=null;render()});return}
+  $("#modalBody").innerHTML=`<div class="mh">${I.phone2}<h3 style="letter-spacing:0">Instalar no celular</h3><button class="x" onclick="closeModal()" aria-label="Fechar">${I.x}</button></div><div class="mb">
+    <ol class="howto"><li>No <b>Safari</b>, toque no botão <b>Compartilhar</b> (o quadrado com a seta para cima).</li><li>Role e toque em <b>Adicionar à Tela de Início</b>.</li><li>Toque em <b>Adicionar</b>. O ícone da Kometa aparece junto dos seus apps.</li></ol>
+    <p class="muted" style="margin-top:12px;font-size:13px">No Android, use o Chrome: menu ⋮ → <b>Instalar app</b> (ou "Adicionar à tela inicial").</p></div>`;$("#modal").classList.add("on")}
+function bannerInstalarHTML(){if(!podeInstalar())return "";try{if(SAFE.get("km_inst_ok"))return ""}catch(e){}
+  return `<div class="instbar">${I.phone2}<span><b>Instale o app no celular</b> e agende com um toque.</span><button class="btn sm" onclick="instalarApp()">Instalar</button><button class="x" onclick="SAFE.set('km_inst_ok','1');render()" aria-label="Dispensar">${I.x}</button></div>`}
+function extrasRodapeHTML(){return `${podeInstalar()?`<button class="nav-i small" onclick="instalarApp()">${I.phone2}Instalar app</button>`:""}<button class="nav-i small" onclick="abrirPrivacidade()">${I.shield}Privacidade</button>`}
+function bnavHTML(items,cur){let its=items;const extra=S.role==="adm"&&S.admAuth;
+  if(extra&&items.length>4){its=items.slice(0,4);const maisOn=!its.some(x=>x[0]===cur);return its.map(([k,l,ic,sh,c])=>`<button class="${cur===k?"on":""}" onclick="go('${k}')">${ic}${sh}${c?`<i class="dotc">${c}</i>`:""}</button>`).join("")+`<button class="${maisOn?"on":""}" onclick="abrirMais()">${I.more}Mais</button>`}
+  return its.map(([k,l,ic,sh])=>`<button class="${cur===k?"on":""}" onclick="go('${k}')">${ic}${sh}</button>`).join("")+(extra?`<button onclick="sair()">${I.out}Sair</button>`:"")}
+function abrirMais(){const items=navItems().slice(4),cur=curKey();
+  $("#modalBody").innerHTML=`<div class="mh"><h3 style="letter-spacing:0">Mais opções</h3><button class="x" onclick="closeModal()" aria-label="Fechar">${I.x}</button></div><div class="mb"><div class="navlist">
+    ${items.map(([k,l,ic,,c])=>`<button class="nav-i ${cur===k?"on":""}" onclick="closeModal();go('${k}')">${ic}${l}${c?`<span class="cnt">${c}</span>`:""}</button>`).join("")}
+    ${podeInstalar()?`<button class="nav-i" onclick="closeModal();instalarApp()">${I.phone2}Instalar app</button>`:""}
+    <button class="nav-i" onclick="closeModal();sair()">${I.out}Sair</button></div></div>`;$("#modal").classList.add("on")}
+if("serviceWorker" in navigator&&/^https:|^http:\/\/(localhost|127\.)/.test(location.href)){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})})}
+
+/* ---------- Ranking de fornecedores ---------- */
+const atrasoMin=a=>a.chegadaEm?Math.round((new Date(a.chegadaEm)-slotDate(a))/60000):null;
+function notaClasse(n){return n==null?["Sem dados",""]:n>=85?["Ótimo","ok"]:n>=70?["Bom","info"]:n>=50?["Atenção","warn"]:["Crítico","bad"]}
+function calcRanking(de,ate){
+  const g={};const med=a=>a.length?Math.round(a.reduce((s,x)=>s+x,0)/a.length):null;
+  DB.all().filter(a=>a.data>=de&&a.data<=ate).forEach(a=>{const k=normCnpj(a.cnpj)||a.fornecedor;const r=g[k]=g[k]||{k,nome:a.fornecedor,cnpj:a.cnpj,ult:"",lista:[]};
+    if(a.data>=r.ult){r.ult=a.data;r.nome=a.fornecedor}r.lista.push(a)});
+  return Object.values(g).map(r=>{const L=r.lista,c=s=>L.filter(a=>a.status===s).length;
+    const rec=c("recebido"),falt=c("noshow"),canc=c("cancelado"),recu=c("recusado");const ch=L.filter(a=>a.chegadaEm);
+    const pont=ch.length?Math.round(ch.filter(a=>atrasoMin(a)<=15).length/ch.length*100):null;
+    const concl=rec+falt+L.filter(a=>["chegou","descarga"].includes(a.status)).length;
+    const comp=concl?Math.round((concl-falt)/concl*100):null;
+    const cancP=L.length?Math.round(canc/L.length*100):0;
+    const nota=comp==null&&pont==null?null:Math.round((pont??comp)*0.5+(comp??pont)*0.4+(100-cancP)*0.1);
+    return{...r,ag:L.length,rec,falt,canc,recu,pont,comp,nota,
+      atraso:med(ch.map(atrasoMin).filter(x=>x>15)),esp:med(L.filter(a=>a.chegadaEm&&a.inicioDescargaEm).map(a=>minDiff(a.chegadaEm,a.inicioDescargaEm))),
+      desc:med(L.filter(a=>a.inicioDescargaEm&&a.fimEm).map(a=>minDiff(a.inicioDescargaEm,a.fimEm))),
+      vol:L.filter(a=>a.status==="recebido").reduce((s,a)=>s+a.totais.vol,0),val:L.filter(a=>a.status==="recebido").reduce((s,a)=>s+a.totais.val,0)}})}
+function admRanking(){
+  const dias=+(S.rkDias||90),ate=iso(today),de=addDays(ate,-dias);if(ONLINE)garantirPeriodo(de);
+  let R=calcRanking(de,ate);const q=(S.rkQ||"").toLowerCase();if(q)R=R.filter(r=>(r.nome+r.cnpj).toLowerCase().includes(q));
+  const col=S.rkSort||"nota",dir=S.rkDir||-1;R.sort((a,b)=>{const x=a[col],y=b[col];if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return (typeof x==="string"?x.localeCompare(y):x-y)*dir});
+  const comNota=R.filter(r=>r.nota!=null),atencao=comNota.filter(r=>r.nota<70).length;
+  const mPont=(()=>{const t=R.reduce((s,r)=>s+r.lista.filter(a=>a.chegadaEm).length,0),ok=R.reduce((s,r)=>s+r.lista.filter(a=>a.chegadaEm&&atrasoMin(a)<=15).length,0);return t?Math.round(ok/t*100):null})();
+  const th=(k,l,num)=>`<th class="${num?"num":""} sort ${col===k?"on":""}" onclick="S.rkSort='${k}';S.rkDir=${col===k?-dir:-1};render()">${l}${col===k?(dir<0?" ↓":" ↑"):""}</th>`;
+  const rows=R.map(r=>{const[nl,nc]=notaClasse(r.nota);return `<tr onclick="detalheFornecedor('${esc(r.k)}')" style="cursor:pointer">
+    <td><b>${esc(r.nome)}</b><br><span class="muted" style="font-size:12.5px">${esc(r.cnpj)}</span></td>
+    <td><span class="nota ${nc}"><b>${r.nota??"—"}</b>${nl}</span></td>
+    <td class="num">${r.ag}</td><td class="num">${r.rec}</td><td class="num ${r.falt?"neg":""}">${r.falt}</td><td class="num">${r.canc}</td>
+    <td class="num">${r.pont!=null?r.pont+"%":"—"}</td><td class="num">${r.atraso!=null?r.atraso+" min":"—"}</td><td class="num">${r.esp!=null?r.esp+" min":"—"}</td><td class="num">${r.desc!=null?r.desc+" min":"—"}</td><td class="num">${r.vol.toLocaleString("pt-BR")}</td></tr>`}).join("");
+  return `<div class="kpis">
+    ${kpi(I.user,"","Fornecedores no período",R.length,`últimos ${dias} dias`)}
+    ${kpi(I.check,"g","Pontualidade geral",mPont!=null?mPont+"%":"—","chegada até 15 min do horário")}
+    ${kpi(I.trophy,"","Melhor nota",comNota.length?Math.max(...comNota.map(r=>r.nota)):"—",comNota.length?esc(comNota.slice().sort((a,b)=>b.nota-a.nota)[0].nome):"")}
+    ${kpi(I.x,"r","Precisam de atenção",atencao,"nota abaixo de 70",atencao?"var(--red)":"")}
+  </div>
+  <div class="card"><div class="filters">
+    <select class="in" onchange="S.rkDias=this.value;render()">${[30,90,180,365].map(d=>`<option value="${d}" ${dias===d?"selected":""}>Últimos ${d} dias</option>`).join("")}</select>
+    <input class="in" placeholder="Buscar fornecedor ou CNPJ…" value="${esc(S.rkQ||"")}" onchange="S.rkQ=this.value;render()" style="flex:1">
+    <button class="btn ghost sm" onclick="exportRanking()">Exportar CSV</button></div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:10px"><b>Nota (0–100)</b> = 50% pontualidade + 40% comparecimento + 10% sem cancelamentos. Toque em um fornecedor para ver o histórico.</p>
+    ${R.length?`<div class="tbl"><table><thead><tr>${th("nome","Fornecedor")}${th("nota","Nota")}${th("ag","Agend.",1)}${th("rec","Receb.",1)}${th("falt","Faltas",1)}${th("canc","Cancel.",1)}${th("pont","Pontual.",1)}${th("atraso","Atraso méd.",1)}${th("esp","Espera",1)}${th("desc","Descarga",1)}${th("vol","Volumes",1)}</tr></thead><tbody>${rows}</tbody></table></div>`:`<div class="empty">${I.inbox}<p>Nenhum agendamento no período.</p></div>`}
+  </div>`}
+function detalheFornecedor(k){const dias=+(S.rkDias||90),ate=iso(today),r=calcRanking(addDays(ate,-dias),ate).find(x=>x.k===k);if(!r)return;const[nl,nc]=notaClasse(r.nota);
+  const L=r.lista.slice().sort((a,b)=>(b.data+b.hora).localeCompare(a.data+a.hora));
+  $("#modalBody").innerHTML=`<div class="mh"><h3 style="letter-spacing:0">${esc(r.nome)}</h3><span class="nota ${nc}"><b>${r.nota??"—"}</b>${nl}</span><button class="x" onclick="closeModal()" aria-label="Fechar">${I.x}</button></div><div class="mb">
+    <p class="muted" style="margin-bottom:12px">${esc(r.cnpj)} · últimos ${dias} dias</p>
+    <div class="totals" style="grid-template-columns:repeat(4,1fr);margin-top:0"><div><small>Agendamentos</small><b>${r.ag}</b></div><div><small>Recebidos</small><b>${r.rec}</b></div><div><small>Faltas</small><b>${r.falt}</b></div><div><small>Pontualidade</small><b>${r.pont!=null?r.pont+"%":"—"}</b></div></div>
+    <div class="tbl" style="margin-top:14px"><table><thead><tr><th>Data</th><th>Status</th><th class="num">Chegada</th><th class="num">Atraso</th><th class="num">Descarga</th></tr></thead><tbody>
+    ${L.map(a=>{const at=atrasoMin(a);return `<tr onclick="details('${a.protocolo}')" style="cursor:pointer"><td>${dShort(a.data)} ${a.hora}</td><td>${pill(a.status)}</td><td class="num">${hm(a.chegadaEm)}</td><td class="num ${at>15?"neg":""}">${at==null?"—":at>0?at+" min":"no horário"}</td><td class="num">${minDiff(a.inicioDescargaEm,a.fimEm)??"—"}</td></tr>`}).join("")}
+    </tbody></table></div></div>`;$("#modal").classList.add("on")}
+function exportRanking(){const dias=+(S.rkDias||90),ate=iso(today),R=calcRanking(addDays(ate,-dias),ate).sort((a,b)=>(b.nota??-1)-(a.nota??-1));
+  const head=["Fornecedor","CNPJ","Nota","Classificacao","Agendamentos","Recebidos","Faltas","Cancelados","Recusados","Pontualidade %","Atraso medio (min)","Espera media (min)","Descarga media (min)","Volumes recebidos","Valor recebido (R$)"];
+  const rows=R.map(r=>[r.nome,r.cnpj,r.nota??"",notaClasse(r.nota)[0],r.ag,r.rec,r.falt,r.canc,r.recu,r.pont??"",r.atraso??"",r.esp??"",r.desc??"",r.vol,r.val.toFixed(2).replace(".",",")]);
+  baixarCSV(`ranking-fornecedores-${ate}.csv`,head,rows)}
+function baixarCSV(nome,head,rows){const csv=[head,...rows].map(r=>r.map(c=>`"${String(c??"").replace(/"/g,'""')}"`).join(";")).join("\n");baixarArquivo(nome,"\ufeff"+csv,"text/csv")}
+
+/* ---------- Relatório semanal e mensal ---------- */
+function periodoRel(){const k=S.relDate||iso(today),t=S.relTipo||"dia";
+  if(t==="semana"){const d=fromIso(k),de=addDays(k,-((d.getDay()+6)%7));return{t,de,ate:addDays(de,6),titulo:"Relatório semanal de recebimento",nome:`Semana de ${fromIso(de).toLocaleDateString("pt-BR")} a ${fromIso(addDays(de,6)).toLocaleDateString("pt-BR")}`}}
+  if(t==="mes"){const d=fromIso(k),de=iso(new Date(d.getFullYear(),d.getMonth(),1)),ate=iso(new Date(d.getFullYear(),d.getMonth()+1,0));return{t,de,ate,titulo:"Relatório mensal de recebimento",nome:`${MESES[d.getMonth()]} de ${d.getFullYear()}`}}
+  return{t:"dia",de:k,ate:k,titulo:"Relatório diário de recebimento",nome:longDate(k)}}
+function moverRel(n){const t=S.relTipo||"dia",k=S.relDate||iso(today);if(t==="mes"){const d=fromIso(k);S.relDate=iso(new Date(d.getFullYear(),d.getMonth()+n,1))}else S.relDate=addDays(k,n*(t==="semana"?7:1));render()}
+function relPeriodoDados(de,ate){
+  const all=DB.all().filter(a=>a.data>=de&&a.data<=ate),c=s=>all.filter(a=>a.status===s).length;
+  const validos=all.filter(a=>!["cancelado","recusado"].includes(a.status));
+  const soma=l=>l.reduce((t,a)=>({vol:t.vol+a.totais.vol,pb:t.pb+a.totais.pb,val:t.val+a.totais.val}),{vol:0,pb:0,val:0});
+  const med=arr=>arr.length?Math.round(arr.reduce((s,x)=>s+x,0)/arr.length):null;
+  const ch=all.filter(a=>a.chegadaEm);const pont=ch.length?Math.round(ch.filter(a=>atrasoMin(a)<=15).length/ch.length*100):null;
+  const dias=[];for(let k=de;k<=ate;k=addDays(k,1))dias.push(k);
+  const uteis=dias.filter(k=>CONFIG.diasUteis.includes(fromIso(k).getDay())&&!isBlocked(k));
+  const porDia=dias.map(k=>{const l=all.filter(a=>a.data===k),v=l.filter(a=>!["cancelado","recusado"].includes(a.status)),chg=l.filter(a=>a.chegadaEm);
+    return{k,ag:v.length,rec:l.filter(a=>a.status==="recebido").length,falt:l.filter(a=>a.status==="noshow").length,canc:l.filter(a=>["cancelado","recusado"].includes(a.status)).length,
+      ocup:uteis.includes(k)&&dayCap()?Math.round(v.length/dayCap()*100):null,pont:chg.length?Math.round(chg.filter(a=>atrasoMin(a)<=15).length/chg.length*100):null,util:uteis.includes(k)}});
+  const porHora=CONFIG.horarios.map(h=>{const l=validos.filter(a=>a.hora===h);return{h,ag:l.length,falt:l.filter(a=>a.status==="noshow").length,atr:l.filter(a=>a.chegadaEm&&atrasoMin(a)>15).length}});
+  const veic={};validos.forEach(a=>veic[a.veiculo]=(veic[a.veiculo]||0)+1);
+  const concl=c("recebido")+c("noshow");
+  return{all,validos,cont:{rec:c("recebido"),falt:c("noshow"),canc:c("cancelado"),recu:c("recusado"),pend:c("pendente")+c("confirmado")},
+    comp:concl?Math.round(c("recebido")/concl*100):null,pont,
+    esp:med(all.filter(a=>a.chegadaEm&&a.inicioDescargaEm).map(a=>minDiff(a.chegadaEm,a.inicioDescargaEm))),desc:med(all.filter(a=>a.inicioDescargaEm&&a.fimEm).map(a=>minDiff(a.inicioDescargaEm,a.fimEm))),
+    ocup:uteis.length&&dayCap()?Math.round(validos.length/(uteis.length*dayCap())*100):0,uteis:uteis.length,
+    prev:soma(validos),rec:soma(all.filter(a=>a.status==="recebido")),porDia,porHora,veic,rank:calcRanking(de,ate)}}
+function graficoBarras(pts,{h=190,cor="#1A6FB8"}={}){
+  const n=pts.length;if(!n)return"";const W=Math.max(680,n*28),pad={l:30,r:8,t:16,b:24},iw=W-pad.l-pad.r,ih=h-pad.t-pad.b;
+  const max=Math.max(1,...pts.map(p=>p.v)),step=max<=4?1:Math.ceil(max/4),top=Math.ceil(max/step)*step,sw=iw/n,bw=Math.max(4,Math.min(28,sw-2*Math.max(2,sw*.18)));
+  const y=v=>pad.t+ih-(v/top)*ih,imax=pts.findIndex(p=>p.v===max);let g="";
+  for(let v=0;v<=top;v+=step)g+=`<line x1="${pad.l}" x2="${W-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#E2E7EE" stroke-width="1"/><text x="${pad.l-6}" y="${y(v)+3.5}" text-anchor="end" font-size="10" fill="#8A96A9">${v}</text>`;
+  pts.forEach((p,i)=>{const x=pad.l+i*sw+(sw-bw)/2,yy=y(p.v),hh=pad.t+ih-yy,r=Math.min(4,bw/2,hh);
+    if(p.v>0)g+=`<path d="M${x} ${pad.t+ih}V${yy+r}Q${x} ${yy} ${x+r} ${yy}H${x+bw-r}Q${x+bw} ${yy} ${x+bw} ${yy+r}V${pad.t+ih}Z" fill="${p.off?"#C9D2DD":cor}"><title>${p.tip}</title></path>`;
+    g+=`<rect x="${pad.l+i*sw}" y="${pad.t}" width="${sw}" height="${ih}" fill="transparent"><title>${p.tip}</title></rect>`;
+    if(i===imax&&p.v>0)g+=`<text x="${x+bw/2}" y="${yy-5}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#13233A">${p.v}</text>`;
+    if(n<=16||i%2===0||i===n-1)g+=`<text x="${x+bw/2}" y="${h-8}" text-anchor="middle" font-size="${n>16?9.5:10.5}" fill="#53607A">${p.l}</text>`});
+  g+=`<line x1="${pad.l}" x2="${W-pad.r}" y1="${pad.t+ih}" y2="${pad.t+ih}" stroke="#8A96A9" stroke-width="1"/>`;
+  return `<div class="chart"><svg viewBox="0 0 ${W} ${h}" width="100%" style="max-width:${W*1.3}px" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Gráfico de barras">${g}</svg></div>`}
+function relatorioPeriodoHTML(P){
+  const R=relPeriodoDados(P.de,P.ate),now=new Date().toLocaleString("pt-BR",{dateStyle:"short",timeStyle:"short"});
+  const k4=(l,v,c,s)=>`<div><small>${l}</small><span class="rv ${c||""}">${v}</span>${s?`<br><span>${s}</span>`:""}</div>`;
+  const pts=R.porDia.map(d=>{const dt=fromIso(d.k);return{v:d.ag,off:!d.util,l:P.t==="semana"?`${DIAS_CURTO[dt.getDay()]} ${dt.getDate()}`:String(dt.getDate()),tip:`${dShort(d.k)}: ${d.ag} agendamento(s), ${d.rec} recebido(s), ${d.falt} falta(s)`}});
+  const top=R.rank.filter(r=>r.ag).sort((a,b)=>b.ag-a.ag).slice(0,10),aten=R.rank.filter(r=>r.nota!=null&&r.nota<70).sort((a,b)=>a.nota-b.nota).slice(0,8);
+  const faltas=R.all.filter(a=>a.status==="noshow").sort((a,b)=>(a.data+a.hora).localeCompare(b.data+b.hora)),recus=R.all.filter(a=>a.status==="recusado");
+  const atrasos=R.all.filter(a=>a.chegadaEm&&atrasoMin(a)>15).length;
+  return `<div class="rep" id="relatorio">
+    <div class="rep-h"><img src="${LOGO}" alt="Supermercados Kometa"><div class="t"><h2>${P.titulo}</h2><span>${P.nome}</span></div></div>
+    <div class="rep-meta"><span>Local: <b>${esc(CONFIG.endereco)}</b></span><span>Dias de recebimento no período: <b>${R.uteis}</b> · capacidade <b>${R.uteis*dayCap()} vagas</b></span><span>Emitido em: <b>${now}</b></span></div>
+    <h3>Resumo do período</h3>
+    <div class="rk">
+      ${k4("Agendamentos",R.validos.length,"b",`${R.ocup}% da capacidade`)}
+      ${k4("Recebidos",R.cont.rec,"g",R.comp!=null?`${R.comp}% de comparecimento`:"")}
+      ${k4("Não compareceram",R.cont.falt,R.cont.falt?"r":"")}
+      ${k4("Cancelados / recusados",R.cont.canc+R.cont.recu,(R.cont.canc+R.cont.recu)?"r":"")}
+      ${k4("Pontualidade",R.pont!=null?R.pont+"%":"—",R.pont!=null&&R.pont<70?"r":"",`${atrasos} chegada(s) com atraso`)}
+      ${k4("Espera média no pátio",R.esp!=null?R.esp+" min":"—","","chegada → descarga")}
+      ${k4("Descarga média",R.desc!=null?R.desc+" min":"—","","início → fim")}
+      ${k4("Volumes recebidos",R.rec.vol.toLocaleString("pt-BR"),"",`${kgTxt(R.rec.pb)} · ${brl(R.rec.val)}`)}
+    </div>
+    <h3>Agendamentos por dia</h3>
+    ${graficoBarras(pts)}
+    <p class="legenda">Passe o mouse sobre as barras para ver recebidos e faltas de cada dia.</p>
+    <div class="cols">
+      <div><h3>Por dia</h3><div class="tblr"><table><thead><tr><th>Dia</th><th class="num">Agend.</th><th class="num">Receb.</th><th class="num">Faltas</th><th class="num">Ocup.</th><th class="num">Pontual.</th></tr></thead><tbody>
+        ${R.porDia.filter(d=>d.util||d.ag).map(d=>`<tr><td>${dShort(d.k)}</td><td class="num">${d.ag}</td><td class="num">${d.rec}</td><td class="num">${d.falt}</td><td class="num">${d.ocup!=null?d.ocup+"%":"—"}</td><td class="num">${d.pont!=null?d.pont+"%":"—"}</td></tr>`).join("")}
+      </tbody></table></div></div>
+      <div><h3>Por horário</h3><table><thead><tr><th>Horário</th><th class="num">Agend.</th><th class="num">Faltas</th><th class="num">Atrasos</th></tr></thead><tbody>
+        ${R.porHora.map(r=>`<tr><td><b>${r.h}</b></td><td class="num">${r.ag}</td><td class="num">${r.falt}</td><td class="num">${r.atr}</td></tr>`).join("")}</tbody></table>
+        <h3>Veículos</h3>${Object.keys(R.veic).length?`<table><tbody>${Object.entries(R.veic).sort((a,b)=>b[1]-a[1]).map(([v,n])=>`<tr><td>${esc(v)}</td><td class="num">${n}</td></tr>`).join("")}</tbody></table>`:`<p class="vazio">Sem veículos no período.</p>`}</div>
+    </div>
+    <h3>Fornecedores com mais entregas</h3>
+    ${top.length?`<div class="tblr"><table><thead><tr><th>Fornecedor</th><th class="num">Agend.</th><th class="num">Receb.</th><th class="num">Faltas</th><th class="num">Pontual.</th><th class="num">Nota</th></tr></thead><tbody>
+      ${top.map(r=>`<tr><td><b>${esc(r.nome)}</b><br><span style="color:#8A96A9">${esc(r.cnpj)}</span></td><td class="num">${r.ag}</td><td class="num">${r.rec}</td><td class="num">${r.falt}</td><td class="num">${r.pont!=null?r.pont+"%":"—"}</td><td class="num"><b>${r.nota??"—"}</b> ${notaClasse(r.nota)[0]}</td></tr>`).join("")}</tbody></table></div>`:`<p class="vazio">Nenhum agendamento no período.</p>`}
+    ${aten.length?`<h3>Fornecedores que precisam de atenção (nota abaixo de 70)</h3><table><thead><tr><th>Fornecedor</th><th class="num">Faltas</th><th class="num">Pontual.</th><th class="num">Nota</th></tr></thead><tbody>${aten.map(r=>`<tr><td>${esc(r.nome)}</td><td class="num">${r.falt}</td><td class="num">${r.pont!=null?r.pont+"%":"—"}</td><td class="num"><b>${r.nota}</b> ${notaClasse(r.nota)[0]}</td></tr>`).join("")}</tbody></table>`:""}
+    <h3>Ocorrências</h3>
+    ${faltas.length||recus.length?`<table><thead><tr><th>Data</th><th>Fornecedor</th><th>Ocorrência</th><th>Motivo</th></tr></thead><tbody>
+      ${faltas.map(a=>`<tr><td>${dShort(a.data)} ${a.hora}</td><td>${esc(a.fornecedor)}</td><td><span class="rst bad">Não compareceu</span></td><td>${esc(a.motivo||"—")}</td></tr>`).join("")}
+      ${recus.map(a=>`<tr><td>${dShort(a.data)} ${a.hora}</td><td>${esc(a.fornecedor)}</td><td><span class="rst bad">Recusado</span></td><td>${esc(a.motivo||"—")}</td></tr>`).join("")}</tbody></table>`:`<p class="vazio">Nenhuma falta ou recusa no período.</p>`}
+    <div class="ass"><div>Responsável pelo recebimento</div><div>Gerência / coordenação</div></div>
+    <div class="rodape">Supermercados Kometa · Agendamento de recebimento · ${P.nome}</div></div>`}
+function resumoPeriodoTexto(P){const R=relPeriodoDados(P.de,P.ate);
+  return [`*Kometa — ${P.t==="semana"?"Recebimento da semana":"Recebimento do mês"}*`,P.nome,
+    `Agendados: ${R.validos.length} (${R.ocup}% da capacidade)`,`Recebidos: ${R.cont.rec} | Faltas: ${R.cont.falt} | Cancel./recus.: ${R.cont.canc+R.cont.recu}`,
+    `Comparecimento: ${R.comp??"—"}% | Pontualidade: ${R.pont??"—"}%`,`Espera média: ${R.esp??"—"} min | Descarga média: ${R.desc??"—"} min`,
+    `Recebido: ${R.rec.vol.toLocaleString("pt-BR")} volumes · ${kgTxt(R.rec.pb)} · ${brl(R.rec.val)}`].join("\n")}
+
+/* ---------- Cópia de segurança ---------- */
+function ultimaCopia(){const v=SAFE.get("km_ultimo_backup");return v?new Date(v):null}
+async function baixarBackup(){
+  try{toast("Preparando a cópia…");let lista=DB.all(),equipe=[];
+    if(ONLINE){lista=(await buscarPeriodo("2000-01-01")).map(fromRow);try{equipe=await sbFetch("/rest/v1/kometa_equipe?select=email,criado_em")||[]}catch(e){}}
+    const{senhaAdmin,...cfg}=CONFIG,agora=new Date();
+    const dados={app:"kometa-agendamento",versao:1,geradoEm:agora.toISOString(),modo:ONLINE?"online":"demonstracao",config:cfg,equipe,agendamentos:lista};
+    const d=iso(agora);baixarArquivo(`kometa-copia-${d}.json`,JSON.stringify(dados,null,1),"application/json");
+    setTimeout(()=>exportCSV(false,lista,`kometa-copia-${d}.csv`),400);
+    SAFE.set("km_ultimo_backup",agora.toISOString());toast(`Cópia baixada: ${lista.length} agendamento(s)`);render()}
+  catch(e){toast("Não foi possível gerar a cópia: "+msgErro(e),1)}}
+function restaurarBackup(input){const f=input.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const j=JSON.parse(r.result);if(j.app!=="kometa-agendamento"||!Array.isArray(j.agendamentos))throw 0;
+    ask(`Restaurar ${j.agendamentos.length} agendamento(s) da cópia de ${new Date(j.geradoEm).toLocaleString("pt-BR")}? Os dados atuais deste navegador serão substituídos.`).then(ok=>{if(!ok)return;
+      DB.save(j.agendamentos);if(j.config){CONFIG={...CONFIG_PADRAO,...j.config};saveConfig()}toast("Cópia restaurada");render()})}
+    catch(e){toast("Arquivo inválido: use uma cópia gerada por este app",1)}};r.readAsText(f);input.value=""}
+function lembreteBackupHTML(){const u=ultimaCopia(),dias=u?Math.floor((Date.now()-u)/864e5):null;if(u&&dias<7)return "";
+  return `<div class="alert info"><span>${I.dl}<b>${u?`Última cópia de segurança há ${dias} dias.`:"Você ainda não fez uma cópia de segurança."}</b> O plano gratuito não guarda cópias automáticas: baixe uma por semana.</span><button class="btn sm" onclick="baixarBackup()">Baixar cópia</button></div>`}
+function backupCardHTML(){const u=ultimaCopia();
+  return `<div class="card" style="margin-top:14px"><div class="card-t">${I.dl}Cópia de segurança</div>
+    <p class="muted" style="font-size:13.5px;margin-bottom:12px">Baixa todos os agendamentos e configurações em dois arquivos: <b>.json</b> (cópia completa) e <b>.csv</b> (abre no Excel). Guarde no seu computador ou no Google Drive.</p>
+    <p style="font-size:13.5px;margin-bottom:12px">Última cópia neste aparelho: <b>${u?u.toLocaleString("pt-BR",{dateStyle:"short",timeStyle:"short"}):"nunca"}</b></p>
+    <div class="acts"><button class="btn sm" onclick="baixarBackup()">${I.dl}Baixar cópia completa</button>
+    ${ONLINE?"":`<label class="btn ghost sm" style="cursor:pointer">Restaurar cópia<input type="file" accept=".json,application/json" hidden onchange="restaurarBackup(this)"></label>`}</div>
+    ${ONLINE?`<p class="muted" style="font-size:12px;margin-top:10px">Para restaurar uma cópia no servidor, peça ajuda ao suporte do sistema.</p>`:""}</div>`}
+function privacidadeCardHTML(){const C=CONFIG;
+  return `<div class="card" style="margin-top:14px"><div class="card-t">${I.shield}Privacidade (LGPD)</div>
+    <div class="f" style="margin-bottom:12px"><label>Contato para pedidos de privacidade (e-mail ou WhatsApp)</label><input class="in" id="cfPriv" value="${esc(C.contatoPrivacidade||"")}" placeholder="privacidade@kometa.com.br"></div>
+    <div class="fg" style="margin-bottom:12px"><div class="f"><label>Guardar dados pessoais por (meses)</label><input class="in" id="cfRet" type="number" min="6" max="120" value="${+C.retencaoMeses||24}"></div>
+      <div class="f"><label>Prazo mínimo para reagendar (horas)</label><input class="in" id="cfPrazo" type="number" min="0" max="168" value="${+C.prazoReagendarHoras||0}"></div></div>
+    <div class="acts"><button class="btn sm" onclick="salvarPrivacidade()">Salvar</button><button class="btn ghost sm" onclick="abrirPrivacidade()">Ver aviso</button><button class="btn ghost sm danger" onclick="anonimizarAntigos()">Anonimizar dados antigos</button></div>
+    <p class="muted" style="font-size:12px;margin-top:10px">O texto do aviso é um modelo. Vale revisar com o jurídico da empresa.</p></div>`}
+function salvarPrivacidade(){CONFIG.contatoPrivacidade=$("#cfPriv").value.trim();CONFIG.retencaoMeses=Math.max(6,parseInt($("#cfRet").value)||24);CONFIG.prazoReagendarHoras=Math.max(0,parseInt($("#cfPrazo").value)||0);
+  saveConfig().then(ok=>{if(ok)toast("Salvo")});render()}
+
+
+/* ================= ALERTAS DE NOVOS AGENDAMENTOS =================
+   Som + notificação do sistema + contador no título da aba, para a equipe de recebimento.
+   Funcionam enquanto o app estiver aberto (pode estar minimizado ou em outra aba). */
+I.bell=sv('<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/>');
+const ALERT_KEY="km_alertas";
+function alertCfg(){try{return{on:false,som:true,...JSON.parse(SAFE.get(ALERT_KEY)||"{}")}}catch(e){return{on:false,som:true}}}
+function salvarAlertCfg(c){SAFE.set(ALERT_KEY,JSON.stringify(c))}
+const notifSuportada=()=>"Notification" in window;
+const notifPerm=()=>notifSuportada()?Notification.permission:"indisponivel";
+let _audio=null;
+function audioCtx(){try{_audio=_audio||new(window.AudioContext||window.webkitAudioContext)();if(_audio.state==="suspended")_audio.resume();return _audio}catch(e){return null}}
+document.addEventListener("pointerdown",()=>{const c=alertCfg();if(c.on&&c.som)audioCtx()},{passive:true});
+function tocarSom(){const ctx=audioCtx();if(!ctx)return false;const t=ctx.currentTime+0.02;
+  [[784,0],[1047,.16],[1319,.32]].forEach(([f,d])=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type="sine";o.frequency.value=f;
+    g.gain.setValueAtTime(0.0001,t+d);g.gain.exponentialRampToValueAtTime(0.4,t+d+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+d+0.45);
+    o.connect(g).connect(ctx.destination);o.start(t+d);o.stop(t+d+0.5)});return true}
+async function notificar(titulo,corpo,tag){
+  if(notifPerm()!=="granted")return false;
+  const opt={body:corpo,icon:"icon-192.png",badge:"icon-192.png",tag,renotify:true,data:{p:tag},lang:"pt-BR"};
+  try{if(navigator.serviceWorker&&navigator.serviceWorker.controller){const r=await navigator.serviceWorker.ready;await r.showNotification(titulo,opt);return true}}catch(e){}
+  try{const n=new Notification(titulo,opt);n.onclick=()=>{try{window.focus()}catch(_){}abrirDoAlerta(tag);n.close()};return true}catch(e){return false}}
+let _naoVistos=0;const _tituloBase=document.title;
+function atualizarTitulo(){document.title=_naoVistos?`(${_naoVistos}) ${_tituloBase}`:_tituloBase}
+document.addEventListener("visibilitychange",()=>{if(!document.hidden){_naoVistos=0;atualizarTitulo()}});
+window.addEventListener("focus",()=>{_naoVistos=0;atualizarTitulo()});
+function tipoMudanca(prev,a){
+  const ult=((a.hist||[]).slice(-1)[0]||{}).motivo||"";
+  if(!prev)return a.status==="pendente"?"novo":null;
+  if(prev.status!=="cancelado"&&a.status==="cancelado"&&/fornecedor/i.test(ult))return "canc";
+  if((prev.data!==a.data||prev.hora!==a.hora)&&/^Reagendado/i.test(ult))return "reag";
+  return null}
+function alertar(evs){
+  if(!evs||!evs.length)return;const c=alertCfg();
+  const tit=e=>e.tipo==="novo"?`Novo agendamento: ${e.a.fornecedor}`:e.tipo==="reag"?`Reagendado: ${e.a.fornecedor}`:`Cancelado pelo fornecedor: ${e.a.fornecedor}`;
+  const corpo=e=>`${DIAS_CURTO[fromIso(e.a.data).getDay()]}, ${fromIso(e.a.data).toLocaleDateString("pt-BR")} às ${e.a.hora} · ${e.a.veiculo} ${e.a.placa}`;
+  toast(evs.length===1?`${tit(evs[0])} · ${dShort(evs[0].a.data)} ${evs[0].a.hora}`:`${evs.length} novidades nos agendamentos`);
+  if(!c.on)return;
+  if(c.som)tocarSom();
+  const fora=document.hidden||!document.hasFocus();
+  if(fora){_naoVistos+=evs.length;atualizarTitulo();
+    if(evs.length<=3)evs.forEach(e=>notificar(tit(e),corpo(e),e.a.protocolo));
+    else notificar(`${evs.length} novidades nos agendamentos`,evs.slice(0,4).map(tit).join("\n"),"km-varios")}}
+function abrirDoAlerta(p){if(!S.admAuth)return;S.role="adm";
+  if(p&&/^KM-/.test(p)){S.admTab="lista";render();details(p)}else{S.admTab="painel";render()}}
+if(navigator.serviceWorker)navigator.serviceWorker.addEventListener("message",e=>{if(e.data&&e.data.abrir!==undefined)abrirDoAlerta(e.data.abrir)});
+/* modo demonstração: avisa quando outra aba deste navegador faz um agendamento */
+window.addEventListener("storage",e=>{if(ONLINE||e.key!=="km_agendamentos_v1"||!S.admAuth)return;
+  try{const antes=new Map(JSON.parse(e.oldValue||"[]").map(a=>[a.protocolo,a])),depois=JSON.parse(e.newValue||"[]");
+    alertar(depois.map(a=>({a,tipo:tipoMudanca(antes.get(a.protocolo),a)})).filter(x=>x.tipo));if(podeRedesenhar())render()}catch(_){}});
+async function ativarAlertas(){
+  audioCtx();let perm=notifPerm();
+  if(perm==="default"){try{perm=await Notification.requestPermission()}catch(e){perm=notifPerm()}}
+  salvarAlertCfg({...alertCfg(),on:true});tocarSom();
+  if(perm==="granted")toast("Alertas ativados neste aparelho");
+  else if(perm==="denied")toast("Som ativado. As notificações estão bloqueadas: libere no cadeado ao lado do endereço do site.",1);
+  else toast("Som ativado. Este navegador não mostra notificações; instale o app para receber.",1);
+  render()}
+function desativarAlertas(){salvarAlertCfg({...alertCfg(),on:false});toast("Alertas desativados neste aparelho");render()}
+function alternarSom(v){salvarAlertCfg({...alertCfg(),som:v});if(v)tocarSom()}
+async function testarAlerta(){audioCtx();const c=alertCfg();if(c.som)tocarSom();
+  const ok=await notificar("Teste de alerta · Kometa","Assim você será avisado quando chegar um agendamento.","km-teste");
+  toast(ok?"Alerta de teste enviado":"Som tocado. Notificação não disponível ou bloqueada neste navegador.",!ok)}
+function bannerAlertasHTML(){if(alertCfg().on)return "";
+  return `<div class="instbar alertbar">${I.bell}<span><b>Ative os alertas</b> para ouvir um som e receber uma notificação quando chegar um agendamento.</span><button class="btn sm" onclick="ativarAlertas()">Ativar alertas</button></div>`}
+function alertasCardHTML(){const c=alertCfg(),p=notifPerm();
+  const st=p==="granted"?["Permitidas","ok"]:p==="denied"?["Bloqueadas no navegador","bad"]:p==="default"?["Ainda não autorizadas","warn"]:["Não disponíveis neste navegador","warn"];
+  return `<div class="card"><div class="card-t">${I.bell}Alertas neste aparelho</div>
+    <div class="alrow"><span>Alertas</span>${c.on?`<span class="pill ok">Ligados</span>`:`<span class="pill">Desligados</span>`}</div>
+    <div class="alrow"><span>Notificações do sistema</span><span class="pill ${st[1]}">${st[0]}</span></div>
+    <label class="alrow" style="cursor:pointer"><span>Tocar som</span><input type="checkbox" class="sw" ${c.som?"checked":""} onchange="alternarSom(this.checked)"></label>
+    <div class="acts" style="margin-top:12px">${c.on?`<button class="btn ghost sm" onclick="desativarAlertas()">Desligar</button>`:`<button class="btn sm" onclick="ativarAlertas()">${I.bell}Ativar alertas</button>`}<button class="btn ghost sm" onclick="testarAlerta()">Testar</button></div>
+    <p class="muted" style="font-size:12.5px;margin-top:10px">Avisa sobre <b>novos agendamentos, reagendamentos e cancelamentos</b> feitos pelos fornecedores. Deixe o app aberto no computador do recebimento (pode minimizar). Com a janela em segundo plano, o aviso pode levar até 1 minuto.
+    ${p==="denied"?"<br><b>Para liberar:</b> clique no cadeado ao lado do endereço do site → Notificações → Permitir, e recarregue a página.":""}
+    ${ehIOS()&&!ehStandalone()?"<br><b>iPhone:</b> as notificações só funcionam com o app instalado na tela inicial.":""}</p></div>`}
+function sinoRodapeHTML(){if(!(S.role==="adm"&&S.admAuth))return "";const on=alertCfg().on;
+  return `<button class="nav-i small" onclick="${on?"S.admTab='config';render()":"ativarAlertas()"}">${I.bell}${on?"Alertas ligados":"Ativar alertas"}</button>`}
+
 
 boot();
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeModal();if($("#askBg").classList.contains("on"))$("#askNo").click()}});

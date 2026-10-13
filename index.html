@@ -515,6 +515,22 @@ button.dc.fila{cursor:pointer}button.dc.fila:hover{border-color:var(--bad);backg
   .vb{height:160px}.vb-c small{font-size:9px}.vb-c:nth-child(even) small{visibility:hidden}.mx-g{grid-template-columns:1fr 1fr}
 }
 @media print{.pv-bar,.wk-card .pill{display:none}.wk{grid-template-columns:repeat(var(--n),1fr)}}
+/* ===== Rota até a doca ===== */
+.in.ta{height:auto;padding:10px 15px;resize:vertical;line-height:1.4}
+.rt{border:1px solid var(--border);border-radius:16px;padding:16px;background:var(--surface);margin:14px 0}
+.rt-page .rt{border:none;padding:0;margin:0}
+.rt-h{display:flex;gap:12px;align-items:center;margin-bottom:12px}.rt-h>svg{width:36px;height:36px;padding:8px;border-radius:12px;background:var(--accent-soft);color:var(--accent);box-sizing:border-box}
+.rt-h small{display:block;font-size:12px;font-weight:800;color:var(--text-3);text-transform:uppercase;letter-spacing:.5px}.rt-h b{font-family:Nunito,"Nunito Sans",system-ui,sans-serif;font-weight:900;font-size:20px}
+.rt-p{list-style:none;counter-reset:p;display:flex;flex-direction:column;gap:10px;margin:0 0 12px;padding:0}
+.rt-p li{counter-increment:p;display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:10px;text-align:left}
+.rt-p li:before{content:counter(p);grid-row:span 2;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:900;font-size:13px}
+.rt-p b{font-size:14px}.rt-p span{font-size:13.5px;color:var(--text-2)}
+.rt-map{margin:12px 0 0}.rt-map iframe{width:100%;border:1px solid var(--border);border-radius:12px;display:block;background:var(--surface-2)}.rt-map small{display:block;font-size:11px;color:var(--text-3);margin-top:4px}
+.rt-b{flex-wrap:wrap}
+.rt-c .rt-p span{font-size:13px}
+.rt-qr{display:flex;gap:14px;align-items:center;background:var(--surface-2);border-radius:14px;padding:12px;margin-bottom:4px}.rt-qr .qrimg{background:#fff;border-radius:10px;padding:6px;flex:none}.rt-qr .qrimg svg{width:150px;height:150px;display:block}.rt-qr span{font-size:13.5px;color:var(--text-2)}
+.rt-doca{border-top:1px solid var(--border);padding:10px 0;display:flex;flex-direction:column;gap:8px}
+@media (max-width:980px){.rt-qr{flex-direction:column;text-align:center}}
 @media print{.side,.mtop,.bnav,.hero,.ag-h button,.ag-h input,.acts,.alert,.toast{display:none!important}.app{display:block}body,html{background:#fff}.card{box-shadow:none}}
 </style>
 </head>
@@ -2540,6 +2556,99 @@ function addBloqueio(){const k=$("#bqData").value,m=($("#bqMot").value||"").trim
   saveConfig().then(ok=>{if(ok)toast(ocup?`Bloqueado. Atenção: ${ocup} agendamento(s) já marcados nesse período continuam ativos.`:"Bloqueio salvo",!!ocup)});render()}
 function remBloqueio(i){CONFIG.bloqueios=(CONFIG.bloqueios||[]).filter((_,j)=>j!==i);saveConfig().then(ok=>{if(ok)toast("Bloqueio removido")});render()}
 function limparBloqueiosAntigos(){const h=iso(today);CONFIG.bloqueios=(CONFIG.bloqueios||[]).filter(b=>bqData(b)>=h);saveConfig();render()}
+
+/* ================= ROTA ATÉ A DOCA (sem custo) =================
+   Navegação pela rua: links do Google Maps e do Waze (não precisam de chave nem de conta paga).
+   Mapa: OpenStreetMap incorporado. Dentro do pátio: instruções passo a passo de cada doca.
+   O motorista abre pelo link "#rota=Doca 1" (WhatsApp ou QR Code da portaria), sem precisar de login. */
+I.route=sv('<circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="5" r="2.2"/><path d="M8.2 19H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h6.8"/>');
+I.nav=sv('<path d="M3 11 21 3l-8 18-2-8z"/>');
+Object.assign(CONFIG_PADRAO,{rota:{lat:"",lng:"",instrucoes:""},docasInfo:{}});
+for(const k of ["rota","docasInfo"])if(CONFIG[k]===undefined)CONFIG[k]=JSON.parse(JSON.stringify(CONFIG_PADRAO[k]));
+const rotaCfg=()=>({lat:"",lng:"",instrucoes:"",...(CONFIG.rota||{})});
+const docaInfo=d=>(d&&(CONFIG.docasInfo||{})[d])||{};
+function lerCoord(txt){const m=String(txt||"").replace(/[()]/g,"").match(/(-?\d{1,2}(?:[.,]\d+)?)\s*[,; ]\s*(-?\d{1,3}(?:[.,]\d+)?)/);if(!m)return null;
+  const lat=+m[1].replace(",","."),lng=+m[2].replace(",",".");if(!(Math.abs(lat)<=90&&Math.abs(lng)<=180)||(lat===0&&lng===0))return null;return{lat:+lat.toFixed(6),lng:+lng.toFixed(6)}}
+const coordTxt=o=>o&&o.lat!==""&&o.lat!=null&&o.lng!==""&&o.lng!=null?`${o.lat}, ${o.lng}`:"";
+/* destino: coordenada da doca → da entrada de caminhões → endereço escrito */
+function destinoRota(doca){const di=docaInfo(doca),r=rotaCfg();
+  if(coordTxt(di))return{lat:+di.lat,lng:+di.lng,nivel:"doca"};if(coordTxt(r))return{lat:+r.lat,lng:+r.lng,nivel:"entrada"};return null}
+function linkMaps(doca){const d=destinoRota(doca);return "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination="+(d?`${d.lat},${d.lng}`:encodeURIComponent(CONFIG.endereco))}
+function linkWaze(doca){const d=destinoRota(doca);return d?`https://waze.com/ul?ll=${d.lat},${d.lng}&navigate=yes`:`https://waze.com/ul?q=${encodeURIComponent(CONFIG.endereco)}&navigate=yes`}
+const linkRotaApp=doca=>urlBase()+"#rota="+encodeURIComponent(doca||"");
+function mapaHTML(doca,alt=230){const d=destinoRota(doca);if(!d)return "";const dx=.0035,dy=.0022;
+  return `<div class="rt-map"><iframe title="Mapa do local de descarga" loading="lazy" referrerpolicy="no-referrer" style="height:${alt}px"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=${d.lng-dx},${d.lat-dy},${d.lng+dx},${d.lat+dy}&layer=mapnik&marker=${d.lat},${d.lng}"></iframe>
+    <small>${d.nivel==="doca"?"Marcador na doca":"Marcador na entrada de caminhões"} · mapa © colaboradores do OpenStreetMap</small></div>`}
+function passosRota(doca){const r=rotaCfg(),di=docaInfo(doca),p=[];
+  p.push({t:"Chegue ao endereço",d:CONFIG.endereco});
+  if(r.instrucoes)p.push({t:"Entrada de caminhões e portaria",d:r.instrucoes});
+  else p.push({t:"Portaria",d:"Apresente o QR Code ou o token do agendamento."});
+  if(doca)p.push({t:`Siga até a ${doca}`,d:di.instr||"A equipe da portaria indica o caminho."});
+  return p}
+function rotaBlocoHTML(doca,{mapa=true,compacto=false}={}){const P=passosRota(doca);
+  return `<div class="rt ${compacto?"rt-c":""}">
+    <div class="rt-h">${I.route}<div><small>Como chegar</small><b>${doca?esc(doca):"Local de descarga"}</b></div></div>
+    <ol class="rt-p">${P.map(x=>`<li><b>${esc(x.t)}</b><span>${esc(x.d).replace(/\n/g,"<br>")}</span></li>`).join("")}</ol>
+    <div class="acts rt-b"><a class="btn sm" href="${linkMaps(doca)}" target="_blank" rel="noopener">${I.nav}Google Maps</a><a class="btn ghost sm" href="${linkWaze(doca)}" target="_blank" rel="noopener">Waze</a>
+      ${navigator.share?`<button class="btn ghost sm" type="button" onclick="compartilharRota('${esc(doca||"")}')">Enviar ao motorista</button>`:`<button class="btn ghost sm" type="button" onclick="copiarRota('${esc(doca||"")}')">Copiar link</button>`}</div>
+    ${mapa?mapaHTML(doca,compacto?180:240):""}</div>`}
+function compartilharRota(doca){navigator.share({title:"Rota até a doca · Kometa",text:`Rota para descarga${doca?" na "+doca:""} · Supermercados Kometa`,url:linkRotaApp(doca)}).catch(()=>{})}
+function copiarRota(doca){const u=linkRotaApp(doca);(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>toast("Link da rota copiado")).catch(()=>ask("Copie o link da rota:",{input:true}).then(()=>{}));setTimeout(()=>{const i=$("#askIn");if(i&&$("#askBg").classList.contains("on"))i.value=u},40)}
+/* modal com QR Code: o motorista aponta o celular e abre a rota */
+function mostrarRota(doca){let qr="";try{qr=QR.svg(linkRotaApp(doca),220)}catch(e){}
+  $("#modalBody").innerHTML=`<div class="mh">${I.route}<h3 style="letter-spacing:0">Rota até ${doca?esc(doca):"a descarga"}</h3><button class="x" onclick="closeModal()" aria-label="Fechar">${I.x}</button></div>
+  <div class="mb">${qr?`<div class="rt-qr"><div class="qrimg">${qr}</div><span><b>Motorista:</b> aponte a câmera do celular para abrir a rota e as instruções.</span></div>`:""}${rotaBlocoHTML(doca)}</div>`;
+  $("#modal").classList.add("on")}
+/* página pública da rota (#rota=Doca 1) */
+function rotaPaginaHTML(){const d=S.rotaView;
+  return hero("Rota até a doca",`Supermercados Kometa · ${esc(CONFIG.endereco)}`,{compact:true,chip:"Para o motorista"})+
+    `<div class="card rt-page">${rotaBlocoHTML(d,{mapa:true})}</div>
+    <div style="margin-top:14px"><button class="back" onclick="S.rotaView=null;render()">${I.arrowL}Ir para o agendamento</button></div>`}
+{const _r=render;render=function(){if(S.rotaView!=null&&S.role==="forn"&&BOOT.state==="ok"){renderChrome();$("#main").innerHTML=rotaPaginaHTML();return}_r()}}
+{const _g=go;go=function(k){S.rotaView=null;_g(k)}}
+{const _sr=setRole;setRole=function(r){S.rotaView=null;_sr(r)}}
+{const _dh=abrirDiaHash;abrirDiaHash=function(){const m=(location.hash||"").match(/rota=([^&]*)/);
+  if(m){let d="";try{d=decodeURIComponent(m[1])}catch(e){d=m[1]}try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}
+    S.role="forn";S.rotaView=d.slice(0,40);render();window.scrollTo(0,0);return}_dh()}}
+window.addEventListener("hashchange",()=>{if(/rota=/.test(location.hash))abrirDiaHash()});
+
+/* ---------- onde a rota aparece ---------- */
+{const _su=renderSuccess;renderSuccess=function(){const h=_su(),a=DB.all().find(x=>x.protocolo===S.lastProto);if(!a)return h;
+  return h.replace('<div class="calbox">',rotaBlocoHTML(a.doca,{mapa:false,compacto:true})+'<div class="calbox">')}}
+{const _tk=tkCard;tkCard=function(a,actions=true){let h=_tk(a,actions);if(!["pendente","confirmado","chegou","descarga"].includes(a.status))return h;
+  const alvo=`<button class="btn ghost sm" onclick="details('${a.protocolo}')">`;return h.replace(alvo,`<button class="btn ghost sm" onclick="mostrarRota('${esc(a.doca||"")}')">${I.route}Rota</button>`+alvo)}}
+{const _pr=portResultadoHTML;portResultadoHTML=function(){let h=_pr();const P=S.port;const a=P&&DB.all().find(x=>x.protocolo===P.p);if(!a)return h;
+  const alvo=`<button class="btn ghost sm" onclick="details('${a.protocolo}')">Detalhes</button>`;
+  return h.replace(alvo,`<button class="btn ghost sm" onclick="mostrarRota('${esc(a.doca||"")}')">${I.route}Rota até ${a.doca?esc(a.doca):"a doca"}</button>`+alvo)}}
+{const _mc=msgConfirmacao;msgConfirmacao=function(a){return _mc(a)+`\n\n🧭 Como chegar${a.doca?" à *"+a.doca+"*":""}: ${linkRotaApp(a.doca)}`}}
+{const _ml=msgLembrete;msgLembrete=function(a){return _ml(a)+`\n\n🧭 Rota${a.doca?" até a *"+a.doca+"*":""}: ${linkRotaApp(a.doca)}`}}
+{const _dt=details;details=function(p){_dt(p);const a=DB.all().find(x=>x.protocolo===p),mb=document.querySelector("#modalBody .mb");if(!a||!mb||!["pendente","confirmado","chegou","descarga"].includes(a.status))return;
+  mb.insertAdjacentHTML("beforeend",`<div style="margin-top:14px"><button class="btn ghost sm" onclick="mostrarRota('${esc(a.doca||"")}')">${I.route}Rota até ${a.doca?esc(a.doca):"a doca"}</button></div>`)}}
+
+/* ---------- Configurações: rota ---------- */
+function rotaCardHTML(){const r=rotaCfg(),ds=CONFIG.docas||[];
+  return `<div class="card" style="margin-top:14px"><div class="card-t">${I.route}Rota até a doca</div>
+    <p class="muted" style="font-size:13px;margin:-4px 0 12px">O motorista recebe um link com o mapa, o caminho no Google Maps/Waze e as instruções até a doca. Sem custo.</p>
+    <div class="f" style="margin-bottom:10px"><label for="rtEnt">Coordenada da entrada de caminhões</label>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><input class="in" id="rtEnt" placeholder="-9.974700, -67.810000" value="${esc(coordTxt(r))}" style="flex:1;min-width:180px">
+      <button class="btn ghost sm" type="button" onclick="pegarLocal('rtEnt')">${I.pin}Usar minha localização</button></div>
+      <small class="muted" style="font-size:12px">No Google Maps, toque e segure no portão de caminhões e copie os números que aparecem. Ou fique no portão com o celular e toque em "Usar minha localização".</small></div>
+    <div class="f" style="margin-bottom:12px"><label for="rtIns">Instruções da entrada e da portaria</label><textarea class="in ta" id="rtIns" rows="3" maxlength="400" placeholder="Ex.: Entrada de caminhões pela rua de trás. Pare na portaria e apresente o QR Code.">${esc(r.instrucoes)}</textarea></div>
+    ${ds.length?`<div class="lbl" style="margin:4px 0 8px">Caminho até cada doca</div>${ds.map((d,i)=>{const di=docaInfo(d);return `<div class="rt-doca"><b>${esc(d)}</b>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><input class="in" id="rtD${i}" aria-label="Coordenada da ${esc(d)}" placeholder="Coordenada (opcional)" value="${esc(coordTxt(di))}" style="flex:1;min-width:160px"><button class="btn ghost sm" type="button" onclick="pegarLocal('rtD${i}')">${I.pin}Aqui</button></div>
+      <textarea class="in ta" id="rtI${i}" rows="2" maxlength="300" aria-label="Instruções até a ${esc(d)}" placeholder="Ex.: Após a portaria, siga à direita. A ${esc(d)} é a 2ª porta, com faixa amarela.">${esc(di.instr||"")}</textarea></div>`}).join("")}`:`<p class="muted" style="font-size:13px">Cadastre as docas (cartão "Docas e portões") para escrever o caminho até cada uma.</p>`}
+    <div class="acts" style="margin-top:12px"><button class="btn sm" onclick="salvarRota()">Salvar rota</button><button class="btn ghost sm" onclick="mostrarRota('${esc(ds[0]||"")}')">Ver como o motorista vê</button></div></div>`}
+function pegarLocal(id){if(!navigator.geolocation){toast("Este aparelho não informa a localização",1);return}toast("Buscando a localização…");
+  navigator.geolocation.getCurrentPosition(p=>{const el=$("#"+id);if(el)el.value=`${p.coords.latitude.toFixed(6)}, ${p.coords.longitude.toFixed(6)}`;toast(`Localização obtida (precisão de ${Math.round(p.coords.accuracy)} m). Clique em Salvar rota.`)},
+    e=>toast(e.code===1?"Permissão de localização negada no navegador":"Não foi possível obter a localização",1),{enableHighAccuracy:true,timeout:15000})}
+function salvarRota(){const ent=$("#rtEnt").value.trim(),c=ent?lerCoord(ent):{lat:"",lng:""};if(ent&&!c){toast("Coordenada da entrada inválida. Use o formato -9.974700, -67.810000",1);$("#rtEnt").focus();return}
+  const info={};let erro=null;(CONFIG.docas||[]).forEach((d,i)=>{const t=($("#rtD"+i)||{}).value||"",ci=t.trim()?lerCoord(t):{lat:"",lng:""};if(t.trim()&&!ci){erro=erro||("rtD"+i);return}
+    const ins=(($("#rtI"+i)||{}).value||"").trim().slice(0,300);if(coordTxt(ci)||ins)info[d]={lat:ci.lat,lng:ci.lng,instr:ins}});
+  if(erro){toast("Coordenada de doca inválida",1);$("#"+erro).focus();return}
+  CONFIG.rota={lat:c.lat,lng:c.lng,instrucoes:$("#rtIns").value.trim().slice(0,400)};CONFIG.docasInfo=info;
+  saveConfig().then(ok=>{if(ok)toast("Rota salva")});render()}
+{const _dc=docasCardHTML;docasCardHTML=function(){return _dc()+rotaCardHTML()}}
 
 boot();
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeModal();if($("#askBg").classList.contains("on"))$("#askNo").click()}});

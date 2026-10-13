@@ -2,7 +2,7 @@
    - Abre o app mesmo com internet fraca (usa a última versão salva).
    - Sempre tenta buscar a versão mais nova primeiro, então atualizações chegam sozinhas.
    - Nunca guarda dados de agendamento: chamadas ao Supabase e a outros sites passam direto. */
-const CACHE = "kometa-agenda-v3";
+const CACHE = "kometa-agenda-v4";
 const ARQUIVOS = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png", "./favicon-64.png"];
 
 self.addEventListener("install", (e) => {

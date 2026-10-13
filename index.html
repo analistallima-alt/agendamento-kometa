@@ -430,6 +430,91 @@ th.sort{cursor:pointer;user-select:none}th.sort.on{color:var(--accent)}td.neg{co
   .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
   .search{flex-direction:column}.search .in{flex:none;max-width:none!important}
 }
+/* ===== Visão do mês, semana, fila, check-ins ===== */
+.lbl{font-size:13px;font-weight:800;color:var(--text-2);margin-bottom:6px;padding:0}
+.pv-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.pv-seg{grid-template-columns:repeat(2,auto)}
+.pv-nav{display:flex;align-items:center;gap:10px}.pv-nav b{font-family:Nunito,"Nunito Sans",system-ui,sans-serif;font-weight:900;font-size:18px;min-width:150px;text-align:center}
+.hb{display:flex;flex-direction:column;gap:9px}
+.hb-r{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) auto;gap:10px;align-items:center;font-size:13.5px}
+.hb-l{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:7px}
+.hb-i{width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:inline-grid;place-items:center;font-size:11px;font-weight:900;flex:none}
+.hb-t{height:12px;background:var(--surface-3);border-radius:999px;overflow:hidden}.hb-t i{display:block;height:100%;border-radius:999px}
+.hb-v{font-size:13px;white-space:nowrap;text-align:right;min-width:64px}
+.vb{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:3px;align-items:end;height:200px;overflow-x:auto}
+.vb-c{display:flex;flex-direction:column;align-items:center;height:100%;gap:4px;min-width:9px}
+.vb-n{font-size:11px;font-weight:800;color:var(--text);height:14px}
+.vb-t{flex:1;width:100%;max-width:22px;display:flex;align-items:flex-end;background:var(--surface-2);border-radius:5px}
+.vb-t i{display:block;width:100%;background:var(--blue);border-radius:5px 5px 2px 2px}
+.vb-c.off .vb-t i{background:var(--border-2)}.vb-c.hoje .vb-t i{background:var(--red)}
+.vb-c small{font-size:10px;color:var(--text-3);font-weight:700}
+.mx-b{display:flex;flex-direction:column;gap:4px;width:100%;text-align:left;border:1px solid var(--border);border-radius:14px;padding:16px;background:var(--surface-2)}
+.mx-b:hover{border-color:var(--accent)}
+.mx-kg{font-family:Nunito,"Nunito Sans",system-ui,sans-serif;font-weight:900;font-size:34px;line-height:1.05;color:var(--accent)}
+.mx-b small{color:var(--text-3);font-size:12.5px}
+.mx-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px;border-top:1px solid var(--border);padding-top:10px}
+.mx-g b{font-size:14px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stk{display:flex;height:16px;border-radius:999px;overflow:hidden;background:var(--surface-3);gap:2px}.stk i{display:block;height:100%}
+.stk-l{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--text-2)}
+.stk-l i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}.stk-l b{color:var(--text)}.stk-l small{color:var(--text-3)}
+table.lista td{vertical-align:top}
+.tbl td.nw{white-space:nowrap}
+td.emp{min-width:240px;max-width:340px}td.emp b{display:block}td.emp small{display:block;color:var(--text-3);font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nfl-w{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.nfl{display:inline-flex;align-items:center;gap:4px;max-width:170px;border:1px solid var(--border);background:var(--surface-2);border-radius:8px;padding:2px 7px;font-size:11.5px;font-weight:700;color:var(--text-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nfl svg{width:13px;height:13px;flex:none}button.nfl{color:var(--accent);cursor:pointer}button.nfl:hover{border-color:var(--accent)}
+.placa{font-weight:800;letter-spacing:.5px}
+.doca{display:inline-flex;align-items:center;gap:5px;font-weight:800;color:var(--accent)}.doca svg{width:15px;height:15px}
+tr.tr-off td{opacity:.6}
+.wk{display:grid;grid-template-columns:repeat(var(--n),minmax(190px,1fr));gap:10px;overflow-x:auto;padding-bottom:6px}
+.wk-col{background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.wk-col.hoje{border-color:var(--red);box-shadow:0 0 0 2px rgba(227,32,43,.14),var(--shadow)}
+.wk-col.blq{background:repeating-linear-gradient(135deg,var(--surface) 0 9px,var(--surface-2) 9px 10px)}
+.wk-h{padding:12px 12px 10px;border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;justify-content:space-between}
+.wk-h>div{display:flex;gap:7px;align-items:baseline}.wk-h>div b{font-family:Nunito,"Nunito Sans",system-ui,sans-serif;font-weight:900;font-size:16px}.wk-h>div span{color:var(--text-3);font-weight:800;font-size:13px}
+.wk-h small{flex-basis:100%;color:var(--text-2);font-size:12px;font-weight:700}
+.wk-blq{flex-basis:100%;display:flex;align-items:center;gap:5px;font-size:12px;font-weight:800;color:var(--bad)}.wk-blq svg{width:14px;height:14px}
+.wk-l{padding:10px;display:flex;flex-direction:column;gap:8px}
+.wk-card{display:flex;flex-direction:column;gap:2px;text-align:left;border:1px solid var(--border);border-left:4px solid var(--warn);border-radius:12px;padding:9px 10px;background:var(--surface-2);min-width:0}
+.wk-card:hover{border-color:var(--accent)}
+.wk-card.st-confirmado,.wk-card.st-recebido{border-left-color:var(--ok)}.wk-card.st-chegou,.wk-card.st-descarga{border-left-color:var(--blue)}.wk-card.st-noshow{border-left-color:var(--bad)}
+.wk-card.cx{border-left-color:var(--border-2);opacity:.65}.wk-card.cx .wk-f,.wk-card.cx small{text-decoration:line-through}
+.wk-t{display:flex;justify-content:space-between;gap:6px;font-size:13px}.wk-t b{color:var(--accent)}.wk-t span{font-weight:800;color:var(--text-2);font-size:12px}
+.wk-f{font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wk-card small{font-size:12px;color:var(--text-2)}.wk-card .pill{align-self:flex-start;margin-top:4px}
+.wk-vazio{color:var(--text-3);font-size:13px;text-align:center;padding:18px 4px}
+.ckin{display:flex;gap:22px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.ckin-n small{display:block;font-size:12px;font-weight:800;color:var(--text-3);text-transform:uppercase;letter-spacing:.5px}
+.ckin-n b{font-family:Nunito,"Nunito Sans",system-ui,sans-serif;font-weight:900;font-size:34px;line-height:1.1}.ckin-n b span{font-size:18px;color:var(--text-3)}
+.ckin-c{flex:1;min-width:220px}
+.ckin-bar{height:14px;border-radius:999px;background:var(--surface-3);overflow:hidden}.ckin-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ok),#1FB86C);border-radius:999px;transition:width .4s}
+.ckin-m{display:flex;gap:16px;flex-wrap:wrap;margin-top:9px;font-size:13px;color:var(--text-2);font-weight:700}
+.ckin-m i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}.ckin-m .d1{background:var(--ok)}.ckin-m .d2{background:var(--warn)}.ckin-m .d3{background:var(--blue)}.ckin-m .d4{background:var(--bad)}
+button.dc.fila{cursor:pointer}button.dc.fila:hover{border-color:var(--bad);background:rgba(211,38,58,.06)}
+.dc .dv.fl{color:var(--accent)}
+.fl-intro{background:var(--accent-soft);border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:14px}
+.fl-aceite{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:13.5px;color:var(--text-2);cursor:pointer;border:1.5px solid transparent;border-radius:10px;padding:6px}
+.fl-aceite input{width:18px;height:18px;margin-top:2px;flex:none}.fl-aceite.err{border-color:var(--bad)}
+.fl-vaga{color:var(--ok)!important;font-weight:800;display:flex!important;align-items:center;gap:5px}.fl-vaga svg{width:14px;height:14px}
+.fl-item .acts{flex-wrap:wrap;justify-content:flex-end}
+.fl-g{margin-bottom:12px}
+.fl-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}.fl-h>div{flex:1;min-width:180px}.fl-h b{font-size:16px}.fl-h small{display:block;color:var(--text-3);font-size:12.5px}
+.fl-row{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--border)}
+.fl-row.off{opacity:.6}
+.fl-pos{width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:900;font-size:13px}
+.fl-info{min-width:0}.fl-info b{display:block}.fl-info small{display:block;color:var(--text-3);font-size:12.5px}.fl-obs{font-style:italic}
+.fl-row .acts{flex-wrap:wrap;justify-content:flex-end}
+.fl-tg{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;color:var(--text-2);cursor:pointer}
+.fl-cta{margin-bottom:14px}
+.doc-chip{padding:7px 8px 7px 14px!important;cursor:default}.doc-chip button{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;color:inherit}.doc-chip button:hover{background:rgba(0,0,0,.1)}.doc-chip svg{width:14px;height:14px}
+@media (max-width:980px){
+  .wk{grid-template-columns:minmax(0,1fr)}
+  .hb-r{grid-template-columns:minmax(0,1fr) auto;row-gap:4px}.hb-t{grid-column:1/-1;grid-row:2}
+  .fl-row{grid-template-columns:34px minmax(0,1fr)}.fl-row .acts{grid-column:1/-1;justify-content:flex-start}
+  .mx-kg{font-size:28px}.ckin{gap:12px}.pv-bar{gap:10px}.pv-seg{width:100%}
+  .vb{height:160px}.vb-c small{font-size:9px}.vb-c:nth-child(even) small{visibility:hidden}.mx-g{grid-template-columns:1fr 1fr}
+}
+@media print{.pv-bar,.wk-card .pill{display:none}.wk{grid-template-columns:repeat(var(--n),1fr)}}
 @media print{.side,.mtop,.bnav,.hero,.ag-h button,.ag-h input,.acts,.alert,.toast{display:none!important}.app{display:block}body,html{background:#fff}.card{box-shadow:none}}
 </style>
 </head>
@@ -571,7 +656,7 @@ function isBlocked(k){return(CONFIG.bloqueios||[]).includes(k)}
 function usedSlots(d,t){if(ONLINE&&!S.admAuth)return OCC[d+"|"+t]||0;return DB.all().filter(a=>a.data===d&&a.hora===t&&!INATIVOS.includes(a.status)).length}
 function slotFree(d,t){return CONFIG.vagasPorHorario-usedSlots(d,t)}
 function slotPast(d,t){const[h,m]=t.split(":").map(Number);const x=fromIso(d);x.setHours(h,m,0,0);return x<=new Date()}
-function dayFree(d){return CONFIG.horarios.reduce((s,t)=>s+(slotPast(d,t)?0:Math.max(0,slotFree(d,t))),0)}
+function dayFree(d){return CONFIG.horarios.reduce((s,t)=>s+(slotIndisp(d,t)?0:Math.max(0,slotFree(d,t))),0)}
 function dayCap(){return CONFIG.horarios.length*CONFIG.vagasPorHorario}
 function nextWorkDays(from,n){const out=[];let k=from,guard=0;while(out.length<n&&guard++<60){const d=fromIso(k);if(CONFIG.diasUteis.includes(d.getDay())&&!isBlocked(k))out.push(k);k=addDays(k,1)}return out}
 function toast(m,bad){const t=$("#toast");t.textContent=m;t.className="toast on"+(bad?" bad":"");clearTimeout(t._t);t._t=setTimeout(()=>t.className="toast",2800)}
@@ -602,7 +687,7 @@ function navItems(){
   if(S.role==="forn")return[["novo","Novo agendamento",I.cal,"Agendar"],["meus","Meus agendamentos",I.list,"Meus"],["status","Consultar status",I.search,"Status"]];
   if(!S.admAuth)return[["login","Entrar",I.lock,"Entrar"]];
   const pend=DB.all().filter(a=>a.status==="pendente"&&a.data>=iso(today)).length;
-  return[["painel","Painel",I.home,"Painel"],["agenda","Agenda do dia",I.clock,"Agenda"],["portaria","Portaria",I.qr,"Portaria"],["lista","Agendamentos",I.table,"Lista",pend],["avisos","Avisos WhatsApp",WA_ICON,"Avisos",DB.all().filter(a=>lembreteDevido(a)!=null).length],["ranking","Fornecedores",I.trophy,"Ranking"],["relatorio","Relatórios",I.doc,"Relatórios"],["config","Configurações",I.gear,"Ajustes"]];
+  return[["painel","Painel",I.home,"Painel"],["agenda","Agenda do dia",I.clock,"Agenda"],["portaria","Portaria",I.qr,"Portaria"],["lista","Agendamentos",I.table,"Lista",pend],["semana","Planilha semanal",I.week,"Semana"],["fila","Fila de espera",I.fila,"Fila",filaContagem()],["avisos","Avisos WhatsApp",WA_ICON,"Avisos",DB.all().filter(a=>lembreteDevido(a)!=null).length],["ranking","Fornecedores",I.trophy,"Ranking"],["relatorio","Relatórios",I.doc,"Relatórios"],["config","Configurações",I.gear,"Ajustes"]];
 }
 function curKey(){return S.role==="forn"?S.tab:(S.admAuth?S.admTab:"login")}
 function go(k){if(k==="login")return;if(S.role==="forn"){S.tab=k;if(k==="meus")carregarMeus();if(k==="novo"&&S.step===4)novo()}else S.admTab=k;render();window.scrollTo(0,0)}
@@ -667,9 +752,9 @@ function renderCalendar(){
     const work=CONFIG.diasUteis.includes(dt.getDay())&&!isBlocked(k);
     if(!work||dt<today){cells+=`<div class="dc off"><span class="dn">${d}</span></div>`;continue}
     const free=dayFree(k);
-    if(free<=0&&isToday){cells+=`<div class="dc off" title="Horários encerrados"><span class="dn">${d}</span></div>`;continue}
+    if(free<=0&&!temHorarioAberto(k)){cells+=`<div class="dc off" title="${isToday?"Horários encerrados":esc(motivoBloqueio(k)||"Indisponível")}"><span class="dn">${d}</span></div>`;continue}
     const ratio=free/dayCap(),col=free<=0?"var(--bad)":ratio<=.35?"var(--warn)":"var(--ok)";
-    if(free<=0){cells+=`<div class="dc off full"><span class="dot" style="background:${col}"></span><span class="dn">${d}</span><span class="dv">Lotado</span></div>`;continue}
+    if(free<=0){cells+=S.reag?`<div class="dc off full"><span class="dot" style="background:${col}"></span><span class="dn">${d}</span><span class="dv">Lotado</span></div>`:`<button class="dc full fila ${isToday?"today":""}" onclick="abrirFila('${k}')" aria-label="${d} de ${MESES[m]}, lotado. Entrar na fila de espera"><span class="dot" style="background:${col}"></span><span class="dn">${d}</span><span class="dv"><span class="lgx">Lotado · fila</span><span class="shx">Fila</span></span></button>`;continue}
     cells+=`<button class="dc av ${isToday?"today":""}" onclick="pickDate('${k}')" aria-label="${d} de ${MESES[m]}, ${free} vagas"><span class="dot" style="background:${col}"></span><span class="dn">${d}</span><span class="dv">${free} vaga${free>1?"s":""}</span></button>`;
   }
   const j=janela();
@@ -679,7 +764,7 @@ function renderCalendar(){
         <button class="rnd" ${canPrev?"":"disabled"} onclick="moveMonth(-1)" aria-label="Mês anterior">${I.left}</button>
         <button class="rnd" ${canNext?"":"disabled"} onclick="moveMonth(1)" aria-label="Próximo mês">${I.right}</button></div>
       <div class="cal-g">${DIAS_CURTO.map(d=>`<div class="wd">${d}</div>`).join("")}${cells}</div>
-      <div class="legend"><span><i style="background:var(--ok)"></i>Muitas vagas</span><span><i style="background:var(--warn)"></i>Poucas vagas</span><span><i style="background:var(--bad)"></i>Lotado</span></div>
+      <div class="legend"><span><i style="background:var(--ok)"></i>Muitas vagas</span><span><i style="background:var(--warn)"></i>Poucas vagas</span><span><i style="background:var(--bad)"></i>Lotado: toque para entrar na fila de espera</span></div>
     </div>
     <div class="card">
       <div class="card-t">Antes de agendar</div>
@@ -696,9 +781,9 @@ function moveMonth(d){let m=S.viewM+d,y=S.viewY;if(m<0){m=11;y--}if(m>11){m=0;y+
 function pickDate(k){S.date=k;S.step=2;render();if(ONLINE&&!S.admAuth)carregarOcupacao().then(()=>{if(S.step===2&&S.date===k)render()}).catch(()=>{})}
 function renderSlots(){
   const d=fromIso(S.date);
-  const slot=t=>{const f=Math.max(0,slotFree(S.date,t)),past=slotPast(S.date,t),dis=f<=0||past,cap=CONFIG.vagasPorHorario;
+  const slot=t=>{const f=Math.max(0,slotFree(S.date,t)),past=slotPast(S.date,t),blq=!past&&slotBlocked(S.date,t),cedo=!past&&!blq&&slotTooSoon(S.date,t),dis=f<=0||past||blq||cedo,cap=CONFIG.vagasPorHorario;
     const seats=Array.from({length:cap},(_,i)=>`<i class="${i<cap-f?"tk":""}"></i>`).join("");
-    return `<button class="slot" ${dis?"disabled":""} onclick="pickTime('${t}')"><span class="t">${t}</span><span class="meta"><span class="seats">${seats}</span><small>${past?"Encerrado":f<=0?"Lotado":`${f} de ${cap} livre${f>1?"s":""}`}</small></span></button>`};
+    return `<button class="slot" ${dis?"disabled":""} onclick="pickTime('${t}')"><span class="t">${t}</span><span class="meta"><span class="seats">${seats}</span><small>${past?"Encerrado":blq?"Bloqueado":cedo?"Fora do prazo":f<=0?"Lotado":`${f} de ${cap} livre${f>1?"s":""}`}</small></span></button>`};
   const man=CONFIG.horarios.filter(h=>+h.slice(0,2)<12),tar=CONFIG.horarios.filter(h=>+h.slice(0,2)>=12);
   return `<div class="two">
     <div class="card">
@@ -822,10 +907,11 @@ function validate(){
 }
 async function submitForm(){
   if(S.enviando||!validate())return;
-  if(slotFree(S.date,S.time)<=0){toast("Este horário acabou de lotar. Escolha outro.",1);S.step=2;render();return}
-  if(!ONLINE){
+  if(slotFree(S.date,S.time)<=0||slotIndisp(S.date,S.time)){toast(slotFree(S.date,S.time)<=0?"Este horário acabou de lotar. Escolha outro.":"Este horário não está mais disponível. Escolha outro.",1);S.step=2;render();return}
+  if(!ONLINE){const lim=limiteEmpresaErro(S.form.cnpj,S.date);if(lim){toast(lim,1);return}
     const proto=genProto(),now=new Date().toISOString();
-    const rec={protocolo:proto,token:genToken(),data:S.date,hora:S.time,criadoEm:now,status:"pendente",...JSON.parse(JSON.stringify(S.form)),aceitePrivacidadeEm:now,totais:totals(),hist:[{st:"pendente",em:now}]};delete rec.aceite;salvarFornLocal(S.form);
+    const rec={protocolo:proto,token:genToken(),data:S.date,hora:S.time,criadoEm:now,status:"pendente",...JSON.parse(JSON.stringify(S.form)),aceitePrivacidadeEm:now,totais:totals(),hist:[{st:"pendente",em:now}]};delete rec.aceite;rec.doca=docaLivre(S.date,S.time);salvarFornLocal(S.form);
+    {const fl=filaDemo();let mud=false;fl.forEach(f=>{if(f.cnpj===normCnpj(rec.cnpj)&&f.data===rec.data&&filaAtiva(f)){f.status="atendido";f.dados.protocolo=proto;mud=true}});if(mud)salvarFilaDemo(fl)}
     const all=DB.all();all.push(rec);DB.save(all);DB.addMine(proto,rec.token);
     S.lastProto=proto;S.step=4;render();window.scrollTo(0,0);return}
   S.enviando=true;const btn=$(".sum .btn.red"),txt=btn?btn.innerHTML:"";if(btn){btn.disabled=true;btn.innerHTML="Enviando…"}
@@ -836,7 +922,7 @@ async function submitForm(){
     S.lastProto=a.protocolo;S.step=4;render();window.scrollTo(0,0);
   }catch(e){
     toast(msgErro(e),1);
-    if(/LOTADO|PASSADO|HORARIO_INVALIDO|BLOQUEADO|SEM_RECEBIMENTO|DISTANTE/.test(e.code||"")){try{await carregarOcupacao()}catch(_){}S.step=2;render()}
+    if(/LOTADO|PASSADO|HORARIO_INVALIDO|BLOQUEADO|SEM_RECEBIMENTO|DISTANTE|ANTECEDENCIA/.test(e.code||"")){try{await carregarOcupacao()}catch(_){}S.step=2;render()}
   }finally{S.enviando=false;const b2=$(".sum .btn.red");if(b2){b2.disabled=false;b2.innerHTML=txt||b2.innerHTML}}
 }
 function renderSuccess(){
@@ -864,19 +950,19 @@ function novo(){S.reag=null;S.step=1;S.date=S.time=null;S.form=blankForm();S.tab
 
 /* ---------- MEUS / STATUS ---------- */
 function tkCard(a,actions=true){
-  const d=fromIso(a.data),canCancel=actions&&["pendente","confirmado"].includes(a.status)&&!slotPast(a.data,a.hora);
+  const d=fromIso(a.data),canCancel=actions&&["pendente","confirmado"].includes(a.status)&&!slotPast(a.data,a.hora)&&prazoCancelOk(a),cancPrazo=actions&&["pendente","confirmado"].includes(a.status)&&!slotPast(a.data,a.hora)&&!prazoCancelOk(a);
   return `<div class="tk"><div class="dt"><small>${MESES[d.getMonth()].slice(0,3)}</small><b>${d.getDate()}</b><span>${a.hora}</span></div>
     <div class="mid"><h4>${esc(a.fornecedor)}</h4><p>NF ${esc(a.nfs)} · ${a.totais.qtd} nota(s) · ${brl(a.totais.val)}</p>
-      <div class="m"><span>${esc(a.veiculo)} · ${esc(a.placa)}</span><span>Frete ${esc(a.frete)}</span><span>${kgTxt(a.totais.pb)}</span>${actions&&a.token?`<span>Token <b style="color:var(--text)">${a.token}</b></span>`:""}${["pendente","confirmado"].includes(a.status)&&slotDate(a)>new Date()?`<span>⏱ ${faltaTxt(minutosAte(a))}</span>`:""}</div></div>
+      <div class="m"><span>${esc(a.veiculo)} · ${esc(a.placa)}</span><span>Frete ${esc(a.frete)}</span>${a.doca?`<span>${esc(a.doca)}</span>`:""}<span>${kgTxt(a.totais.pb)}</span>${actions&&a.token?`<span>Token <b style="color:var(--text)">${a.token}</b></span>`:""}${["pendente","confirmado"].includes(a.status)&&slotDate(a)>new Date()?`<span>⏱ ${faltaTxt(minutosAte(a))}</span>`:""}</div></div>
     <div class="rt"><span class="proto">${a.protocolo}</span>${pill(a.status)}
-      <div class="acts">${actions&&a.token&&["pendente","confirmado"].includes(a.status)&&slotDate(a)>new Date()?`<button class="btn ghost sm" onclick="mostrarQR('${a.protocolo}')">${I.qr}QR</button>`:""}${["pendente","confirmado"].includes(a.status)&&slotDate(a)>new Date()?agendaBtns(a,true):""}${actions&&podeReagendar(a)?`<button class="btn ghost sm" onclick="iniciarReagendar('${a.protocolo}')">${I.swap}Reagendar</button>`:""}<button class="btn ghost sm" onclick="details('${a.protocolo}')">Detalhes</button>${canCancel?`<button class="btn ghost sm danger" onclick="cancelBk('${a.protocolo}')">Cancelar</button>`:""}</div></div></div>`;
+      <div class="acts">${actions&&a.token&&["pendente","confirmado"].includes(a.status)&&slotDate(a)>new Date()?`<button class="btn ghost sm" onclick="mostrarQR('${a.protocolo}')">${I.qr}QR</button>`:""}${["pendente","confirmado"].includes(a.status)&&slotDate(a)>new Date()?agendaBtns(a,true):""}${actions&&podeReagendar(a)?`<button class="btn ghost sm" onclick="iniciarReagendar('${a.protocolo}')">${I.swap}Reagendar</button>`:""}<button class="btn ghost sm" onclick="details('${a.protocolo}')">Detalhes</button>${canCancel?`<button class="btn ghost sm danger" onclick="cancelBk('${a.protocolo}')">Cancelar</button>`:""}</div>${cancPrazo?`<small class="muted" style="font-size:11.5px">Cancelamento pelo app até ${+CONFIG.antecedenciaCancelarHoras}h antes</small>`:""}</div></div>`;
 }
 function renderMeus(){
   const mine=DB.mine(),list=DB.all().filter(a=>mine.includes(a.protocolo)).sort((a,b)=>(a.data+a.hora).localeCompare(b.data+b.hora));
   if(!list.length)return `<div class="card empty">${I.inbox}<p>Nenhum agendamento feito neste dispositivo.</p><button class="btn" style="margin-top:16px" onclick="novo()">Agendar entrega</button></div>`;
   return `<div class="tk-list">${list.map(a=>tkCard(a)).join("")}</div>`;
 }
-function cancelBk(p){ask("Cancelar este agendamento? A vaga será liberada.").then(async ok=>{if(!ok)return;
+function cancelBk(p){if(!prazoCancelOk(DB.all().find(x=>x.protocolo===p))){toast(ERROS.PRAZO_CANCELAR,1);return}ask("Cancelar este agendamento? A vaga será liberada.").then(async ok=>{if(!ok)return;
   if(ONLINE){const it=DB.mineItems().find(x=>x.protocolo===p);const tok=(it&&it.token)||(ROWS.get(p)||{}).token;
     try{const r=await rpc("kometa_cancelar",{p_protocolo:p,p_token:tok});const a=fromRow(r);ROWS.set(a.protocolo,a);if(OCC[a.data+"|"+a.hora])OCC[a.data+"|"+a.hora]--;toast("Agendamento cancelado")}catch(e){toast(msgErro(e),1)}
     render();return}
@@ -955,8 +1041,8 @@ function renderAdmin(){
   if(!S.agDate)S.agDate=iso(today);
   if(S.pendingQ){S.admTab="portaria";S.port={p:S.pendingQ.p,t:S.pendingQ.t};const pq=S.pendingQ.p;S.pendingQ=null;buscarProtocolo(pq)}
   if(ONLINE){const ks=[S.agDate,S.relDate,S.admFrom].filter(Boolean).sort();if(ks.length)garantirPeriodo(ks[0])}
-  const v=(S.admTab==="painel"?bannerAlertasHTML()+lembreteBackupHTML()+bannerInstalarHTML():"")+({painel:admPainel,agenda:admAgenda,portaria:admPortaria,lista:admLista,avisos:admAvisos,ranking:admRanking,relatorio:admRelatorio,config:admConfig}[S.admTab]||admPainel)();
-  const t={painel:["Painel do recebimento",longDate(iso(today))],agenda:["Agenda do dia","Acompanhe cada descarga em tempo real"],lista:["Agendamentos","Busque, filtre e exporte"],avisos:["Avisos WhatsApp","Tokens de confirmação e lembretes antes da entrega"],portaria:["Portaria","Leia o QR Code do motorista e registre a chegada"],ranking:["Ranking de fornecedores","Pontualidade, faltas e tempos de cada fornecedor"],relatorio:["Relatórios","Diário, semanal e mensal: imprima, salve em PDF ou envie"],config:["Configurações","Horários, vagas, bloqueios e acesso"]}[S.admTab]||["Painel do recebimento",""];
+  const v=(S.admTab==="painel"?bannerAlertasHTML()+lembreteBackupHTML()+bannerInstalarHTML():"")+({painel:admPainel,agenda:admAgenda,portaria:admPortaria,lista:admLista,semana:admSemana,fila:admFila,avisos:admAvisos,ranking:admRanking,relatorio:admRelatorio,config:admConfig}[S.admTab]||admPainel)();
+  const t={painel:["Painel do recebimento",longDate(iso(today))],agenda:["Agenda do dia","Acompanhe cada descarga em tempo real"],lista:["Agendamentos","Busque, filtre e exporte"],semana:["Planilha semanal","Todas as entregas da semana, dia a dia"],fila:["Fila de espera","Fornecedores aguardando vaga em dias lotados"],avisos:["Avisos WhatsApp","Tokens de confirmação e lembretes antes da entrega"],portaria:["Portaria","Leia o QR Code do motorista e registre a chegada"],ranking:["Ranking de fornecedores","Pontualidade, faltas e tempos de cada fornecedor"],relatorio:["Relatórios","Diário, semanal e mensal: imprima, salve em PDF ou envie"],config:["Configurações","Horários, vagas, regras, docas, bloqueios e acesso"]}[S.admTab]||["Painel do recebimento",""];
   return hero(t[0],t[1],{compact:true})+v;
 }
 const kpi=(ic,cls,l,v,sub,color)=>`<div class="kpi"><span class="ic ${cls}">${ic}</span><div><small>${l}</small><b ${color?`style="color:${color}"`:""}>${v}</b>${sub?`<span>${sub}</span>`:""}</div></div>`;
@@ -1005,7 +1091,7 @@ function admAgenda(){
       cells.push(a?`<div class="ag-cell ${a.status}" onclick="details('${a.protocolo}')"><div class="ag-top"><b>${esc(a.fornecedor)}</b>${pill(a.status)}</div>
         <small>NF ${esc(a.nfs)} · ${a.totais.vol} vol · ${kgTxt(a.totais.pb)}</small><small>${esc(a.veiculo)} · ${esc(a.placa)} · ${esc(a.motorista)}</small>
         ${a.chegadaEm?`<small>Chegada ${hm(a.chegadaEm)}${a.inicioDescargaEm?` · Descarga ${hm(a.inicioDescargaEm)}`:""}${a.fimEm?` · Fim ${hm(a.fimEm)} (${minDiff(a.inicioDescargaEm,a.fimEm)} min)`:""}</small>`:""}
-        <div class="acts" style="margin-top:8px">${acoesHTML(a)}</div></div>`:`<div class="ag-cell free">Vaga livre</div>`)}
+        <div class="acts" style="margin-top:8px">${acoesHTML(a)}</div></div>`:(slotBlocked(k,t)?`<div class="ag-cell free">${I.lock}Bloqueado${motivoBloqueio(k,t)?" · "+esc(motivoBloqueio(k,t)):""}</div>`:`<div class="ag-cell free">Vaga livre</div>`))}
     return `<div class="ag-row"><div class="ag-time">${t}</div><div class="ag-cells">${cells.join("")}${off.length?`<div class="ag-off">${off.map(a=>`${esc(a.fornecedor)} (${STATUS[a.status][0].toLowerCase()})`).join(" · ")}</div>`:""}</div></div>`}).join("");
   return `<div class="ag-h">
     <button class="rnd" onclick="S.agDate=addDays(S.agDate,-1);render()" aria-label="Dia anterior">${I.left}</button>
@@ -1015,9 +1101,9 @@ function admAgenda(){
     <input class="in" type="date" value="${k}" onchange="if(this.value){S.agDate=this.value;render()}" style="width:auto;height:42px">
     <button class="btn ghost sm" onclick="S.agDate=iso(today);render()">Hoje</button>
     <button class="btn ghost sm" onclick="S.relDate=S.agDate;S.admTab='relatorio';render()">Relatório do dia</button>
-    ${blocked?"":work?`<button class="btn ghost sm danger" onclick="ask('Bloquear esta data para novos agendamentos?').then(ok=>{if(ok)toggleBloqueio('${k}')})">Bloquear data</button>`:""}
+    ${blocked?"":work?`<button class="btn ghost sm danger" onclick="bloquearDiaPrompt('${k}')">Bloquear data</button>`:""}
   </div>
-  ${blocked?`<div class="alert"><span>Data bloqueada para recebimento.</span><button class="btn ghost sm" onclick="toggleBloqueio('${k}')">Desbloquear</button></div>`:!work?`<div class="alert"><span>Dia sem recebimento (fora dos dias configurados).</span></div>`:""}
+  ${blocked?`<div class="alert"><span>Data bloqueada para recebimento${motivoBloqueio(k)?": "+esc(motivoBloqueio(k)):"."}</span><button class="btn ghost sm" onclick="toggleBloqueio('${k}')">Desbloquear</button></div>`:!work?`<div class="alert"><span>Dia sem recebimento (fora dos dias configurados).</span></div>`:""}
   <div class="card">${rows}</div>`;
 }
 function toggleBloqueio(k){const b=new Set(CONFIG.bloqueios||[]);b.has(k)?b.delete(k):b.add(k);CONFIG.bloqueios=[...b].sort();saveConfig();toast(b.has(k)?"Data bloqueada":"Data liberada");render()}
@@ -1041,26 +1127,25 @@ function admLista(){
 }
 function exportCSV(f,lista,nome){
   const list=lista||(f?filtrados():DB.all());
-  const head=["Protocolo","Data","Hora","Status","Fornecedor","CNPJ","Contato","Telefone","E-mail","NFs","Qtd notas","Volume","Peso liq (kg)","Peso bruto (kg)","Valor (R$)","Frete","Veiculo","Placa","Motorista","Chegada","Inicio descarga","Fim","Espera (min)","Descarga (min)","Observacoes","Motivo","Aceite privacidade"];
+  const head=["Protocolo","Solicitado em","Data","Hora","Status","Fornecedor","CNPJ","Contato","Telefone","E-mail","NFs","Qtd notas","Volume","Peso liq (kg)","Peso bruto (kg)","Valor (R$)","Frete","Veiculo","Placa","Motorista","Chegada","Inicio descarga","Fim","Espera (min)","Descarga (min)","Observacoes","Motivo","Aceite privacidade","Doca"];
   const br=n=>n.toFixed(2).replace(".",",");
-  const rows=list.map(a=>[a.protocolo,a.data,a.hora,STATUS[a.status][0],a.fornecedor,a.cnpj,a.contato,a.telefone,a.email,a.nfs,a.totais.qtd,a.totais.vol,br(a.totais.pl),br(a.totais.pb),br(a.totais.val),a.frete,a.veiculo,a.placa,a.motorista,hm(a.chegadaEm),hm(a.inicioDescargaEm),hm(a.fimEm),minDiff(a.chegadaEm,a.inicioDescargaEm)??"",minDiff(a.inicioDescargaEm,a.fimEm)??"",a.obs,a.motivo||"",a.aceitePrivacidadeEm?new Date(a.aceitePrivacidadeEm).toLocaleString("pt-BR"):""]);
+  const rows=list.map(a=>[a.protocolo,a.criadoEm?new Date(a.criadoEm).toLocaleString("pt-BR"):"",a.data,a.hora,STATUS[a.status][0],a.fornecedor,a.cnpj,a.contato,a.telefone,a.email,a.nfs,a.totais.qtd,a.totais.vol,br(a.totais.pl),br(a.totais.pb),br(a.totais.val),a.frete,a.veiculo,a.placa,a.motorista,hm(a.chegadaEm),hm(a.inicioDescargaEm),hm(a.fimEm),minDiff(a.chegadaEm,a.inicioDescargaEm)??"",minDiff(a.inicioDescargaEm,a.fimEm)??"",a.obs,a.motivo||"",a.aceitePrivacidadeEm?new Date(a.aceitePrivacidadeEm).toLocaleString("pt-BR"):"",a.doca||""]);
   const csv=[head,...rows].map(r=>r.map(c=>`"${String(c??"").replace(/"/g,'""')}"`).join(";")).join("\n");
   const url=URL.createObjectURL(new Blob(["﻿"+csv],{type:"text/csv"}));const l=document.createElement("a");l.href=url;l.download=nome||`agendamentos-kometa-${iso(today)}.csv`;l.click();URL.revokeObjectURL(url);
 }
 function admConfig(){
   const C=CONFIG;
   return `<div class="adm-g">
-  <div class="card"><div class="card-t">Recebimento</div>
+  <div><div class="card"><div class="card-t">Recebimento</div>
     <div class="f" style="margin-bottom:14px"><label>Local de recebimento</label><input class="in" id="cfEnd" value="${esc(C.endereco)}"></div>
     <div class="f" style="margin-bottom:14px"><label>Horários (separados por vírgula)</label><input class="in" id="cfHor" value="${C.horarios.join(", ")}"></div>
     <div class="fg" style="margin-bottom:14px"><div class="f"><label>Vagas por horário</label><input class="in" id="cfVag" type="number" min="1" max="20" value="${C.vagasPorHorario}"></div>
       <div class="f"><label>Meses liberados à frente</label><input class="in" id="cfMes" type="number" min="1" max="12" value="${C.mesesAFrente}"></div></div>
     <div class="f" style="margin-bottom:18px"><label>Dias de recebimento</label><div class="chips">${DIAS_CURTO.map((d,i)=>`<label class="chip ${C.diasUteis.includes(i)?"on":""}" style="padding:9px 14px"><input type="checkbox" value="${i}" class="cfDia" ${C.diasUteis.includes(i)?"checked":""} onchange="this.parentNode.classList.toggle('on',this.checked)">${d}</label>`).join("")}</div></div>
     <button class="btn" onclick="salvarConfig()">Salvar configurações</button></div>
+    ${regrasCardHTML()}${docasCardHTML()}</div>
   <div>
-    <div class="card"><div class="card-t">Datas bloqueadas</div><p class="muted" style="font-size:13.5px;margin-bottom:12px">Feriados, inventário ou manutenção: o fornecedor não consegue agendar nessas datas.</p>
-      <div style="display:flex;gap:10px;margin-bottom:8px"><input class="in" type="date" id="cfBloq" style="flex:1"><button class="btn sm" onclick="const v=$('#cfBloq').value;if(v&&!isBlocked(v))toggleBloqueio(v)">Bloquear</button></div>
-      ${(C.bloqueios||[]).length?C.bloqueios.map(k=>`<div class="mini" style="cursor:default"><b>${longDate(k)}</b><button class="btn ghost sm" onclick="toggleBloqueio('${k}')">Remover</button></div>`).join(""):`<p class="muted">Nenhuma data bloqueada.</p>`}</div>
+    ${bloqueiosCardHTML()}
     <div class="card" style="margin-top:14px"><div class="card-t">${WA_ICON}WhatsApp</div>
       <div class="f" style="margin-bottom:12px"><label>WhatsApp do recebimento (com DDD)</label><input class="in" id="cfWa" inputmode="tel" placeholder="(68) 99999-0000" value="${esc(C.whatsRecebimento||"")}" oninput="this.value=masks.tel(this.value)"></div>
       <div class="f" style="margin-bottom:12px"><label>Lembretes antes da entrega (horas, separadas por vírgula)</label><input class="in" id="cfLem" value="${(C.lembretesHoras||[]).join(", ")}" placeholder="24, 2"></div>
@@ -1523,10 +1608,10 @@ function bootHTML(){
   return `<div class="card empty" style="margin-top:40px">${I.x}<p style="font-weight:800;color:var(--text)">Não foi possível conectar ao servidor</p><p>${esc(BOOT.msg)}</p><button class="btn" style="margin-top:16px" onclick="boot()">Tentar de novo</button></div>`}
 async function boot(){
   let t="light";try{t=localStorage.getItem("km_theme")||"light"}catch(e){}applyTheme(t);
-  if(!ONLINE){BOOT.state="ok";render();tratarHash();return}
+  if(!ONLINE){BOOT.state="ok";render();tratarHash();abrirDiaHash();return}
   BOOT.state="loading";render();
   try{restaurarSessao();await carregarConfig();await carregarOcupacao();BOOT.state="ok";render();
-    carregarMeus();const temQ=/(q|ag)=KM-/i.test(decodeURIComponent(location.hash||""));if(SESSION){if(temQ)await entrarEquipe(true);else entrarEquipe(true)}if(temQ)tratarHash()}
+    carregarMeus();const temQ=/(q|ag)=KM-/i.test(decodeURIComponent(location.hash||""));if(SESSION){if(temQ)await entrarEquipe(true);else entrarEquipe(true)}if(temQ)tratarHash();abrirDiaHash()}
   catch(e){BOOT.state="erro";BOOT.msg=msgErro(e);render()}
   if(!window._kmSync)window._kmSync=setInterval(sincronizar,20000);
 }
@@ -1779,8 +1864,9 @@ function confirmarReagendar(t){const R=S.reag;
       catch(e){const m=/kometa_reagendar|function|404/i.test(e.code||"")&&!ERROS[e.code]?"O servidor ainda não tem a função de reagendar. Rode o arquivo supabase-atualizacao-1.sql no Supabase.":msgErro(e);
         toast(m,1);if(/LOTADO|PASSADO/.test(e.code||"")){try{await carregarOcupacao()}catch(_){}render()}return}}
     else{if(slotFree(S.date,t)<=0){toast(ERROS.HORARIO_LOTADO,1);return}
+      {const atual=DB.all().find(x=>x.protocolo===R.protocolo),lim=atual&&S.date!==R.data&&limiteEmpresaErro(atual.cnpj,S.date,R.protocolo);if(lim){toast(lim,1);return}}
       DB.update(R.protocolo,a=>{const now=new Date().toISOString();(a.hist=a.hist||[]).push({st:"pendente",em:now,motivo:`Reagendado pelo fornecedor: ${dShort(a.data)} ${a.hora} → ${dShort(S.date)} ${t}`});
-        a.data=S.date;a.hora=t;a.status="pendente";a.lembretes=[];delete a.waConfEm;delete a.tokenConfirmadoEm;a.reagendamentos=(a.reagendamentos||0)+1})}
+        a.doca=docaLivre(S.date,t,a.protocolo);a.data=S.date;a.hora=t;a.status="pendente";a.lembretes=[];delete a.waConfEm;delete a.tokenConfirmadoEm;a.reagendamentos=(a.reagendamentos||0)+1})}
     toast("Entrega reagendada para "+dShort(S.date)+" às "+t);S.reag=null;S.step=1;S.date=S.time=null;go("meus")})}
 
 /* ---------- App no celular (PWA) ---------- */
@@ -2062,6 +2148,398 @@ function alertasCardHTML(){const c=alertCfg(),p=notifPerm();
 function sinoRodapeHTML(){if(!(S.role==="adm"&&S.admAuth))return "";const on=alertCfg().on;
   return `<button class="nav-i small" onclick="${on?"S.admTab='config';render()":"ativarAlertas()"}">${I.bell}${on?"Alertas ligados":"Ativar alertas"}</button>`}
 
+
+/* ================= PAINEL DO MÊS, SEMANA, FILA DE ESPERA, DOCAS E REGRAS =================
+   Visão do mês, planilha semanal, contador de check-ins, fila de espera para dias lotados,
+   docas/portões, limite por empresa, antecedência para agendar e cancelar e bloqueio por intervalo. */
+I.week=sv('<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M8.5 10v11M15.5 10v11"/>');
+I.fila=sv('<circle cx="7" cy="8" r="2.6"/><circle cx="17" cy="8" r="2.6"/><path d="M2.5 19c.6-3 2.3-4.6 4.5-4.6s3.9 1.6 4.5 4.6M12.5 19c.6-3 2.3-4.6 4.5-4.6s3.9 1.6 4.5 4.6"/>');
+I.dock=sv('<path d="M3 21V9l9-5 9 5v12"/><path d="M7 21v-8h10v8M7 17h10"/>');
+I.chart=sv('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>');
+
+Object.assign(CONFIG_PADRAO,{maxPorEmpresaDia:0,antecedenciaAgendarHoras:0,antecedenciaCancelarHoras:0,docas:[]});
+for(const k of ["maxPorEmpresaDia","antecedenciaAgendarHoras","antecedenciaCancelarHoras","docas"])if(CONFIG[k]===undefined)CONFIG[k]=JSON.parse(JSON.stringify(CONFIG_PADRAO[k]));
+Object.assign(ERROS,{
+  ANTECEDENCIA_AGENDAR:"Este horário está dentro do prazo mínimo de antecedência. Escolha um horário mais à frente.",
+  LIMITE_EMPRESA_DIA:"Esta empresa já atingiu o limite de agendamentos para este dia.",
+  PRAZO_CANCELAR:"O prazo para cancelar pelo app já passou. Fale com o recebimento.",
+  JA_NA_FILA:"Esta empresa já está na fila de espera deste dia.",
+  LIMITE_FILA:"Esta empresa já está em 3 filas de espera. Saia de uma para entrar em outra.",
+  PERIODO_INVALIDO:"Escolha o período: manhã, tarde ou qualquer horário.",
+  DIA_BLOQUEADO:"Esta data ou horário foi bloqueado pelo recebimento."});
+const fmtDH=s=>s?new Date(s).toLocaleString("pt-BR",{dateStyle:"short",timeStyle:"short"}):"—";
+const kgCurto=n=>n>=10000?fmtNum(n/1000,1)+" t":kgTxt(n);
+const brlCurto=n=>n>=1e6?"R$ "+fmtNum(n/1e6,2)+" mi":n>=1e5?"R$ "+fmtNum(n/1e3,1)+" mil":brl(n);
+const VALIDO=a=>!["cancelado","recusado"].includes(a.status);
+
+/* ---------- bloqueios: dia inteiro ("2026-10-12" ou {data,motivo}) ou intervalo ({data,de,ate,motivo}) ---------- */
+const bqData=b=>typeof b==="string"?b:(b&&b.data)||"";
+const bqDiaInteiro=b=>typeof b==="string"||!(b&&b.de);
+function bloqueiosDe(k){return(CONFIG.bloqueios||[]).filter(b=>bqData(b)===k)}
+function bloqueioDia(k){return bloqueiosDe(k).find(bqDiaInteiro)||null}
+isBlocked=function(k){return !!bloqueioDia(k)};
+function slotBlocked(k,t){return bloqueiosDe(k).some(b=>bqDiaInteiro(b)||(t>=b.de&&t<=(b.ate||"23:59")))}
+function motivoBloqueio(k,t){const b=bloqueiosDe(k).find(b=>bqDiaInteiro(b)||(t&&t>=b.de&&t<=(b.ate||"23:59")));return b&&typeof b==="object"?b.motivo||"":""}
+function slotTooSoon(k,t){const h=+CONFIG.antecedenciaAgendarHoras||0;if(!h)return false;const[hh,mm]=t.split(":").map(Number),x=fromIso(k);x.setHours(hh,mm,0,0);return x<new Date(Date.now()+h*3600000)}
+function slotIndisp(k,t){return slotPast(k,t)||slotBlocked(k,t)||slotTooSoon(k,t)}
+const temHorarioAberto=k=>CONFIG.horarios.some(t=>!slotIndisp(k,t));
+const prazoCancelOk=a=>!a||!a.data||minutosAte(a)>=(+CONFIG.antecedenciaCancelarHoras||0)*60;
+function limiteEmpresaErro(cnpj,k,ignorar){const max=+CONFIG.maxPorEmpresaDia||0;if(!max)return "";const c=normCnpj(cnpj);
+  const n=DB.all().filter(a=>a.data===k&&normCnpj(a.cnpj)===c&&!INATIVOS.includes(a.status)&&a.protocolo!==ignorar).length;
+  return n>=max?ERROS.LIMITE_EMPRESA_DIA:""}
+/* doca com menos caminhões no mesmo dia e horário */
+function docaLivre(k,t,ignorar){const ds=CONFIG.docas||[];if(!ds.length)return "";
+  const uso=d=>DB.all().filter(a=>a.data===k&&a.hora===t&&!INATIVOS.includes(a.status)&&a.doca===d&&a.protocolo!==ignorar).length;
+  return ds.slice().sort((x,y)=>uso(x)-uso(y)||ds.indexOf(x)-ds.indexOf(y))[0]}
+function definirDoca(p,v){DB.update(p,a=>{a.doca=v});toast(v?"Doca: "+v:"Doca removida");if(podeRedesenhar()||$("#modal").classList.contains("on"))render()}
+function toggleBloqueio(k){const tem=!!bloqueioDia(k);
+  CONFIG.bloqueios=tem?(CONFIG.bloqueios||[]).filter(b=>!(bqData(b)===k&&bqDiaInteiro(b))):[...(CONFIG.bloqueios||[]),k];
+  CONFIG.bloqueios.sort((a,b)=>bqData(a).localeCompare(bqData(b)));saveConfig();toast(tem?"Data liberada":"Data bloqueada");render()}
+function bloquearDiaPrompt(k){ask("Bloquear esta data para novos agendamentos? Informe o motivo (opcional):",{input:true}).then(m=>{if(m===null)return;m=String(m).trim().slice(0,80);
+  CONFIG.bloqueios=[...(CONFIG.bloqueios||[]),m?{data:k,motivo:m}:k].sort((a,b)=>bqData(a).localeCompare(bqData(b)));saveConfig();toast("Data bloqueada");render()})}
+
+/* ================= FILA DE ESPERA ================= */
+const FILA_KEY="km_fila",MFILA_KEY="km_minha_fila";
+const FILA=new Map(),MINHA_FILA=new Map();let FILA_OK=false,FILA_ERRO=null;
+const FL_ST={aguardando:["Aguardando","warn"],avisado:["Vaga avisada","info"],atendido:["Atendido","ok"],desistiu:["Saiu da fila",""]};
+const PER={manha:"Manhã",tarde:"Tarde",qualquer:"Qualquer horário"};
+const flPill=st=>{const[l,c]=FL_ST[st]||[st,""];return `<span class="pill ${c}">${l}</span>`};
+const filaAtiva=f=>f&&["aguardando","avisado"].includes(f.status);
+function filaDemo(){try{return JSON.parse(SAFE.get(FILA_KEY)||"[]")}catch(e){return[]}}
+function salvarFilaDemo(l){SAFE.set(FILA_KEY,JSON.stringify(l))}
+function filaTodos(){return ONLINE?[...FILA.values()]:filaDemo()}
+function filaDoDia(k){return filaTodos().filter(f=>f.data===k&&filaAtiva(f)).sort((a,b)=>String(a.criado_em).localeCompare(String(b.criado_em)))}
+function filaContagem(){const h=iso(today);return filaTodos().filter(f=>filaAtiva(f)&&f.data>=h).length}
+function minhaFilaItens(){try{return JSON.parse(SAFE.get(MFILA_KEY)||"[]")}catch(e){return[]}}
+function addMinhaFila(c,t){const m=minhaFilaItens().filter(x=>x.codigo!==c);m.push({codigo:c,token:t});SAFE.set(MFILA_KEY,JSON.stringify(m.slice(-30)))}
+function minhaFila(){const m=minhaFilaItens();if(ONLINE)return m.map(x=>MINHA_FILA.get(x.codigo)).filter(Boolean);
+  const all=filaDemo();return m.map(x=>all.find(f=>f.codigo===x.codigo&&f.token===x.token)).filter(Boolean)}
+function erroFila(e){const c=String(e&&(e.code||e.message)||"");
+  if(!ERROS[c]&&/kometa_(entrar|minha|sair)_fila|kometa_fila|schema cache|does not exist|404/i.test(c))return "A fila de espera ainda não foi ativada no servidor (falta rodar a atualização 2 no Supabase).";
+  return msgErro(e)}
+
+/* demonstração: mesmas regras do servidor */
+function entrarFilaDemo(p){const all=filaDemo(),c=normCnpj(p.cnpj),h=iso(today);
+  if(all.some(f=>f.cnpj===c&&f.data===p.data&&filaAtiva(f)))throw new ErroApp("JA_NA_FILA");
+  if(all.filter(f=>f.cnpj===c&&f.data>=h&&filaAtiva(f)).length>=3)throw new ErroApp("LIMITE_FILA");
+  const now=new Date().toISOString();
+  const r={codigo:"FL-"+genProto().slice(3),token:genToken(),data:p.data,periodo:p.periodo,cnpj:c,status:"aguardando",
+    dados:{fornecedor:p.fornecedor,cnpj:p.cnpj,contato:p.contato,telefone:p.telefone,email:p.email,obs:p.obs,aceitePrivacidadeEm:now},criado_em:now,atualizado_em:now};
+  all.push(r);salvarFilaDemo(all);return r}
+
+/* ---------- fornecedor ---------- */
+function abrirFila(k){
+  const F=S.form,ult=(()=>{const m=fornSalvos(),ks=Object.keys(m).sort((a,b)=>m[b].usadoEm-m[a].usadoEm);return ks.length?m[ks[0]]:{}})();
+  const v=c=>esc(String(F[c]||"").trim()?F[c]:(ult[c]||""));
+  const per=S.filaPer||"qualquer";
+  $("#modalBody").innerHTML=`<div class="mh">${I.fila}<h3 style="letter-spacing:0">Fila de espera</h3><button class="x" onclick="closeModal()" aria-label="Fechar">${I.x}</button></div>
+  <div class="mb">
+    <div class="fl-intro"><b>${longDate(k)}</b> está lotado.<br>Deixe seus dados: se alguém cancelar, o recebimento avisa pelo WhatsApp, na ordem de entrada na fila.</div>
+    <div class="fg">
+      <div class="f"><label for="flEmp">Empresa <span class="req">*</span></label><input class="in" id="flEmp" value="${v("fornecedor")}" autocomplete="organization"></div>
+      <div class="f"><label for="flCnpj">CNPJ <span class="req">*</span></label><input class="in" id="flCnpj" value="${v("cnpj")}" oninput="this.value=masks.cnpj(this.value)" autocapitalize="characters"></div>
+      <div class="f"><label for="flCont">Contato <span class="req">*</span></label><input class="in" id="flCont" value="${v("contato")}" autocomplete="name"></div>
+      <div class="f"><label for="flTel">WhatsApp <span class="req">*</span></label><input class="in" id="flTel" value="${v("telefone")}" inputmode="tel" oninput="this.value=masks.tel(this.value)"></div>
+      <div class="f full"><label for="flEmail">E-mail</label><input class="in" id="flEmail" type="email" value="${v("email")}" autocomplete="email"></div>
+    </div>
+    <fieldset class="f" style="margin-top:14px;border:none"><legend class="lbl">Período que serve para você</legend><div class="chips" id="flPer">
+      ${Object.entries(PER).map(([k2,l])=>`<label class="chip ${per===k2?"on":""}"><input type="radio" name="flPer" value="${k2}" ${per===k2?"checked":""} onchange="document.querySelectorAll('#flPer .chip').forEach(c=>c.classList.toggle('on',c.querySelector('input').checked))">${l}</label>`).join("")}</div></fieldset>
+    <div class="f" style="margin-top:14px"><label for="flObs">Observação</label><input class="in" id="flObs" maxlength="300" placeholder="Ex.: carga refrigerada, chego em 30 minutos"></div>
+    <label class="fl-aceite" id="flAceiteBox"><input type="checkbox" id="flAceite"><span>Concordo com o uso destes dados apenas para o contato sobre a vaga, conforme o aviso de privacidade.</span></label>
+    <div class="acts" style="margin-top:16px;justify-content:flex-end"><button class="btn ghost" onclick="closeModal()">Voltar</button><button class="btn" id="btnFila" onclick="enviarFila('${k}')">${I.fila}Entrar na fila</button></div>
+  </div>`;
+  $("#modal").classList.add("on");setTimeout(()=>{const e=$("#flEmp");if(e&&!e.value)e.focus()},40)}
+async function enviarFila(k){
+  const g=id=>($("#"+id).value||"").trim(),per=(document.querySelector("input[name=flPer]:checked")||{}).value||"qualquer";
+  const p={data:k,periodo:per,fornecedor:g("flEmp"),cnpj:g("flCnpj"),contato:g("flCont"),telefone:g("flTel"),email:g("flEmail"),obs:g("flObs"),aceitePrivacidade:true};
+  let erro=null;const mark=id=>{const el=$("#"+id);if(el){el.classList.add("err");erro=erro||el}};
+  document.querySelectorAll("#modalBody .err").forEach(e=>e.classList.remove("err"));
+  if(!p.fornecedor)mark("flEmp");if(!cnpjValido(p.cnpj))mark("flCnpj");if(!p.contato)mark("flCont");if(p.telefone.replace(/\D/g,"").length<10)mark("flTel");
+  if(p.email&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.email))mark("flEmail");if(!$("#flAceite").checked)mark("flAceiteBox");
+  if(erro){toast("Confira os campos destacados",1);if(erro.focus&&erro.tagName==="INPUT")erro.focus();return}
+  S.filaPer=per;const b=$("#btnFila");if(b){b.disabled=true;b.textContent="Enviando…"}
+  try{let r;if(ONLINE){r=await rpc("kometa_entrar_fila",{p});MINHA_FILA.set(r.codigo,r)}else r=entrarFilaDemo(p);
+    addMinhaFila(r.codigo,r.token);
+    $("#modalBody").innerHTML=`<div class="mh">${I.check}<h3 style="letter-spacing:0">Você está na fila</h3><button class="x" onclick="closeModal()" aria-label="Fechar">${I.x}</button></div>
+      <div class="mb"><div class="proto-big" style="margin:0 0 12px"><small>Código da fila</small><b>${r.codigo}</b></div>
+      <p>Dia: <b>${longDate(r.data)}</b> · ${PER[r.periodo]}</p>
+      <p class="muted" style="margin-top:8px">Se uma vaga abrir, o recebimento avisa no WhatsApp <b>${esc(p.telefone)}</b>. A vaga fica com quem agendar primeiro. Você acompanha e sai da fila em <b>Meus agendamentos</b>.</p>
+      <div class="acts" style="margin-top:16px;justify-content:flex-end"><button class="btn ghost" onclick="closeModal()">Fechar</button><button class="btn" onclick="closeModal();novo();go('meus')">Ver em Meus agendamentos</button></div></div>`;
+    if(!ONLINE)render()}
+  catch(e){toast(erroFila(e),1);const b2=$("#btnFila");if(b2){b2.disabled=false;b2.innerHTML=I.fila+"Entrar na fila"}}}
+async function carregarMinhaFila(){if(!ONLINE||S.admAuth)return;const itens=minhaFilaItens();if(!itens.length)return;
+  try{const rows=await rpc("kometa_minha_fila",{p_itens:itens});(rows||[]).forEach(r=>MINHA_FILA.set(r.codigo,r));
+    if(S.role==="forn"&&S.tab==="meus"&&podeRedesenhar())render()}catch(e){}}
+function sairFila(c){ask("Sair da fila de espera deste dia?").then(async ok=>{if(!ok)return;const it=minhaFilaItens().find(x=>x.codigo===c);if(!it)return;
+  try{if(ONLINE){const r=await rpc("kometa_sair_fila",{p_codigo:c,p_token:it.token});MINHA_FILA.set(r.codigo,r)}
+    else{const all=filaDemo(),f=all.find(x=>x.codigo===c);if(f){f.status="desistiu";f.atualizado_em=new Date().toISOString();salvarFilaDemo(all)}}
+    toast("Você saiu da fila")}catch(e){toast(erroFila(e),1)}render()})}
+function agendarDaFila(k){S.reag=null;S.tab="novo";const d=fromIso(k);S.viewY=d.getFullYear();S.viewM=d.getMonth();closeModal();pickDate(k);window.scrollTo(0,0)}
+function filaMeusHTML(){const h=iso(today),l=minhaFila().filter(f=>f.data>=h).sort((a,b)=>a.data.localeCompare(b.data));if(!l.length)return "";
+  return `<div class="card" style="margin-top:16px"><div class="card-t">${I.fila}Fila de espera</div>
+    ${l.map(f=>{const vaga=filaAtiva(f)&&(f.status==="avisado"||dayFree(f.data)>0);
+      return `<div class="mini fl-item" style="cursor:default"><div style="min-width:0"><b>${longDate(f.data)} · ${PER[f.periodo]||""}</b>
+        <small>${f.codigo} · ${esc((f.dados||{}).fornecedor)} · entrou em ${fmtDH(f.criado_em)}</small>
+        ${vaga?`<small class="fl-vaga">${I.check}Abriu vaga neste dia. Agende o quanto antes.</small>`:""}</div>
+        <div class="acts">${flPill(f.status)}${vaga?`<button class="btn sm" onclick="agendarDaFila('${f.data}')">Agendar</button>`:""}${filaAtiva(f)?`<button class="btn ghost sm danger" onclick="sairFila('${f.codigo}')">Sair da fila</button>`:""}</div></div>`}).join("")}</div>`}
+
+/* ---------- equipe ---------- */
+async function carregarFila(forcar){if(!ONLINE||(!S.admAuth&&!forcar))return;
+  try{const rows=await sbFetch(`/rest/v1/kometa_fila?select=*&data=gte.${addDays(iso(today),-30)}&order=criado_em.asc&limit=1000`)||[];
+    const antes=new Set(FILA.keys()),novos=rows.filter(r=>FILA_OK&&!antes.has(r.codigo)&&r.status==="aguardando");
+    FILA.clear();rows.forEach(r=>FILA.set(r.codigo,r));FILA_OK=true;FILA_ERRO=null;if(novos.length)alertarFila(novos)}
+  catch(e){FILA_ERRO=e}}
+function salvarFilaItem(c,fn){
+  if(!ONLINE){const all=filaDemo(),f=all.find(x=>x.codigo===c);if(!f)return;fn(f);f.atualizado_em=new Date().toISOString();salvarFilaDemo(all);render();return}
+  const antes=FILA.get(c);if(!antes)return;const f=JSON.parse(JSON.stringify(antes));fn(f);FILA.set(c,f);render();
+  sbFetch(`/rest/v1/kometa_fila?codigo=eq.${encodeURIComponent(c)}`,{method:"PATCH",body:{status:f.status,dados:f.dados},headers:{Prefer:"return=representation"}})
+    .then(r=>{if(!r||!r.length)throw new ErroApp("Sem permissão para alterar");FILA.set(c,r[0])})
+    .catch(e=>{FILA.set(c,antes);toast("Não foi salvo: "+erroFila(e),1);render()})}
+function marcarFila(c,st){const por=ONLINE&&SESSION?SESSION.email:"";
+  salvarFilaItem(c,f=>{f.status=st;f.dados=f.dados||{};f.dados[st+"Em"]=new Date().toISOString();if(por)f.dados[st+"Por"]=por});
+  toast(st==="avisado"?"Marcado como avisado":"Marcado como "+FL_ST[st][0].toLowerCase())}
+function removerFila(c){ask("Remover este fornecedor da fila de espera?").then(async ok=>{if(!ok)return;
+  if(!ONLINE){salvarFilaDemo(filaDemo().filter(f=>f.codigo!==c));render();toast("Removido da fila");return}
+  try{await sbFetch(`/rest/v1/kometa_fila?codigo=eq.${encodeURIComponent(c)}`,{method:"DELETE"});FILA.delete(c);toast("Removido da fila")}catch(e){toast(erroFila(e),1)}render()})}
+function msgVagaFila(f){const d=f.dados||{};
+  return `Olá, ${d.contato||""}! Aqui é o recebimento dos Supermercados Kometa.\n\nAbriu uma vaga para descarga em *${longDate(f.data)}*. Você está na nossa fila de espera (${f.codigo}).\n\nPara garantir o horário, agende agora:\n${urlBase()}#dia=${f.data}\n\nA vaga fica com quem agendar primeiro.`}
+function vagasLivresEquipe(k){return CONFIG.horarios.reduce((s,t)=>s+(slotIndisp(k,t)?0:Math.max(0,CONFIG.vagasPorHorario-DB.all().filter(a=>a.data===k&&a.hora===t&&!INATIVOS.includes(a.status)).length)),0)}
+function admFila(){
+  if(ONLINE&&FILA_ERRO)return `<div class="card empty">${I.fila}<p style="font-weight:800;color:var(--text)">A fila de espera ainda não está ativa no servidor</p><p>Rode o arquivo <b>supabase-atualizacao-2.sql</b> no Supabase (SQL Editor → New query → Run) e recarregue a página.</p><button class="btn" style="margin-top:14px" onclick="carregarFila().then(render)">Tentar de novo</button></div>`;
+  const h=iso(today),todos=filaTodos(),todas=!!S.filaTodas;
+  const lista=todos.filter(f=>todas?f.data>=addDays(h,-30):(filaAtiva(f)&&f.data>=h));
+  const datas=[...new Set(lista.map(f=>f.data))].sort();
+  const ativos=todos.filter(f=>filaAtiva(f)&&f.data>=h),datasAtivas=[...new Set(ativos.map(f=>f.data))];
+  const comVaga=datasAtivas.filter(k=>vagasLivresEquipe(k)>0);
+  const grupos=datas.map(k=>{const l=lista.filter(f=>f.data===k).sort((a,b)=>String(a.criado_em).localeCompare(String(b.criado_em))),livres=vagasLivresEquipe(k),ord=filaDoDia(k);
+    return `<div class="card fl-g"><div class="fl-h"><div><b>${longDate(k)}</b><small>${ord.length} na fila${bloqueioDia(k)?" · data bloqueada":""}</small></div>
+      ${k<h?`<span class="pill">Passou</span>`:livres>0?`<span class="pill ok">${livres} vaga${livres>1?"s":""} livre${livres>1?"s":""}</span>`:`<span class="pill bad">Lotado</span>`}
+      <button class="btn ghost sm" onclick="S.agDate='${k}';S.admTab='agenda';render()">Ver agenda</button></div>
+      ${l.map(f=>{const d=f.dados||{},pos=ord.findIndex(x=>x.codigo===f.codigo)+1;
+        return `<div class="fl-row ${filaAtiva(f)?"":"off"}"><span class="fl-pos" aria-label="Posição na fila">${pos>0?pos+"º":"—"}</span>
+          <div class="fl-info"><b>${esc(d.fornecedor)}</b><small>${esc(d.cnpj||f.cnpj)} · ${esc(d.contato)} · ${esc(d.telefone)}${d.email?" · "+esc(d.email):""}</small>
+            <small>${PER[f.periodo]||""} · entrou em ${fmtDH(f.criado_em)}${d.avisadoEm?" · avisado "+fmtDH(d.avisadoEm):""}${d.protocolo?" · agendou "+esc(d.protocolo):""}</small>${d.obs?`<small class="fl-obs">“${esc(d.obs)}”</small>`:""}</div>
+          <div class="acts">${flPill(f.status)}${filaAtiva(f)?waBtn(waLink(d.telefone,msgVagaFila(f)),f.status==="avisado"?"Avisar de novo":"Avisar vaga",`marcarFila('${f.codigo}','avisado')`)+`<button class="btn ghost sm" onclick="marcarFila('${f.codigo}','atendido')">Atendido</button>`:""}<button class="btn ghost sm danger" onclick="removerFila('${f.codigo}')" aria-label="Remover da fila">${I.trash}</button></div></div>`}).join("")}</div>`}).join("");
+  return `<div class="kpis">
+    ${kpi(I.fila,"","Na fila",ativos.length,"pedidos ativos")}
+    ${kpi(I.cal,"","Datas com fila",datasAtivas.length,"")}
+    ${kpi(I.check,"g","Vagas abertas",comVaga.length,comVaga.length?"datas com fila e vaga livre":"nenhuma no momento",comVaga.length?"var(--ok)":"")}
+    ${kpi(I.bell||I.clock,"y","Já avisados",ativos.filter(f=>f.status==="avisado").length,"aguardando o fornecedor agendar")}
+  </div>
+  ${comVaga.length?`<div class="alert info"><span>${I.check}<b>Abriu vaga em ${comVaga.map(dShort).join(", ")}.</b> Avise o primeiro da fila pelo WhatsApp.</span></div>`:""}
+  <div class="filters" style="margin-bottom:12px"><label class="fl-tg"><input type="checkbox" class="sw" ${todas?"checked":""} onchange="S.filaTodas=this.checked;render()">Mostrar atendidos, desistências e datas passadas</label></div>
+  ${grupos||`<div class="card empty">${I.fila}<p>Ninguém na fila de espera.</p><p style="font-size:13px">Quando um dia lota, o fornecedor pode entrar na fila pelo calendário. Os pedidos aparecem aqui.</p></div>`}`}
+function alertarFila(novos){const c=alertCfg(),f=novos[0],d=f.dados||{};
+  const tit=novos.length===1?`Fila de espera: ${d.fornecedor}`:`${novos.length} novos pedidos na fila de espera`;
+  const corpo=novos.length===1?`Quer vaga em ${dShort(f.data)} (${PER[f.periodo]||""})`:"Abra a fila de espera para ver.";
+  toast(tit+" · "+corpo);if(!c.on)return;if(c.som)tocarSom();
+  if(document.hidden||!document.hasFocus()){_naoVistos+=novos.length;atualizarTitulo();notificar(tit,corpo,"km-fila")}}
+function avisarVagaFila(datas){const h=iso(today);[...new Set(datas)].filter(k=>k&&k>=h).forEach(k=>{const n=filaDoDia(k).filter(f=>f.status==="aguardando").length;if(!n)return;
+  const tit=`Vaga aberta em ${dShort(k)}`,corpo=`${n} fornecedor${n>1?"es":""} na fila de espera. Avise o primeiro pelo WhatsApp.`;
+  setTimeout(()=>toast(tit+" · "+corpo),900);const c=alertCfg();if(c.on&&(document.hidden||!document.hasFocus()))notificar(tit,corpo,"km-fila-vaga")})}
+
+/* ---------- ganchos nas funções existentes ---------- */
+{const _al=alertar;alertar=function(evs){_al(evs);try{avisarVagaFila((evs||[]).filter(e=>e.tipo==="canc").map(e=>e.a.data))}catch(_){}}}
+{const _ss=setStatus;setStatus=function(p,st,m){const a=DB.all().find(x=>x.protocolo===p),antes=a?{data:a.data,status:a.status}:null;_ss(p,st,m);
+  if(antes&&["cancelado","recusado"].includes(st)&&!INATIVOS.includes(antes.status))avisarVagaFila([antes.data])}}
+{const _ab=abrirDoAlerta;abrirDoAlerta=function(p){if(/^km-fila/.test(p||"")&&S.admAuth){S.role="adm";S.admTab="fila";render();return}_ab(p)}}
+{const _ct=carregarTudo;carregarTudo=async function(){await _ct();FILA_OK=false;FILA.clear();await carregarFila(true)}}
+{const _sy=sincronizar;sincronizar=async function(){await _sy();if(ONLINE&&S.admAuth&&BOOT.state==="ok"){const n0=JSON.stringify([...FILA.values()].map(f=>f.codigo+f.status));await carregarFila();
+  if(n0!==JSON.stringify([...FILA.values()].map(f=>f.codigo+f.status))){if(S.role==="adm"&&podeRedesenhar())render();else renderChrome()}}}}
+{const _sa=sair;sair=async function(s){FILA.clear();FILA_OK=false;return _sa(s)}}
+{const _cm=carregarMeus;carregarMeus=async function(){await Promise.all([_cm(),carregarMinhaFila()])}}
+{const _rm=renderMeus;renderMeus=function(){return _rm()+filaMeusHTML()}}
+{const _rs=renderSlots;renderSlots=function(){const r=_rs();if(S.reag||!S.date||dayFree(S.date)>0||!temHorarioAberto(S.date))return r;
+  return `<div class="alert info fl-cta"><span>${I.fila}<b>Todos os horários deste dia estão ocupados.</b> Entre na fila de espera e seja avisado se uma vaga abrir.</span><button class="btn sm" onclick="abrirFila('${S.date}')">Entrar na fila</button></div>`+r}}
+{const _su=renderSuccess;renderSuccess=function(){let h=_su();const a=DB.all().find(x=>x.protocolo===S.lastProto);
+  if(a&&a.doca)h=h.replace('<div class="full"><small>Local</small>',`<div><small>Doca / portão</small><b>${esc(a.doca)}</b></div><div><small>Solicitado em</small><b>${fmtDH(a.criadoEm)}</b></div><div class="full"><small>Local</small>`);return h}}
+{const _dt=details;details=function(p){_dt(p);const a=DB.all().find(x=>x.protocolo===p),kv=document.querySelector("#modalBody .kv");if(!a||!kv)return;
+  const adm=S.role==="adm"&&S.admAuth,ds=CONFIG.docas||[];let h=`<div><small>Solicitado em</small><b>${fmtDH(a.criadoEm)}</b></div>`;
+  if(adm&&ds.length)h+=`<div><small><label for="selDoca">Doca / portão</label></small><select id="selDoca" class="st-select" onchange="definirDoca('${p}',this.value)"><option value="">Sem doca</option>${[...new Set([...ds,a.doca].filter(Boolean))].map(d=>`<option ${a.doca===d?"selected":""}>${esc(d)}</option>`).join("")}</select></div>`;
+  else if(a.doca)h+=`<div><small>Doca / portão</small><b>${esc(a.doca)}</b></div>`;
+  kv.insertAdjacentHTML("beforeend",h)}}
+{const _ge=gerarExemplo;gerarExemplo=function(){_ge();if(ONLINE)return;
+  const forn=[["Mercearia Horizonte Ltda","11444777000161","Fernanda Alves"],["Atacado Rio Acre","04252011000110","Rafael Moura"],["Frigorífico Vale Verde","60701190000104","Lúcia Prado"]];
+  const dias=nextWorkDays(addDays(iso(today),1),4),all=filaDemo(),now=Date.now();
+  forn.forEach(([f,c,ct],i)=>{const k=dias[i%dias.length];if(!k||all.some(x=>x.cnpj===c&&x.data===k))return;const em=new Date(now-(3-i)*3600000).toISOString();
+    all.push({codigo:"FL-"+genProto().slice(3),token:genToken(),data:k,periodo:["manha","tarde","qualquer"][i],cnpj:c,status:i===2?"avisado":"aguardando",
+      dados:{fornecedor:f,cnpj:masks.cnpj(c),contato:ct,telefone:"(68) 99"+(100+i*111)+"-"+(4000+i*321),email:"",obs:i===0?"Carga paletizada, pode ser qualquer doca":"",aceitePrivacidadeEm:em,...(i===2?{avisadoEm:new Date(now-1800000).toISOString()}:{})},criado_em:em,atualizado_em:em})});
+  salvarFilaDemo(all);render()}}
+window.addEventListener("storage",e=>{if(ONLINE||e.key!==FILA_KEY||!S.admAuth)return;
+  try{const antes=new Set(JSON.parse(e.oldValue||"[]").map(f=>f.codigo)),novos=JSON.parse(e.newValue||"[]").filter(f=>!antes.has(f.codigo)&&f.status==="aguardando");
+    if(novos.length)alertarFila(novos);if(podeRedesenhar())render();else renderChrome()}catch(_){}});
+function abrirDiaHash(){const m=decodeURIComponent(location.hash||"").match(/dia=(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}
+  const k=m[1];if(k<iso(today))return;S.role="forn";S.tab="novo";S.reag=null;const d=fromIso(k);S.viewY=d.getFullYear();S.viewM=d.getMonth();pickDate(k)}
+
+/* ================= S04 · CHECK-INS DE HOJE (Portaria) ================= */
+function checkinsHTML(){const h=iso(today),l=DB.all().filter(a=>a.data===h&&VALIDO(a));
+  const feitos=l.filter(a=>a.chegadaEm||["chegou","descarga","recebido"].includes(a.status)).length,falt=l.filter(a=>a.status==="noshow").length,y=l.length,p=y?Math.round(feitos/y*100):0;
+  return `<div class="card ckin"><div class="ckin-n"><small>Check-ins de hoje</small><b>${feitos} <span>de ${y}</span></b></div>
+    <div class="ckin-c"><div class="ckin-bar" role="progressbar" aria-valuenow="${p}" aria-valuemin="0" aria-valuemax="100" aria-label="Check-ins feitos hoje"><i style="width:${p}%"></i></div>
+    <div class="ckin-m"><span><i class="d1"></i>${feitos} chegaram</span><span><i class="d2"></i>${Math.max(0,y-feitos-falt)} aguardando</span><span><i class="d3"></i>${l.filter(a=>a.status==="descarga").length} em descarga</span>${falt?`<span><i class="d4"></i>${falt} falta${falt>1?"s":""}</span>`:""}</div></div></div>`}
+{const _ap=admPortaria;admPortaria=function(){return checkinsHTML()+_ap()}}
+
+/* ================= S01 · PAINEL: HOJE | MÊS ================= */
+function painelSelHTML(){const v=S.painelVis||"hoje",k=S.pMes||iso(new Date(today.getFullYear(),today.getMonth(),1)),d=fromIso(k);
+  return `<div class="pv-bar"><div class="seg seg3 pv-seg" role="tablist"><button role="tab" aria-selected="${v==="hoje"}" class="${v==="hoje"?"on":""}" onclick="S.painelVis='hoje';render()">Hoje</button><button role="tab" aria-selected="${v==="mes"}" class="${v==="mes"?"on":""}" onclick="S.painelVis='mes';render()">Visão do mês</button></div>
+    ${v==="mes"?`<div class="pv-nav"><button class="rnd" onclick="moverMes(-1)" aria-label="Mês anterior">${I.left}</button><b>${MESES[d.getMonth()]} ${d.getFullYear()}</b><button class="rnd" onclick="moverMes(1)" aria-label="Próximo mês">${I.right}</button></div>`:""}</div>`}
+function moverMes(n){const d=fromIso(S.pMes||iso(new Date(today.getFullYear(),today.getMonth(),1)));S.pMes=iso(new Date(d.getFullYear(),d.getMonth()+n,1));render()}
+function hbars(rows,{fmt=v=>v,cor="var(--blue)"}={}){const max=Math.max(1,...rows.map(r=>r.v));
+  return `<div class="hb">${rows.map(r=>`<div class="hb-r" title="${esc(r.tip||"")}"><span class="hb-l">${r.l}</span><span class="hb-t"><i style="width:${Math.max(r.v?2:0,r.v/max*100)}%;background:${r.cor||cor}"></i></span><b class="hb-v">${fmt(r.v)}</b></div>`).join("")}</div>`}
+function vbars(pts){const max=Math.max(1,...pts.map(p=>p.v)),imax=pts.findIndex(p=>p.v===max&&p.v>0);
+  return `<div class="vb" style="--n:${pts.length}">${pts.map((p,i)=>`<div class="vb-c ${p.off?"off":""} ${p.hoje?"hoje":""}" title="${esc(p.tip)}"><span class="vb-n">${i===imax?p.v:""}</span><span class="vb-t"><i style="height:${p.v?Math.max(3,p.v/max*100):0}%"></i></span><small>${p.l}</small></div>`).join("")}</div>`}
+function painelMesHTML(){
+  const de=S.pMes||iso(new Date(today.getFullYear(),today.getMonth(),1)),d0=fromIso(de),ate=iso(new Date(d0.getFullYear(),d0.getMonth()+1,0));if(ONLINE)garantirPeriodo(de);
+  const R=relPeriodoDados(de,ate),val=R.validos,tk=iso(today);
+  const t=val.reduce((s,a)=>({pb:s.pb+a.totais.pb,pl:s.pl+a.totais.pl,val:s.val+a.totais.val,vol:s.vol+a.totais.vol,nf:s.nf+(a.totais.qtd||0)}),{pb:0,pl:0,val:0,vol:0,nf:0});
+  const maior=val.slice().sort((a,b)=>b.totais.pb-a.totais.pb)[0];
+  const g={};val.forEach(a=>{const k=normCnpj(a.cnpj)||a.fornecedor,x=g[k]=g[k]||{nome:a.fornecedor,pb:0,n:0,val:0};x.pb+=a.totais.pb;x.n++;x.val+=a.totais.val});
+  const top=Object.values(g).sort((a,b)=>b.pb-a.pb).slice(0,5);
+  const cif=val.filter(a=>a.frete==="CIF").length,fob=val.filter(a=>a.frete==="FOB").length,tf=cif+fob;
+  const conc=val.filter(a=>a.data<=tk&&(a.chegadaEm||a.status==="noshow")),pont=conc.filter(a=>a.chegadaEm&&atrasoMin(a)<=15).length,atr=conc.filter(a=>a.chegadaEm&&atrasoMin(a)>15).length,falt=conc.filter(a=>a.status==="noshow").length,tc=conc.length;
+  const pct=(n,t)=>t?Math.round(n/t*100):0;
+  const pts=R.porDia.map(x=>{const dt=fromIso(x.k);return{v:x.ag,off:!x.util,hoje:x.k===tk,l:String(dt.getDate()),tip:`${dShort(x.k)}: ${x.ag} agendamento(s)`}});
+  const horas=R.porHora.slice().sort((a,b)=>b.ag-a.ag);
+  const stack=(parts)=>`<div class="stk">${parts.filter(p=>p.n).map(p=>`<i style="width:${p.n/Math.max(1,parts.reduce((s,q)=>s+q.n,0))*100}%;background:${p.cor}" title="${p.l}: ${p.n}"></i>`).join("")||`<i style="width:100%;background:var(--surface-3)"></i>`}</div>
+    <div class="stk-l">${parts.map(p=>`<span><i style="background:${p.cor}"></i>${p.l} <b>${p.n}</b>${p.t?` <small>(${pct(p.n,p.t)}%)</small>`:""}</span>`).join("")}</div>`;
+  if(!R.all.length)return `<div class="card empty">${I.chart}<p>Nenhum agendamento em ${MESES[d0.getMonth()].toLowerCase()} de ${d0.getFullYear()}.</p></div>`;
+  return `<div class="kpis">
+    ${kpi(I.cal,"","Agendamentos",val.length,`${R.cont.rec} recebidos · ${R.cont.canc+R.cont.recu} cancelados`)}
+    ${kpi(I.chart,"","Ocupação",R.ocup+"%",`${R.uteis} dias úteis · ${dayCap()} vagas/dia`,R.ocup>=85?"var(--bad)":"")}
+    ${kpi(I.scale,"","Peso bruto",kgCurto(t.pb),`líquido ${kgCurto(t.pl)}`)}
+    ${kpi(I.box,"g","Valor das notas",`<span title="${brl(t.val)}">${brlCurto(t.val)}</span>`,`${t.nf} NF · ${t.vol.toLocaleString("pt-BR")} volumes`)}
+  </div>
+  <div class="adm-g">
+    <div class="card"><div class="card-t">${I.chart}Agendamentos por dia</div>${vbars(pts)}
+      <div class="legend"><span><i style="background:var(--blue)"></i>Dia útil</span><span><i style="background:var(--border-2)"></i>Sem recebimento</span><span><i style="background:var(--red)"></i>Hoje</span></div></div>
+    <div class="card mx"><div class="card-t">${I.truck}Maior carga do mês</div>
+      ${maior?`<button class="mx-b" onclick="details('${maior.protocolo}')"><span class="mx-kg">${kgCurto(maior.totais.pb)}</span><b>${esc(maior.fornecedor)}</b>
+        <small>${longDate(maior.data)} às ${maior.hora}</small>
+        <span class="mx-g"><span><small>Volumes</small><b>${maior.totais.vol.toLocaleString("pt-BR")}</b></span><span><small>Valor</small><b>${brl(maior.totais.val)}</b></span><span><small>Veículo</small><b>${esc(maior.veiculo)}</b></span></span></button>`:`<p class="muted">Sem cargas no mês.</p>`}</div>
+  </div>
+  <div class="adm-g" style="margin-top:14px">
+    <div class="card"><div class="card-t">${I.trophy||I.user}Maiores fornecedores por peso</div>
+      ${top.length?hbars(top.map((x,i)=>({l:`<span class="hb-i">${i+1}</span>${esc(x.nome)}`,v:x.pb,tip:`${x.nome}: ${x.n} entrega(s), ${brl(x.val)}`})),{fmt:kgCurto}):`<p class="muted">Sem dados.</p>`}</div>
+    <div class="card"><div class="card-t">${I.truck}Frete CIF × FOB</div>${stack([{l:"CIF",n:cif,t:tf,cor:"var(--blue)"},{l:"FOB",n:fob,t:tf,cor:"var(--red)"}])}
+      <div class="card-t" style="margin-top:20px">${I.clock}Pontualidade</div>${stack([{l:"No horário",n:pont,t:tc,cor:"var(--ok)"},{l:"Atrasados",n:atr,t:tc,cor:"var(--warn)"},{l:"Faltaram",n:falt,t:tc,cor:"var(--bad)"}])}
+      <p class="muted" style="font-size:12px;margin-top:8px">No horário = chegada até 15 min depois do agendado.</p></div>
+  </div>
+  <div class="card" style="margin-top:14px"><div class="card-t">${I.clock}Horários mais procurados</div>
+    ${hbars(horas.map(x=>({l:x.h,v:x.ag,tip:`${x.h}: ${x.ag} agendamento(s), ${x.atr} atraso(s), ${x.falt} falta(s)`})),{fmt:v=>v+" ag."})}</div>`}
+{const _pp=admPainel;admPainel=function(){return painelSelHTML()+((S.painelVis||"hoje")==="mes"?painelMesHTML():_pp())}}
+
+/* ================= S02 · AGENDA EM LISTA ================= */
+function nfLinksHTML(a){return `<div class="nfl-w">${(a.notas||[]).map((n,i)=>{const nome=esc(n.arquivo||`Nota ${i+1}`);
+  return ONLINE&&n.path?`<button class="nfl" onclick="event.stopPropagation();abrirArquivo('${esc(n.path)}')" title="Abrir ${nome}">${I.doc}${nome}</button>`:`<span class="nfl" title="${nome}">${I.doc}${nome}</span>`}).join("")}</div>`}
+admLista=function(){
+  let list=filtrados();if(S.admDoca)list=list.filter(a=>(a.doca||"")===(S.admDoca==="-"?"":S.admDoca));
+  list.sort((a,b)=>(b.data+b.hora).localeCompare(a.data+a.hora));
+  const t={vol:0,pb:0,val:0};list.forEach(a=>{t.vol+=a.totais.vol;t.pb+=a.totais.pb;t.val+=a.totais.val});const ds=CONFIG.docas||[];
+  const rows=list.map(a=>`<tr onclick="details('${a.protocolo}')" style="cursor:pointer" class="${INATIVOS.includes(a.status)?"tr-off":""}">
+    <td class="proto">${a.protocolo}</td>
+    <td class="nw"><span class="muted">${a.criadoEm?new Date(a.criadoEm).toLocaleDateString("pt-BR"):"—"}</span><br><small class="muted">${a.criadoEm?hm(a.criadoEm):""}</small></td>
+    <td class="nw">${fromIso(a.data).toLocaleDateString("pt-BR")}<br><b>${a.hora}</b></td>
+    <td class="emp"><b>${esc(a.fornecedor)}</b><small>${esc(a.contato)} · ${esc(a.telefone)}</small><small>${esc(a.cnpj)}</small>${nfLinksHTML(a)}</td>
+    <td class="nw"><b>${a.totais.qtd} NF</b> · ${a.totais.vol} vol<br>${kgTxt(a.totais.pb)}<br><span class="muted">${brl(a.totais.val)} · ${esc(a.frete)}</span></td>
+    <td class="nw">${esc(a.veiculo)}<br><span class="placa">${esc(a.placa)}</span></td>
+    <td class="nw">${a.doca?`<span class="doca">${I.dock}${esc(a.doca)}</span>`:`<span class="muted">—</span>`}</td>
+    <td>${pill(a.status)}</td><td onclick="event.stopPropagation()"><div class="acts">${acoesHTML(a)}</div></td></tr>`).join("");
+  return `<div class="card"><div class="filters">
+      <label class="flt">De<input class="in" type="date" value="${S.admFrom}" onchange="S.admFrom=this.value;render()"></label>
+      <label class="flt">Até<input class="in" type="date" value="${S.admTo}" onchange="S.admTo=this.value;render()"></label>
+      <select class="in" aria-label="Status" onchange="S.admStatus=this.value;render()"><option value="">Todos os status</option>${Object.entries(STATUS).map(([k,[l]])=>`<option value="${k}" ${S.admStatus===k?"selected":""}>${l}</option>`).join("")}</select>
+      ${ds.length?`<select class="in" aria-label="Doca" onchange="S.admDoca=this.value;render()"><option value="">Todas as docas</option>${ds.map(d=>`<option ${S.admDoca===d?"selected":""}>${esc(d)}</option>`).join("")}<option value="-" ${S.admDoca==="-"?"selected":""}>Sem doca</option></select>`:""}
+      <input class="in" placeholder="Fornecedor, CNPJ, NF, placa…" aria-label="Buscar" value="${esc(S.admQuery)}" onchange="S.admQuery=this.value;render()" style="flex:1">
+      <button class="btn ghost sm" onclick="S.admFrom=S.admTo=S.admStatus=S.admQuery=S.admDoca='';render()">Limpar</button>
+      <button class="btn sm" onclick="exportCSV(true,${S.admDoca?"filtradosDoca()":"undefined"})">Exportar CSV</button></div>
+    <p class="muted" style="margin-bottom:10px;font-size:13.5px;font-weight:700">${list.length} agendamento(s) · ${t.vol.toLocaleString("pt-BR")} volumes · ${kgTxt(t.pb)} · ${brl(t.val)}</p>
+    ${list.length?`<div class="tbl"><table class="lista"><thead><tr><th>Código</th><th>Solicitado em</th><th>Agendado para</th><th>Empresa e notas</th><th>Resumo</th><th>Veículo</th><th>Doca</th><th>Status</th><th>Ações</th></tr></thead><tbody>${rows}</tbody></table></div>`:`<div class="empty">${I.inbox}<p>Nenhum agendamento encontrado.</p></div>`}</div>`};
+function filtradosDoca(){return filtrados().filter(a=>(a.doca||"")===(S.admDoca==="-"?"":S.admDoca))}
+
+/* ================= S03 · PLANILHA SEMANAL ================= */
+const semanaDe=k=>addDays(k,-((fromIso(k).getDay()+6)%7));
+function admSemana(){
+  const de=S.semDe||(S.semDe=semanaDe(iso(today))),ate=addDays(de,6),tk=iso(today);if(ONLINE)garantirPeriodo(de);
+  const lista=DB.all().filter(a=>a.data>=de&&a.data<=ate),val=lista.filter(VALIDO);
+  const dias=[0,1,2,3,4,5,6].map(i=>addDays(de,i)).filter(k=>CONFIG.diasUteis.includes(fromIso(k).getDay())||lista.some(a=>a.data===k));
+  const forn=new Set(val.map(a=>normCnpj(a.cnpj)||a.fornecedor)).size,nfs=val.reduce((s,a)=>s+(a.totais.qtd||0),0),vol=val.reduce((s,a)=>s+a.totais.vol,0),pl=val.reduce((s,a)=>s+a.totais.pl,0);
+  const cols=dias.map(k=>{const dt=fromIso(k),l=lista.filter(a=>a.data===k).sort((a,b)=>a.hora.localeCompare(b.hora)||INATIVOS.includes(a.status)-INATIVOS.includes(b.status)),v=l.filter(VALIDO);
+    const bd=bloqueioDia(k),bi=bloqueiosDe(k).filter(b=>!bqDiaInteiro(b)),mot=bd&&typeof bd==="object"?bd.motivo:"";
+    return `<section class="wk-col ${k===tk?"hoje":""} ${bd?"blq":""}" aria-label="${DIAS[dt.getDay()]} ${dt.toLocaleDateString("pt-BR")}">
+      <header class="wk-h"><div><b>${DIAS[dt.getDay()]}</b><span>${String(dt.getDate()).padStart(2,"0")}/${String(dt.getMonth()+1).padStart(2,"0")}</span></div>${k===tk?`<span class="pill info">Hoje</span>`:""}
+        <small>${v.length} agend. · ${v.reduce((s,a)=>s+(a.totais.qtd||0),0)} NF · ${kgCurto(v.reduce((s,a)=>s+a.totais.pl,0))}</small>
+        ${bd?`<span class="wk-blq">${I.lock}${esc(mot||"Dia bloqueado")}</span>`:""}${bi.map(b=>`<span class="wk-blq">${I.lock}${b.de}–${b.ate||b.de}${b.motivo?" · "+esc(b.motivo):""}</span>`).join("")}
+        ${!bd&&!CONFIG.diasUteis.includes(dt.getDay())?`<span class="wk-blq">Sem recebimento</span>`:""}</header>
+      <div class="wk-l">${l.length?l.map(a=>`<button class="wk-card st-${a.status} ${INATIVOS.includes(a.status)?"cx":""}" onclick="details('${a.protocolo}')">
+          <span class="wk-t"><b>${a.hora}</b>${a.doca?`<span>${esc(a.doca)}</span>`:""}</span>
+          <b class="wk-f">${esc(a.fornecedor)}</b>
+          <small>${a.totais.qtd} NF · ${a.totais.vol} vol · ${kgTxt(a.totais.pl)}</small>
+          <small>${esc(a.veiculo)} · ${esc(a.placa)}</small>${pill(a.status)}</button>`).join(""):`<p class="wk-vazio">${bd?"Sem recebimento":"Nenhum agendamento"}</p>`}</div></section>`}).join("");
+  return `<div class="ag-h">
+    <button class="rnd" onclick="S.semDe=addDays(S.semDe,-7);render()" aria-label="Semana anterior">${I.left}</button>
+    <div><h2>Semana de ${fromIso(de).toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit"})} a ${fromIso(ate).toLocaleDateString("pt-BR")}</h2><span class="muted">${val.length} agendamento(s) · ${lista.length-val.length} cancelado(s)</span></div>
+    <button class="rnd" onclick="S.semDe=addDays(S.semDe,7);render()" aria-label="Próxima semana">${I.right}</button>
+    <span style="flex:1"></span>
+    <input class="in" type="date" aria-label="Ir para a semana do dia" value="${de}" onchange="if(this.value){S.semDe=semanaDe(this.value);render()}" style="width:auto;height:42px">
+    <button class="btn ghost sm" onclick="S.semDe=semanaDe(iso(today));render()">Esta semana</button>
+    <button class="btn ghost sm" onclick="S.relTipo='semana';S.relDate='${de}';S.admTab='relatorio';render()">Relatório da semana</button>
+    <button class="btn sm" onclick="exportCSV(false,DB.all().filter(a=>a.data>='${de}'&&a.data<='${ate}').sort((a,b)=>(a.data+a.hora).localeCompare(b.data+b.hora)),'semana-kometa-${de}.csv')">Exportar CSV</button></div>
+  <div class="kpis">
+    ${kpi(I.user,"","Fornecedores",forn,"empresas na semana")}
+    ${kpi(I.doc,"","Notas fiscais",nfs,"")}
+    ${kpi(I.box,"","Volumes",vol.toLocaleString("pt-BR"),"")}
+    ${kpi(I.scale,"g","Peso líquido",kgCurto(pl),"")}
+  </div>
+  <div class="wk" style="--n:${Math.max(1,dias.length)}">${cols}</div>`}
+
+/* ================= S06 · CONFIGURAÇÕES ================= */
+function regrasCardHTML(){const C=CONFIG;
+  return `<div class="card" style="margin-top:14px"><div class="card-t">Regras de agendamento</div>
+    <div class="fg">
+      <div class="f"><label for="rgMax">Máximo de agendamentos por empresa no mesmo dia</label><input class="in" id="rgMax" type="number" min="0" max="50" value="${+C.maxPorEmpresaDia||0}"></div>
+      <div class="f"><label for="rgAnt">Antecedência mínima para agendar (horas)</label><input class="in" id="rgAnt" type="number" min="0" max="720" value="${+C.antecedenciaAgendarHoras||0}"></div>
+      <div class="f"><label for="rgCan">Antecedência mínima para cancelar (horas)</label><input class="in" id="rgCan" type="number" min="0" max="720" value="${+C.antecedenciaCancelarHoras||0}"></div>
+    </div>
+    <p class="muted" style="font-size:12.5px;margin:10px 0 12px">0 = sem limite. As regras valem para novos agendamentos e reagendamentos e são conferidas também no servidor. A equipe continua podendo alterar qualquer agendamento.</p>
+    <button class="btn sm" onclick="salvarRegras()">Salvar regras</button></div>`}
+function salvarRegras(){const n=(id,max)=>Math.min(max,Math.max(0,parseInt($("#"+id).value)||0));
+  CONFIG.maxPorEmpresaDia=n("rgMax",50);CONFIG.antecedenciaAgendarHoras=n("rgAnt",720);CONFIG.antecedenciaCancelarHoras=n("rgCan",720);
+  saveConfig().then(ok=>{if(ok)toast("Regras salvas")});render()}
+function docasCardHTML(){const ds=CONFIG.docas||[];
+  return `<div class="card" style="margin-top:14px"><div class="card-t">${I.dock}Docas e portões</div>
+    <p class="muted" style="font-size:13px;margin:-4px 0 12px">Cada agendamento recebe a doca menos ocupada no horário. A equipe pode trocar no detalhe do agendamento.</p>
+    <div class="chips" style="margin-bottom:12px">${ds.length?ds.map((d,i)=>`<span class="chip on doc-chip">${esc(d)}<button onclick="remDoca(${i})" aria-label="Remover ${esc(d)}">${I.x}</button></span>`).join(""):`<span class="muted">Nenhuma doca cadastrada.</span>`}</div>
+    <div style="display:flex;gap:10px"><input class="in" id="novaDoca" maxlength="40" placeholder="Ex.: Doca 3, Portão B" style="flex:1" onkeydown="if(event.key==='Enter')addDoca()" aria-label="Nome da doca"><button class="btn sm" onclick="addDoca()">${I.plus}Incluir</button></div></div>`}
+function addDoca(){const v=($("#novaDoca").value||"").trim().slice(0,40);if(!v){toast("Informe o nome da doca",1);return}
+  const ds=CONFIG.docas||[];if(ds.some(d=>d.toLowerCase()===v.toLowerCase())){toast("Esta doca já existe",1);return}if(ds.length>=20){toast("Limite de 20 docas",1);return}
+  CONFIG.docas=[...ds,v];saveConfig().then(ok=>{if(ok)toast("Doca incluída")});render();setTimeout(()=>{const e=$("#novaDoca");if(e)e.focus()},30)}
+function remDoca(i){const d=(CONFIG.docas||[])[i];if(d==null)return;ask(`Remover "${d}"? Agendamentos que já usam esta doca continuam com ela.`).then(ok=>{if(!ok)return;CONFIG.docas=CONFIG.docas.filter((_,j)=>j!==i);saveConfig();render()})}
+function bloqueiosCardHTML(){const h=iso(today),bs=(CONFIG.bloqueios||[]).map((b,i)=>({b,i,k:bqData(b)})).sort((x,y)=>x.k.localeCompare(y.k)),fut=bs.filter(x=>x.k>=h),ant=bs.length-fut.length;
+  const hs=CONFIG.horarios,tipo=S.bqTipo||"dia";
+  return `<div class="card"><div class="card-t">${I.lock}Bloqueios de agenda</div>
+    <p class="muted" style="font-size:13px;margin:-4px 0 12px">Feriados, inventário ou manutenção. Bloqueie o dia inteiro ou só alguns horários.</p>
+    <div class="fg">
+      <div class="f"><label for="bqData">Data</label><input class="in" type="date" id="bqData" min="${h}" value="${S.bqData||""}" onchange="S.bqData=this.value"></div>
+      <fieldset class="f" style="border:none"><legend class="lbl">Bloquear</legend><div class="chips">
+        <label class="chip ${tipo==="dia"?"on":""}" style="padding:9px 14px"><input type="radio" name="bqTipo" value="dia" ${tipo==="dia"?"checked":""} onchange="S.bqData=$('#bqData').value;S.bqMot=$('#bqMot').value;S.bqTipo='dia';render()">Dia inteiro</label>
+        <label class="chip ${tipo==="int"?"on":""}" style="padding:9px 14px"><input type="radio" name="bqTipo" value="int" ${tipo==="int"?"checked":""} onchange="S.bqData=$('#bqData').value;S.bqMot=$('#bqMot').value;S.bqTipo='int';render()">Horários</label></div></fieldset>
+      ${tipo==="int"?`<div class="f"><label for="bqDe">Do horário</label><select class="in" id="bqDe">${hs.map(x=>`<option>${x}</option>`).join("")}</select></div>
+      <div class="f"><label for="bqAte">Até o horário</label><select class="in" id="bqAte">${hs.map((x,i)=>`<option ${i===hs.length-1?"selected":""}>${x}</option>`).join("")}</select></div>`:""}
+      <div class="f full"><label for="bqMot">Motivo</label><input class="in" id="bqMot" maxlength="80" placeholder="Ex.: Feriado municipal, inventário, manutenção da doca" value="${esc(S.bqMot||"")}"></div>
+    </div>
+    <button class="btn sm" style="margin-top:12px" onclick="addBloqueio()">${I.lock}Bloquear</button>
+    <div style="margin-top:12px">${fut.length?fut.map(({b,i,k})=>`<div class="mini" style="cursor:default"><div><b>${longDate(k)}</b><small>${bqDiaInteiro(b)?"Dia inteiro":`${b.de} até ${b.ate||b.de}`}${typeof b==="object"&&b.motivo?" · "+esc(b.motivo):""}</small></div><button class="btn ghost sm" onclick="remBloqueio(${i})">Remover</button></div>`).join(""):`<p class="muted">Nenhum bloqueio futuro.</p>`}
+      ${ant?`<button class="btn ghost sm" style="margin-top:8px" onclick="limparBloqueiosAntigos()">Apagar ${ant} bloqueio(s) de datas passadas</button>`:""}</div></div>`}
+function addBloqueio(){const k=$("#bqData").value,m=($("#bqMot").value||"").trim().slice(0,80),tipo=S.bqTipo||"dia";
+  if(!k){toast("Escolha a data",1);$("#bqData").focus();return}if(k<iso(today)){toast("Escolha uma data a partir de hoje",1);return}
+  let item;if(tipo==="dia"){if(bloqueioDia(k)){toast("Esta data já está bloqueada",1);return}item=m?{data:k,motivo:m}:k}
+  else{const de=$("#bqDe").value,ate=$("#bqAte").value;if(ate<de){toast("O horário final precisa ser depois do inicial",1);return}item={data:k,de,ate,motivo:m}}
+  const ocup=DB.all().filter(a=>a.data===k&&!INATIVOS.includes(a.status)&&(tipo==="dia"||(a.hora>=item.de&&a.hora<=item.ate))).length;
+  CONFIG.bloqueios=[...(CONFIG.bloqueios||[]),item].sort((a,b)=>bqData(a).localeCompare(bqData(b)));S.bqData=S.bqMot="";
+  saveConfig().then(ok=>{if(ok)toast(ocup?`Bloqueado. Atenção: ${ocup} agendamento(s) já marcados nesse período continuam ativos.`:"Bloqueio salvo",!!ocup)});render()}
+function remBloqueio(i){CONFIG.bloqueios=(CONFIG.bloqueios||[]).filter((_,j)=>j!==i);saveConfig().then(ok=>{if(ok)toast("Bloqueio removido")});render()}
+function limparBloqueiosAntigos(){const h=iso(today);CONFIG.bloqueios=(CONFIG.bloqueios||[]).filter(b=>bqData(b)>=h);saveConfig();render()}
 
 boot();
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeModal();if($("#askBg").classList.contains("on"))$("#askNo").click()}});
